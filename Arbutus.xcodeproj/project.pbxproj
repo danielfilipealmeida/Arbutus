@@ -285,10 +285,10 @@
 			children = (
 				650415441F65A3CB001D7832 /* GUI.cpp */,
 				650415451F65A3CC001D7832 /* GUI.hpp */,
-				650415501F65B09F001D7832 /* Element.cpp */,
-				650415511F65B09F001D7832 /* Element.hpp */,
 				650415531F65B0A5001D7832 /* Primitives.cpp */,
 				650415541F65B0A5001D7832 /* Primitives.hpp */,
+				650415501F65B09F001D7832 /* Element.cpp */,
+				650415511F65B09F001D7832 /* Element.hpp */,
 				6504154A1F65B017001D7832 /* Button.cpp */,
 				6504154B1F65B017001D7832 /* Button.hpp */,
 			);

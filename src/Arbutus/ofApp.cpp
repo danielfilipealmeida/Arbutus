@@ -31,19 +31,26 @@ void ofApp::setup(){
     });
 
 
-    gui = new GUI();
+    GUI::getInstance().add<Button>({
+        {"x", 200},
+        {"y", 200},
+        {"width", 100},
+        {"height", 20},
+        {"caption", "OK"}
+    });
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     Engine::getInstance()->render();
+    GUI::getInstance().update();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     Engine::getInstance()->drawOutput();
-    gui->draw();
+    GUI::getInstance().draw();
 }
 
 //--------------------------------------------------------------

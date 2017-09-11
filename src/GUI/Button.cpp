@@ -20,9 +20,13 @@ Button::~Button()
     
 }
 
+void Button::update() {
+    Element::update();
+}
 
 void Button::draw(NVGcontext* vg)
 {
+    Element::draw(vg);
     drawButton(vg, 1, caption.c_str(), rect.getX(), rect.getY(), rect.getWidth(), rect.getHeight(), nvgRGBA(128,128,0,255));
     
 }

@@ -11,15 +11,29 @@
 
 #include <stdio.h>
 #include "ofMain.h"
+#include "nanovg.h"
+
 
 class Element
 {
+    Boolean hover;
+    Boolean pressed;
 public:
     ofRectangle rect;
 
     Element();
     ~Element();
-    void draw();
+    
+    /*!
+     Checks if the mouse is hover and if the element is being pressed
+     */
+    virtual void update();
+    
+    /*!
+     Draws. Method to be overriden by childs
+     */
+    virtual void draw(NVGcontext* vg);
+    
 };
 
 #endif /* Element_hpp */

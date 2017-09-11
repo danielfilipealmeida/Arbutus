@@ -16,7 +16,7 @@
 
 using json = nlohmann::json;
 
-class Button : Element
+class Button : public Element
 {
     Boolean pushed;
     string caption;
@@ -24,8 +24,10 @@ public:
     
     Button();
     ~Button();
+    void update();
     void draw(NVGcontext* vg);
     void set(json buttonConfig);
+
 };
 
 #endif /* Button_hpp */

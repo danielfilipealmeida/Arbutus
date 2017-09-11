@@ -15,7 +15,6 @@
 
 
 
-
 struct NVGcontext* vg;
 
 /*!
@@ -27,13 +26,6 @@ GUI::GUI()
 
     loadFonts();
 
-    testButton.set({
-        {"x", 10},
-        {"y", 10},
-        {"width", 100},
-        {"height", 20},
-        {"caption", "A Button"}
-    });
 }
 
 /*!
@@ -43,6 +35,13 @@ GUI::~GUI()
 {
     free(vg);
 }
+
+GUI& GUI::getInstance() {
+    static GUI instance;
+    
+    return instance;
+}
+
 
 void GUI::loadFonts() {
     fontIcons = nvgCreateFont(vg, "icons", "../Resources/entypo.ttf");
@@ -59,20 +58,35 @@ void GUI::loadFonts() {
 
 }
 
-/*!
- Draws the GUI
- */
+
+
+
 void GUI::draw()
 {
-    nvgBeginFrame(vg, ofGetWidth(), ofGetHeight(), 1);
+        nvgBeginFrame(vg, ofGetWidth(), ofGetHeight(), 1);
+    /*
     nvgBeginPath(vg);
     nvgRect(vg, 100,100, 120,30);
     nvgFillColor(vg, nvgRGBA(255,192,0,255));
     nvgFill(vg);
-    nvgEndFrame(vg);
     
     drawSlider(vg, 0.5, 400, 430, 100, 20);
 
     testButton.draw(vg);
+   */
+    
+    for(auto element:elements) {
+         element->draw(vg);
+    }
+    nvgEndFrame(vg);
     
 }
+
+void GUI::update()
+{
+
+    for(auto element:elements) {
+        element->update();
+    }
+}
+
