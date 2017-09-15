@@ -12,21 +12,21 @@
 #include <stdio.h>
 #include "Element.hpp"
 #include "json.hpp"
-#include "nanovg.h"
+
 
 using json = nlohmann::json;
 
 class Button : public Element
 {
+public:
     Boolean pushed;
     string caption;
-public:
     
     Button();
     ~Button();
-    void update();
-    void draw(NVGcontext* vg);
-    void set(json buttonConfig);
+    virtual void update();
+    virtual void draw(NVGcontext* vg);
+    virtual void set(json config);
 
 };
 

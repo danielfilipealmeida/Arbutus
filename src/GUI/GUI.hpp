@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 #include "Button.hpp"
+#include "Slider.hpp"
+
 
 class GUI
 {

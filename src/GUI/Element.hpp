@@ -16,9 +16,12 @@
 
 class Element
 {
+public:
     Boolean hover;
     Boolean pressed;
-public:
+    Boolean entered;
+    Boolean exited;
+    
     ofRectangle rect;
 
     Element();

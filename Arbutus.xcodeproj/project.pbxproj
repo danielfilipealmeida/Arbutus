@@ -49,6 +49,7 @@
 		65276BB81F486ED300949383 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81401DF8D96500331165 /* IpEndpointName.cpp */; };
 		65276BB91F486EDA00949383 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81451DF8D96500331165 /* NetworkingUtils.cpp */; };
 		65276BBA1F486FC100949383 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
+		65308E991F685A0D00106AE5 /* GUIStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65308E971F685A0D00106AE5 /* GUIStyle.cpp */; };
 		655BFAF91E7355BD00B74446 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655BFAF81E7355BD00B74446 /* CoreMIDI.framework */; };
 		655BFAFA1E7358C000B74446 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
 		655BFAFB1E735A3D00B74446 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81401DF8D96500331165 /* IpEndpointName.cpp */; };
@@ -80,6 +81,7 @@
 		65E8969F1E734F02000D470B /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81531DF8D96500331165 /* OscPrintReceivedElements.cpp */; };
 		65E896A01E734F05000D470B /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81501DF8D96500331165 /* OscOutboundPacketStream.cpp */; };
 		65E896A11E734F37000D470B /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C1EB171E6E1D16003F731D /* RtMidi.cpp */; };
+		65F7782E1F6B243600FFA43B /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65F7782C1F6B243600FFA43B /* Slider.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -135,6 +137,8 @@
 		6504155A1F65DE47001D7832 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Resources/Fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		650455591F47085D00CB3BE5 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6504CA6B1ECE4DCC00355E4A /* Loop001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Loop001.mp4; sourceTree = "<group>"; };
+		65308E971F685A0D00106AE5 /* GUIStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUIStyle.cpp; path = GUI/GUIStyle.cpp; sourceTree = "<group>"; };
+		65308E981F685A0D00106AE5 /* GUIStyle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GUIStyle.hpp; path = GUI/GUIStyle.hpp; sourceTree = "<group>"; };
 		655BFAF81E7355BD00B74446 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		659E25D51E70BCAE00217A12 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		65BC812F1DF8D94600331165 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 		65E896851E733920000D470B /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = ../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework; sourceTree = "<group>"; };
 		65E896871E733975000D470B /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = ../../../libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
 		65F6C5401F42F08A00270C51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		65F7782C1F6B243600FFA43B /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Slider.cpp; path = GUI/Slider.cpp; sourceTree = "<group>"; };
+		65F7782D1F6B243600FFA43B /* Slider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Slider.hpp; path = GUI/Slider.hpp; sourceTree = "<group>"; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,12 +291,16 @@
 			children = (
 				650415441F65A3CB001D7832 /* GUI.cpp */,
 				650415451F65A3CC001D7832 /* GUI.hpp */,
+				65308E971F685A0D00106AE5 /* GUIStyle.cpp */,
+				65308E981F685A0D00106AE5 /* GUIStyle.hpp */,
 				650415531F65B0A5001D7832 /* Primitives.cpp */,
 				650415541F65B0A5001D7832 /* Primitives.hpp */,
 				650415501F65B09F001D7832 /* Element.cpp */,
 				650415511F65B09F001D7832 /* Element.hpp */,
 				6504154A1F65B017001D7832 /* Button.cpp */,
 				6504154B1F65B017001D7832 /* Button.hpp */,
+				65F7782C1F6B243600FFA43B /* Slider.cpp */,
+				65F7782D1F6B243600FFA43B /* Slider.hpp */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -817,6 +827,7 @@
 				65276BAC1F486E0000949383 /* tinyxml.cpp in Sources */,
 				65276BB31F486E3400949383 /* OscReceivedElements.cpp in Sources */,
 				65276BA51F486DD000949383 /* ofxMidiIn.cpp in Sources */,
+				65F7782E1F6B243600FFA43B /* Slider.cpp in Sources */,
 				65276BA91F486DE600949383 /* ofxRtMidiOut.cpp in Sources */,
 				6504154C1F65B017001D7832 /* Button.cpp in Sources */,
 				65276BA61F486DD000949383 /* ofxMidiMessage.cpp in Sources */,
@@ -824,6 +835,7 @@
 				65276BB41F486E3400949383 /* OscTypes.cpp in Sources */,
 				65276BB51F486E4300949383 /* ofxSyphonClient.mm in Sources */,
 				650415461F65A3CC001D7832 /* GUI.cpp in Sources */,
+				65308E991F685A0D00106AE5 /* GUIStyle.cpp in Sources */,
 				65276BB61F486E4300949383 /* ofxSyphonServer.mm in Sources */,
 				650415551F65B0A5001D7832 /* Primitives.cpp in Sources */,
 				650415521F65B09F001D7832 /* Element.cpp in Sources */,

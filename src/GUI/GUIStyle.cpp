@@ -1,0 +1,77 @@
+//
+//  style.cpp
+//  Arbutus
+//
+//  Created by Daniel Almeida on 12/09/17.
+//
+//
+
+#include "GUIStyle.hpp"
+
+
+GUIStyle::GUIStyle() {
+    baseColor = ofColor::forestGreen;
+    textColor = ofColor::white;
+    saturation = 0.1;
+    brightness = 60;
+    calculateColors();
+}
+
+
+GUIStyle::~GUIStyle() {
+    
+}
+
+void GUIStyle::calculateColors() {
+    backgroundColor = baseColor;
+    //backgroundColor.setSaturation(saturation);
+    lightColor = backgroundColor + brightness;
+    
+    //lightColor.setBrightness(10);
+    darkColor = backgroundColor - brightness;
+    //darkColor.setBrightness(brightness);
+
+}
+
+GUIStyle& GUIStyle::getInstance() {
+    static GUIStyle instance;
+    
+    return instance;
+}
+
+
+
+ofColor GUIStyle::getTextColor() {
+    return textColor;
+}
+
+
+ofColor GUIStyle::getBaseColor() {
+    return baseColor;
+}
+
+
+ofColor GUIStyle::getBackgroundColor() {
+    return backgroundColor;
+}
+
+
+ofColor GUIStyle::getDarkColor() {
+    return darkColor;
+}
+
+
+ofColor GUIStyle::getLightColor() {
+    return lightColor;
+}
+
+
+float GUIStyle::getBrightness() {
+    return brightness;
+}
+
+
+float GUIStyle::getSaturation(){
+    return saturation;
+}
+

@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/GUI/Element.cpp"
-            timestampString = "526858413.648135"
+            timestampString = "527208224.465047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "Element::draw(NVGcontext* vg)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,6 +94,22 @@
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "GUI::draw()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/GUI/Button.cpp"
+            timestampString = "527083877.103771"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "Button::draw(NVGcontext* vg)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

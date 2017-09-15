@@ -8,6 +8,7 @@
 
 #include "Button.hpp"
 #include "Primitives.hpp"
+#include "GUIStyle.hpp"
 
 Button::Button()
 {
@@ -26,17 +27,34 @@ void Button::update() {
 
 void Button::draw(NVGcontext* vg)
 {
+    ofColor backgroundColor;
     Element::draw(vg);
-    drawButton(vg, 1, caption.c_str(), rect.getX(), rect.getY(), rect.getWidth(), rect.getHeight(), nvgRGBA(128,128,0,255));
-    
+    if (hover == FALSE) {
+        backgroundColor = GUIStyle::getInstance().getBackgroundColor();
+    }
+    else {
+        if (pressed == TRUE) {
+            backgroundColor = GUIStyle::getInstance().getDarkColor();
+
+        }
+        else  {
+            backgroundColor = GUIStyle::getInstance().getLightColor();
+
+        }
+        
+    }
+    print(backgroundColor);
+    drawButton(vg, 1, caption, rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 }
 
-void Button::set(json buttonConfig) {
-    if (!buttonConfig.is_object()) throw("not a json object");
+
+
+void Button::set(json config) {
+    if (!config.is_object()) throw("not a json object");
     
-    rect.set(buttonConfig["x"].get<unsigned int>(),
-             buttonConfig["y"].get<unsigned int>(),
-             buttonConfig["width"].get<unsigned int>(),
-             buttonConfig["height"].get<unsigned int>());
-    caption = buttonConfig["caption"].get<string>();
+    rect.set(config["x"].get<unsigned int>(),
+             config["y"].get<unsigned int>(),
+             config["width"].get<unsigned int>(),
+             config["height"].get<unsigned int>());
+    caption = config["caption"].get<string>();
 }

@@ -35,9 +35,21 @@ void ofApp::setup(){
         {"x", 200},
         {"y", 200},
         {"width", 100},
-        {"height", 20},
+        {"height", 32},
         {"caption", "OK"}
     });
+    
+    GUI::getInstance().add<Slider>({
+        {"x", 200},
+        {"y", 240},
+        {"width", 100},
+        {"height", 32},
+        {"caption", "Slider"},
+        {"value", 0.2},
+        {"minValue", -1.0},
+        {"maxValue", 1.0}
+    });
+
 }
 
 //--------------------------------------------------------------

@@ -13,6 +13,8 @@ Element::Element()
 {
     hover = FALSE;
     pressed = FALSE;
+    entered = FALSE;
+    exited = FALSE;
 }
 
 
@@ -24,13 +26,22 @@ Element::~Element()
 
 void Element::update()
 {
-    if (rect.inside(ofGetMouseX(), ofGetMouseY())) {
+    Boolean previousHover = hover;
+    
+    if (!rect.inside(ofGetMouseX(), ofGetMouseY())) {
         hover = FALSE;
         pressed = FALSE;
     }
     else {
         hover = TRUE;
-        if (ofGetMousePressed() > 0) pressed = true;
+        pressed = (ofGetMousePressed() > 0);
+    }
+    
+    if (hover) {
+        entered = (!previousHover) ? TRUE : FALSE;
+    }
+    else {
+        exited = (previousHover) ? TRUE : FALSE;
     }
 }
 

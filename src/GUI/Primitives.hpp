@@ -9,10 +9,14 @@
 #ifndef Primitives_hpp
 #define Primitives_hpp
 
+#include <stdio.h>
+#include "ofMain.h"
 #include "nanovg.h"
 
-void drawButton(NVGcontext* vg, int preicon, const char* text, float x, float y, float w, float h, NVGcolor col);
-void drawSlider(NVGcontext* vg, float pos, float x, float y, float w, float h);
+void print(ofColor color);
+NVGcolor ofColor2NVGColor(ofColor color, unsigned char alpha = 255);
+void drawButton(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor);
+void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor);
 
 
 

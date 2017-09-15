@@ -7,7 +7,7 @@
 //
 
 #include "Primitives.hpp"
-
+#include "GUIStyle.hpp"
 
 // Returns 1 if col.rgba is 0.0f,0.0f,0.0f,0.0f, 0 otherwise
 int isBlack(NVGcolor col)
@@ -41,93 +41,126 @@ static char* cpToUTF8(int cp, char* str)
 }
 
 
-void drawButton(NVGcontext* vg, int preicon, const char* text, float x, float y, float w, float h, NVGcolor col)
-{
-    NVGpaint bg;
-    char icon[8];
-    float cornerRadius = 4.0f;
-    float tw = 0, iw = 0;
+void print(ofColor color) {
+    //cout << "ofColor: r=" << color.r <<", g=" << color.g << ", b=", color.b << ", a=" << color.a << endl;
+    printf("ofColor: r=%i, g=%i, b=%i, a=%i\n", color.r, color.g, color.b, color.a);
+}
+
+void shrinkRect(ofRectangle &rect, float pixels) {
+    rect.setX(rect.getX() + pixels);
+    rect.setY(rect.getY() + pixels);
+    rect.setWidth(rect.getWidth() - (2*pixels));
+    rect.setHeight(rect.getHeight() - (2*pixels));
     
-    bg = nvgLinearGradient(vg, x,y,x,y+h, nvgRGBA(255,255,255,isBlack(col)?16:32), nvgRGBA(0,0,0,isBlack(col)?16:32));
+}
+
+NVGcolor ofColor2NVGColor(ofColor color, unsigned char alpha) {
+    return nvgRGBA(color.r, color.g, color.b, alpha);
+}
+
+
+void drawFilledRoundRect(NVGcontext* vg, ofRectangle rect, NVGcolor col, float cornerRadius) {
     nvgBeginPath(vg);
-    nvgRoundedRect(vg, x+1,y+1, w-2,h-2, cornerRadius-1);
-    if (!isBlack(col)) {
-        nvgFillColor(vg, col);
-        nvgFill(vg);
-    }
-    nvgFillPaint(vg, bg);
+    nvgFillColor(vg, col);
+    nvgRoundedRect(
+                   vg,
+                   rect.getX(),
+                   rect.getY(),
+                   rect.getWidth(),
+                   rect.getHeight(),
+                   cornerRadius
+                   );
     nvgFill(vg);
-    
+}
+
+
+void drawStrokedRoundRect(NVGcontext* vg, ofRectangle rect, NVGcolor col, float cornerRadius) {
     nvgBeginPath(vg);
-    nvgRoundedRect(vg, x+0.5f,y+0.5f, w-1,h-1, cornerRadius-0.5f);
-    nvgStrokeColor(vg, nvgRGBA(0,0,0,48));
+    nvgRoundedRect(
+                   vg,
+                   rect.getX() + 0.5f,
+                   rect.getY() + 0.5f,
+                   rect.getWidth() - 1,
+                   rect.getHeight() - 1,
+                   cornerRadius-0.5f
+                   );
+    nvgStrokeColor(vg, col);
     nvgStroke(vg);
+    
+
+}
+
+void drawBox(NVGcontext* vg, ofRectangle rect, NVGcolor col, float cornerRadius)
+{
+    ofRectangle innerRect, outerRect;
+    innerRect = outerRect = rect;
+    shrinkRect(innerRect, 1);
+    shrinkRect(outerRect, 0.5);
+    
+    drawFilledRoundRect(vg, innerRect, col, cornerRadius - 1);
+    drawStrokedRoundRect(vg, outerRect, ofColor2NVGColor(ofColor::black, 255), cornerRadius - 0.5);
+}
+
+
+void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor textColor) {
+    float tw = 0, iw = 0;
+    char icon[8];
     
     nvgFontSize(vg, 20.0f);
     nvgFontFace(vg, "sans-bold");
-    tw = nvgTextBounds(vg, 0,0, text, NULL, NULL);
+    tw = nvgTextBounds(vg, 0,0, text.c_str(), NULL, NULL);
     if (preicon != 0) {
-        nvgFontSize(vg, h*1.3f);
-        nvgFontFace(vg, "icons");
-        iw = nvgTextBounds(vg, 0,0, cpToUTF8(preicon,icon), NULL, NULL);
-        iw += h*0.15f;
-    }
-    
-    if (preicon != 0) {
-        nvgFontSize(vg, h*1.3f);
+        nvgFontSize(vg, rect.getHeight() * 1.3f);
         nvgFontFace(vg, "icons");
         nvgFillColor(vg, nvgRGBA(255,255,255,96));
         nvgTextAlign(vg,NVG_ALIGN_LEFT|NVG_ALIGN_MIDDLE);
-        nvgText(vg, x+w*0.5f-tw*0.5f-iw*0.75f, y+h*0.5f, cpToUTF8(preicon,icon), NULL);
+        nvgText(
+                vg,
+                rect.getX() + rect.getWidth() * 0.5f - tw * 0.5f - iw * 0.75f,
+                rect.getY() + rect.getHeight() * 0.5f,
+                cpToUTF8(preicon,icon),
+                NULL
+                );
     }
     
     nvgFontSize(vg, 20.0f);
     nvgFontFace(vg, "sans-bold");
-    nvgTextAlign(vg,NVG_ALIGN_LEFT|NVG_ALIGN_MIDDLE);
-    nvgFillColor(vg, nvgRGBA(0,0,0,160));
-    nvgText(vg, x+w*0.5f-tw*0.5f+iw*0.25f,y+h*0.5f-1,text, NULL);
-    nvgFillColor(vg, nvgRGBA(255,255,255,160));
-    nvgText(vg, x+w*0.5f-tw*0.5f+iw*0.25f,y+h*0.5f,text, NULL);
+    nvgTextAlign(vg, NVG_ALIGN_LEFT | NVG_ALIGN_MIDDLE);
+    
+    nvgFillColor(vg, textColor);
+    nvgText(
+            vg,
+            rect.getX() + rect.getWidth() * 0.5f - tw * 0.5f + iw * 0.25f,
+            rect.getY() + rect.getHeight() * 0.5f,
+            text.c_str(),
+            NULL
+            );
 }
 
-void drawSlider(NVGcontext* vg, float pos, float x, float y, float w, float h)
+void drawButton(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor)
 {
-    NVGpaint bg, knob;
-    float cy = y+(int)(h*0.5f);
-    float kr = (int)(h*0.25f);
+    float cornerRadius = 2.0f;
     
-    nvgSave(vg);
-    //	nvgClearState(vg);
+    drawBox(vg, rect, backgroundColor, cornerRadius);
+    printCenteredText(vg, preicon, text, rect, textColor);
+}
+
+void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor)
+{
+    pos = ofClamp(pos, 0,1);
+    float cornerRadius = 2.0f;
+    //drawBox(vg, rect, backgroundColor, cornerRadius);
+
+    ofRectangle innerRect, outerRect, valueRect;
+    innerRect = outerRect = rect;
+    shrinkRect(innerRect, 1);
+    shrinkRect(outerRect, 0.5);
     
-    // Slot
-    bg = nvgBoxGradient(vg, x,cy-2+1, w,4, 2,2, nvgRGBA(0,0,0,32), nvgRGBA(0,0,0,128));
-    nvgBeginPath(vg);
-    nvgRoundedRect(vg, x,cy-2, w,4, 2);
-    nvgFillPaint(vg, bg);
-    nvgFill(vg);
+    valueRect = innerRect;
+    valueRect.setWidth(valueRect.getWidth() * pos);
+    drawFilledRoundRect(vg, innerRect, backgroundColor, cornerRadius - 1);
+    drawFilledRoundRect(vg, valueRect, ofColor2NVGColor(ofColor::white, 128), cornerRadius - 1);
+    drawStrokedRoundRect(vg, outerRect, ofColor2NVGColor(ofColor::black), cornerRadius - 0.5);
     
-    // Knob Shadow
-    bg = nvgRadialGradient(vg, x+(int)(pos*w),cy+1, kr-3,kr+3, nvgRGBA(0,0,0,64), nvgRGBA(0,0,0,0));
-    nvgBeginPath(vg);
-    nvgRect(vg, x+(int)(pos*w)-kr-5,cy-kr-5,kr*2+5+5,kr*2+5+5+3);
-    nvgCircle(vg, x+(int)(pos*w),cy, kr);
-    nvgPathWinding(vg, NVG_HOLE);
-    nvgFillPaint(vg, bg);
-    nvgFill(vg);
-    
-    // Knob
-    knob = nvgLinearGradient(vg, x,cy-kr,x,cy+kr, nvgRGBA(255,255,255,16), nvgRGBA(0,0,0,16));
-    nvgBeginPath(vg);
-    nvgCircle(vg, x+(int)(pos*w),cy, kr-1);
-    nvgFillColor(vg, nvgRGBA(40,43,48,255));
-    nvgFill(vg);
-    nvgFillPaint(vg, knob);
-    nvgFill(vg);
-    
-    nvgBeginPath(vg);
-    nvgCircle(vg, x+(int)(pos*w),cy, kr-0.5f);
-    nvgStrokeColor(vg, nvgRGBA(0,0,0,92));
-    nvgStroke(vg);
-    
-    nvgRestore(vg);
+    printCenteredText(vg, 0, text, rect, textColor);
 }
