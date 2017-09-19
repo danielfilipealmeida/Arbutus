@@ -24,7 +24,6 @@
 		6504556E1F470EA300CB3BE5 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655BFAF81E7355BD00B74446 /* CoreMIDI.framework */; };
 		6504556F1F470EAC00CB3BE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E8967B1E73311F000D470B /* Foundation.framework */; };
 		650455711F470ED000CB3BE5 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BC812F1DF8D94600331165 /* Syphon.framework */; };
-		6504CA6E1ECE4E0000355E4A /* Loop001.mp4 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6504CA6B1ECE4DCC00355E4A /* Loop001.mp4 */; };
 		65276BA31F486DC000949383 /* ofxBaseMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81871DF8D9CA00331165 /* ofxBaseMidi.cpp */; };
 		65276BA41F486DC000949383 /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81891DF8D9CA00331165 /* ofxMidi.cpp */; };
 		65276BA51F486DD000949383 /* ofxMidiIn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC818C1DF8D9CA00331165 /* ofxMidiIn.cpp */; };
@@ -54,6 +53,20 @@
 		655BFAFA1E7358C000B74446 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
 		655BFAFB1E735A3D00B74446 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81401DF8D96500331165 /* IpEndpointName.cpp */; };
 		655BFAFD1E735BC100B74446 /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
+		658AF52E1F6FEA4500576066 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415441F65A3CB001D7832 /* GUI.cpp */; };
+		658AF52F1F6FEA4500576066 /* GUI.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415451F65A3CC001D7832 /* GUI.hpp */; };
+		658AF5301F6FEA4500576066 /* GUIStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65308E971F685A0D00106AE5 /* GUIStyle.cpp */; };
+		658AF5311F6FEA4500576066 /* GUIStyle.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 65308E981F685A0D00106AE5 /* GUIStyle.hpp */; };
+		658AF5321F6FEA4500576066 /* Primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415531F65B0A5001D7832 /* Primitives.cpp */; };
+		658AF5331F6FEA4500576066 /* Primitives.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415541F65B0A5001D7832 /* Primitives.hpp */; };
+		658AF5341F6FEA4500576066 /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415501F65B09F001D7832 /* Element.cpp */; };
+		658AF5351F6FEA4500576066 /* Element.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415511F65B09F001D7832 /* Element.hpp */; };
+		658AF5361F6FEA4500576066 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504154A1F65B017001D7832 /* Button.cpp */; };
+		658AF5371F6FEA4500576066 /* Button.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504154B1F65B017001D7832 /* Button.hpp */; };
+		658AF5381F6FEA4500576066 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65F7782C1F6B243600FFA43B /* Slider.cpp */; };
+		658AF5391F6FEA4500576066 /* Slider.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 65F7782D1F6B243600FFA43B /* Slider.hpp */; };
+		658AF53A1F6FEA4500576066 /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
+		658AF53D1F6FEAD600576066 /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 658AF53C1F6FEAD600576066 /* Element.cpp */; };
 		65E21BC81EC6764F006D1C37 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E21BC61EC6764F006D1C37 /* ofApp.cpp */; };
 		65E6BD321F4467A0008E4F9E /* ofxMidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC818E1DF8D9CA00331165 /* ofxMidiMessage.cpp */; };
 		65E6BD331F4467B1008E4F9E /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81891DF8D9CA00331165 /* ofxMidi.cpp */; };
@@ -91,7 +104,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				6504CA6E1ECE4E0000355E4A /* Loop001.mp4 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +152,7 @@
 		65308E971F685A0D00106AE5 /* GUIStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUIStyle.cpp; path = GUI/GUIStyle.cpp; sourceTree = "<group>"; };
 		65308E981F685A0D00106AE5 /* GUIStyle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GUIStyle.hpp; path = GUI/GUIStyle.hpp; sourceTree = "<group>"; };
 		655BFAF81E7355BD00B74446 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		658AF53C1F6FEAD600576066 /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = CatchCpp/GUI/Element.cpp; sourceTree = "<group>"; };
 		659E25D51E70BCAE00217A12 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		65BC812F1DF8D94600331165 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
 		65BC81311DF8D94600331165 /* SyphonNameboundClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyphonNameboundClient.h; sourceTree = "<group>"; };
@@ -263,6 +276,7 @@
 		6504152D1F6582E4001D7832 /* Arbutus */ = {
 			isa = PBXGroup;
 			children = (
+				658AF53B1F6FEA7500576066 /* GUI */,
 				650415401F6584C3001D7832 /* HelloWorld-Info.plist */,
 				6504152F1F6582F4001D7832 /* main.cpp */,
 				650415301F6582F4001D7832 /* ofApp.cpp */,
@@ -332,6 +346,14 @@
 			);
 			name = "Test Data";
 			path = TestData;
+			sourceTree = "<group>";
+		};
+		658AF53B1F6FEA7500576066 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				658AF53C1F6FEAD600576066 /* Element.cpp */,
+			);
+			name = GUI;
 			sourceTree = "<group>";
 		};
 		659E25D41E70BCAE00217A12 /* Frameworks */ = {
@@ -753,8 +775,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				65E8965B1E72F3FF000D470B /* Catch Tests */,
 				650455581F47085D00CB3BE5 /* HelloWorld */,
+				65E8965B1E72F3FF000D470B /* Catch Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -801,7 +823,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Copying fixtures\"\ncp -R src/CatchCpp/Fixtures \"$TARGET_BUILD_DIR\"";
+			shellScript = "#echo \"Copying fixtures\"\n#cp -R src/CatchCpp/Fixtures \"$TARGET_BUILD_DIR\"";
 		};
 		65F6C5451F43A6E000270C51 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -863,6 +885,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658AF52E1F6FEA4500576066 /* GUI.cpp in Sources */,
+				658AF52F1F6FEA4500576066 /* GUI.hpp in Sources */,
+				658AF5301F6FEA4500576066 /* GUIStyle.cpp in Sources */,
+				658AF5311F6FEA4500576066 /* GUIStyle.hpp in Sources */,
+				658AF5321F6FEA4500576066 /* Primitives.cpp in Sources */,
+				658AF5331F6FEA4500576066 /* Primitives.hpp in Sources */,
+				658AF5341F6FEA4500576066 /* Element.cpp in Sources */,
+				658AF5351F6FEA4500576066 /* Element.hpp in Sources */,
+				658AF5361F6FEA4500576066 /* Button.cpp in Sources */,
+				658AF5371F6FEA4500576066 /* Button.hpp in Sources */,
+				658AF5381F6FEA4500576066 /* Slider.cpp in Sources */,
+				658AF5391F6FEA4500576066 /* Slider.hpp in Sources */,
+				658AF53A1F6FEA4500576066 /* nanovg.c in Sources */,
 				65E6BD3F1F446BB5008E4F9E /* NetworkingUtils.cpp in Sources */,
 				65E6BD3E1F4469DB008E4F9E /* ofxXmlSettings.cpp in Sources */,
 				65E6BD321F4467A0008E4F9E /* ofxMidiMessage.cpp in Sources */,
@@ -872,6 +907,7 @@
 				65E896931E7342BC000D470B /* ofxSyphonServer.mm in Sources */,
 				65E896941E734340000D470B /* ofxSyphonClient.mm in Sources */,
 				65E896A11E734F37000D470B /* RtMidi.cpp in Sources */,
+				658AF53D1F6FEAD600576066 /* Element.cpp in Sources */,
 				65E896911E733DD2000D470B /* ofxOscMessage.cpp in Sources */,
 				65E896921E734275000D470B /* ofxOscReceiver.cpp in Sources */,
 				655BFAFB1E735A3D00B74446 /* IpEndpointName.cpp in Sources */,

@@ -39,6 +39,7 @@ void ofApp::setup(){
         {"caption", "OK"}
     });
     
+    val = 0.1;
     GUI::getInstance().add<Slider>({
         {"x", 200},
         {"y", 240},
@@ -63,6 +64,8 @@ void ofApp::update(){
 void ofApp::draw(){
     Engine::getInstance()->drawOutput();
     GUI::getInstance().draw();
+    
+    //cout << "val: " << val << endl;
 }
 
 //--------------------------------------------------------------
