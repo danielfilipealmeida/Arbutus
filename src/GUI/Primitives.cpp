@@ -42,7 +42,6 @@ static char* cpToUTF8(int cp, char* str)
 
 
 void print(ofColor color) {
-    //cout << "ofColor: r=" << color.r <<", g=" << color.g << ", b=", color.b << ", a=" << color.a << endl;
     printf("ofColor: r=%i, g=%i, b=%i, a=%i\n", color.r, color.g, color.b, color.a);
 }
 

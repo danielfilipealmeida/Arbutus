@@ -51,6 +51,6 @@ void Button::draw(NVGcontext* vg)
 void Button::set(json config) {
     if (!config.is_object()) throw("not a json object");
     
-    Element:set(config);
+    Element::set(config);
     caption = config["caption"].get<string>();
 }

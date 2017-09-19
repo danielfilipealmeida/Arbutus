@@ -57,14 +57,13 @@ void Slider::draw(NVGcontext* vg)
         }
         
     }
-    print(backgroundColor);
     drawSlider(vg, value, caption, rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 }
 
 
 
 void Slider::set(json config) {
-    cout << config.dump(4) << endl;
+    //cout << config.dump(4) << endl;
     Button::set(config);
     minValue = (config["minValue"].is_number_float()) ? config["minValue"].get<float>() : 0.0;
     maxValue = (config["maxValue"].is_number_float()) ? config["maxValue"].get<float>() : 1.0;

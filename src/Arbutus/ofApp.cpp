@@ -39,7 +39,6 @@ void ofApp::setup(){
         {"caption", "OK"}
     });
     
-    val = 0.1;
     GUI::getInstance().add<Slider>({
         {"x", 200},
         {"y", 240},
