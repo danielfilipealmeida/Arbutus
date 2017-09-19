@@ -276,7 +276,6 @@
 		6504152D1F6582E4001D7832 /* Arbutus */ = {
 			isa = PBXGroup;
 			children = (
-				658AF53B1F6FEA7500576066 /* GUI */,
 				650415401F6584C3001D7832 /* HelloWorld-Info.plist */,
 				6504152F1F6582F4001D7832 /* main.cpp */,
 				650415301F6582F4001D7832 /* ofApp.cpp */,
@@ -354,6 +353,7 @@
 				658AF53C1F6FEAD600576066 /* Element.cpp */,
 			);
 			name = GUI;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		659E25D41E70BCAE00217A12 /* Frameworks */ = {
@@ -642,6 +642,7 @@
 		65E896641E730453000D470B /* CatchCpp */ = {
 			isa = PBXGroup;
 			children = (
+				658AF53B1F6FEA7500576066 /* GUI */,
 				65E21BC61EC6764F006D1C37 /* ofApp.cpp */,
 				65E21BC71EC6764F006D1C37 /* ofApp.h */,
 				65E896651E730453000D470B /* main.cpp */,

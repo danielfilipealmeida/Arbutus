@@ -12,6 +12,10 @@
 #include <stdio.h>
 #include "ofMain.h"
 #include "nanovg.h"
+#include "json.hpp"
+
+
+using json = nlohmann::json;
 
 
 class Element
@@ -36,6 +40,11 @@ public:
      Draws. Method to be overriden by childs
      */
     virtual void draw(NVGcontext* vg);
+    
+    /*!
+     Sets the Rectangle 
+     */
+    virtual void set(json config);
     
 };
 

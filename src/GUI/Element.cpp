@@ -48,3 +48,14 @@ void Element::update()
 void Element::draw(NVGcontext* vg) {
     
 }
+
+
+
+void Element::set(json config) {
+    if (!config.is_object()) throw("not a json object");
+    
+    rect.set(config["x"].get<unsigned int>(),
+             config["y"].get<unsigned int>(),
+             config["width"].get<unsigned int>(),
+             config["height"].get<unsigned int>());
+}
