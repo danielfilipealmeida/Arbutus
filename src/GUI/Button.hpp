@@ -21,6 +21,7 @@ class Button : public Element
 public:
     Boolean pushed;
     string caption;
+    std::function<void()> onClick = NULL;
     
     Button();
     ~Button();
@@ -28,6 +29,7 @@ public:
     virtual void draw(NVGcontext* vg);
     virtual void set(json config);
 
+    void setOnClick(std::function<void()> _onClick);
 };
 
 #endif /* Button_hpp */

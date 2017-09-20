@@ -31,15 +31,19 @@ void ofApp::setup(){
     });
 
 
-    GUI::getInstance().add<Button>({
+    Button *button = GUI::getInstance().add<Button>({
         {"x", 200},
         {"y", 200},
         {"width", 100},
         {"height", 32},
         {"caption", "OK"}
     });
+    button->setOnClick([](){
+        cout << "button clicked!" << endl;
+    });
     
-    GUI::getInstance().add<Slider>({
+    
+    Slider *slider = GUI::getInstance().add<Slider>({
         {"x", 200},
         {"y", 240},
         {"width", 100},
@@ -48,6 +52,9 @@ void ofApp::setup(){
         {"value", 0.2},
         {"minValue", -1.0},
         {"maxValue", 1.0}
+    });
+    slider->setOnChange([](float _value) {
+        cout << "value: " << _value << endl;
     });
 
 }

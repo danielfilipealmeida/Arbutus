@@ -53,6 +53,10 @@ void Element::draw(NVGcontext* vg) {
 
 void Element::set(json config) {
     if (!config.is_object()) throw("not a json object");
+    if (!config["x"].is_number()) throw("x not defined");
+    if (!config["y"].is_number()) throw("x not defined");
+    if (!config["width"].is_number()) throw("x not defined");
+    if (!config["height"].is_number()) throw("x not defined");
     
     rect.set(config["x"].get<unsigned int>(),
              config["y"].get<unsigned int>(),

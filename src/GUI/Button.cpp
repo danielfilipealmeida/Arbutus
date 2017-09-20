@@ -12,7 +12,8 @@
 
 Button::Button()
 {
-    
+    pushed = false;
+    caption = "";
 }
 
 
@@ -22,12 +23,22 @@ Button::~Button()
 }
 
 void Button::update() {
+    Boolean previousPressed = pressed;
+    
     Element::update();
+
+    if (pressed == FALSE &&
+        previousPressed != pressed
+        )
+    {
+        onClick();
+    }
 }
 
 void Button::draw(NVGcontext* vg)
 {
     ofColor backgroundColor;
+    
     Element::draw(vg);
     if (hover == FALSE) {
         backgroundColor = GUIStyle::getInstance().getBackgroundColor();
@@ -39,7 +50,8 @@ void Button::draw(NVGcontext* vg)
         }
         else  {
             backgroundColor = GUIStyle::getInstance().getLightColor();
-
+            
+            
         }
         
     }
@@ -53,4 +65,8 @@ void Button::set(json config) {
     
     Element::set(config);
     caption = config["caption"].get<string>();
+}
+
+void Button::setOnClick(std::function<void()> _onClick) {
+    onClick = _onClick;
 }

@@ -49,6 +49,7 @@
 		65276BB91F486EDA00949383 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81451DF8D96500331165 /* NetworkingUtils.cpp */; };
 		65276BBA1F486FC100949383 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
 		65308E991F685A0D00106AE5 /* GUIStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65308E971F685A0D00106AE5 /* GUIStyle.cpp */; };
+		6532BF4F1F729987008A5761 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6532BF4E1F729987008A5761 /* Button.cpp */; };
 		655BFAF91E7355BD00B74446 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655BFAF81E7355BD00B74446 /* CoreMIDI.framework */; };
 		655BFAFA1E7358C000B74446 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
 		655BFAFB1E735A3D00B74446 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81401DF8D96500331165 /* IpEndpointName.cpp */; };
@@ -151,6 +152,7 @@
 		6504CA6B1ECE4DCC00355E4A /* Loop001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Loop001.mp4; sourceTree = "<group>"; };
 		65308E971F685A0D00106AE5 /* GUIStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUIStyle.cpp; path = GUI/GUIStyle.cpp; sourceTree = "<group>"; };
 		65308E981F685A0D00106AE5 /* GUIStyle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GUIStyle.hpp; path = GUI/GUIStyle.hpp; sourceTree = "<group>"; };
+		6532BF4E1F729987008A5761 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Button.cpp; path = CatchCpp/GUI/Button.cpp; sourceTree = "<group>"; };
 		655BFAF81E7355BD00B74446 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		658AF53C1F6FEAD600576066 /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = CatchCpp/GUI/Element.cpp; sourceTree = "<group>"; };
 		659E25D51E70BCAE00217A12 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -351,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				658AF53C1F6FEAD600576066 /* Element.cpp */,
+				6532BF4E1F729987008A5761 /* Button.cpp */,
 			);
 			name = GUI;
 			path = ..;
@@ -888,6 +891,7 @@
 			files = (
 				658AF52E1F6FEA4500576066 /* GUI.cpp in Sources */,
 				658AF52F1F6FEA4500576066 /* GUI.hpp in Sources */,
+				6532BF4F1F729987008A5761 /* Button.cpp in Sources */,
 				658AF5301F6FEA4500576066 /* GUIStyle.cpp in Sources */,
 				658AF5311F6FEA4500576066 /* GUIStyle.hpp in Sources */,
 				658AF5321F6FEA4500576066 /* Primitives.cpp in Sources */,
