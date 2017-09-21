@@ -31,7 +31,7 @@ void Button::update() {
         previousPressed != pressed
         )
     {
-        onClick();
+        onClick(this);
     }
 }
 
@@ -50,8 +50,6 @@ void Button::draw(NVGcontext* vg)
         }
         else  {
             backgroundColor = GUIStyle::getInstance().getLightColor();
-            
-            
         }
         
     }
@@ -67,6 +65,6 @@ void Button::set(json config) {
     caption = config["caption"].get<string>();
 }
 
-void Button::setOnClick(std::function<void()> _onClick) {
+void Button::setOnClick(std::function<void(Button *button)> _onClick) {
     onClick = _onClick;
 }

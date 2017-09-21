@@ -18,15 +18,19 @@ using json = nlohmann::json;
 class Slider : public Button
 {
     float value, maxValue, minValue;
-    std::function<void(float _value)> onChange= NULL;
+    std::function<void(Slider *slider)> onChange= NULL;
 public:
+    
+   
     
     Slider();
     ~Slider();
     void update();
     void draw(NVGcontext* vg);
     void set(json config);
-    void setOnChange(std::function<void(float _value)> _onChange);
+    void setValue(float _value);
+    float getValue();
+    void setOnChange(std::function<void(Slider *slider)> _onChange);
 };
 
 #endif /* Slider_hpp */

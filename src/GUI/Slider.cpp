@@ -32,10 +32,7 @@ void Slider::update() {
         if (exited && ofGetMousePressed() > 0) {
             if (ofGetMouseX() < rect.x) value = minValue;
             if (ofGetMouseX() > rect.x + rect.width) value = maxValue;
-        
-            if (onChange != NULL) onChange(value);
         }
-        return;
     }
     else {
         if (ofGetMousePressed() > 0) {
@@ -46,8 +43,7 @@ void Slider::update() {
     if (previousValue != value &&
         onChange != NULL)
     {
-        onChange(value);
-        
+        onChange(this);
     }
 }
 
@@ -79,9 +75,20 @@ void Slider::set(json config) {
     Button::set(config);
     minValue = (config["minValue"].is_number_float()) ? config["minValue"].get<float>() : 0.0;
     maxValue = (config["maxValue"].is_number_float()) ? config["maxValue"].get<float>() : 1.0;
-    value = (config["value"].is_number_float()) ? ofClamp(config["value"].get<float>(), minValue, maxValue) : minValue;
+    setValue(config["value"].is_number_float() ? config["value"].get<float>() : minValue);
 }
 
-void Slider::setOnChange(std::function<void(float _value)> _onChange) {
+
+void Slider::setValue(float _value) {
+    value = ofClamp(_value, minValue, maxValue);
+}
+
+
+float Slider::getValue() {
+    return value;
+}
+
+
+void Slider::setOnChange(std::function<void(Slider *slider)> _onChange) {
     onChange = _onChange;
 }

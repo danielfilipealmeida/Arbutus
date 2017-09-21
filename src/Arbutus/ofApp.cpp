@@ -38,9 +38,11 @@ void ofApp::setup(){
         {"height", 32},
         {"caption", "OK"}
     });
-    button->setOnClick([](){
-        cout << "button clicked!" << endl;
+    
+    button->setOnClick([](Button *button){
+        cout << "button clicked!" << button << endl;
     });
+    
     
     
     Slider *slider = GUI::getInstance().add<Slider>({
@@ -53,9 +55,11 @@ void ofApp::setup(){
         {"minValue", -1.0},
         {"maxValue", 1.0}
     });
-    slider->setOnChange([](float _value) {
-        cout << "value: " << _value << endl;
+    slider->setValue(0.7);
+    slider->setOnChange([](Slider *slider) {
+        cout << "value: " << slider->getValue() << endl;
     });
+     
 
 }
 
