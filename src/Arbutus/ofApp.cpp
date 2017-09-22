@@ -57,7 +57,8 @@ void ofApp::setup(){
     });
     slider->setValue(0.7);
     slider->setOnChange([](Slider *slider) {
-        cout << "value: " << slider->getValue() << endl;
+        Layers::getInstance().get(0)->setState({{"alpha", 1.0-slider->getValue()}});
+        Layers::getInstance().get(1)->setState({{"alpha", slider->getValue()}});
     });
      
 
