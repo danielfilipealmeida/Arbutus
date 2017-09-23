@@ -11,6 +11,7 @@
 
 Element::Element()
 {
+    parent = NULL;
     hover = FALSE;
     pressed = FALSE;
     entered = FALSE;
@@ -27,8 +28,9 @@ Element::~Element()
 void Element::update()
 {
     Boolean previousHover = hover;
+    visibleRect = calculateVisibleRect();
     
-    if (!rect.inside(ofGetMouseX(), ofGetMouseY())) {
+    if (!visibleRect.inside(ofGetMouseX(), ofGetMouseY())) {
         hover = FALSE;
         pressed = FALSE;
     }
@@ -46,10 +48,21 @@ void Element::update()
 }
 
 void Element::draw(NVGcontext* vg) {
-    
+    if (rect==visibleRect) return;
+
+    nvgEndFrame(vg);
+    ofRectangle parentRect = parent->rect;
+    ofViewport(parentRect.x,parentRect.y, parentRect.width, parentRect.height, true);
+    nvgBeginFrame(vg, parentRect.width, parentRect.height, 1);
 }
 
-
+void Element::finishDraw(NVGcontext* vg) {
+    if (rect==visibleRect) return;
+    
+    nvgEndFrame(vg);
+    ofViewport(0, 0, ofGetWidth(), ofGetHeight(), true);
+    nvgBeginFrame(vg, ofGetWidth(), ofGetHeight(), 1);
+}
 
 void Element::set(json config) {
     if (!config.is_object()) throw("not a json object");
@@ -62,4 +75,30 @@ void Element::set(json config) {
              config["y"].get<unsigned int>(),
              config["width"].get<unsigned int>(),
              config["height"].get<unsigned int>());
+}
+
+void Element::setParent(Element *_parent) {
+    parent = _parent;
+}
+
+ofRectangle Element::calculateVisibleRect() {
+    if (parent == NULL) {
+        return rect;
+    }
+    
+    ofRectangle parentRect = parent->calculateVisibleRect();
+    ofRectangle visibleRect;
+    
+    visibleRect.x = parentRect.x + rect.x;
+    visibleRect.y = parentRect.y + rect.y;
+    visibleRect.width = rect.width;
+    visibleRect.height = rect.height;
+    
+    float excessWidth = parentRect.width - (rect.width + rect.x);
+    if (excessWidth > 0) rect.width - excessWidth;
+    float excessHeight = parentRect.height - (rect.height + rect.y);
+    if (excessHeight > 0) rect.height - excessHeight;
+    
+ 
+    return visibleRect;
 }

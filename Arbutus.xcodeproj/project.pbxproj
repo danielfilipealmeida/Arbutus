@@ -68,6 +68,8 @@
 		658AF5391F6FEA4500576066 /* Slider.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 65F7782D1F6B243600FFA43B /* Slider.hpp */; };
 		658AF53A1F6FEA4500576066 /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		658AF53D1F6FEAD600576066 /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 658AF53C1F6FEAD600576066 /* Element.cpp */; };
+		65C1DA6C1F75B726008DA84A /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C1DA6A1F75B726008DA84A /* Viewport.cpp */; };
+		65C1DA6D1F75B726008DA84A /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C1DA6A1F75B726008DA84A /* Viewport.cpp */; };
 		65E21BC81EC6764F006D1C37 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E21BC61EC6764F006D1C37 /* ofApp.cpp */; };
 		65E6BD321F4467A0008E4F9E /* ofxMidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC818E1DF8D9CA00331165 /* ofxMidiMessage.cpp */; };
 		65E6BD331F4467B1008E4F9E /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81891DF8D9CA00331165 /* ofxMidi.cpp */; };
@@ -226,6 +228,8 @@
 		65BC81921DF8D9CA00331165 /* ofxMidiTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxMidiTypes.h; sourceTree = "<group>"; };
 		65BC819A1DF8D9D600331165 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		65BC819B1DF8D9D600331165 /* ofxXmlSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		65C1DA6A1F75B726008DA84A /* Viewport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Viewport.cpp; path = GUI/Viewport.cpp; sourceTree = "<group>"; };
+		65C1DA6B1F75B726008DA84A /* Viewport.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Viewport.hpp; path = GUI/Viewport.hpp; sourceTree = "<group>"; };
 		65C1EB161E6E1D16003F731D /* readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 		65C1EB171E6E1D16003F731D /* RtMidi.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RtMidi.cpp; sourceTree = "<group>"; };
 		65C1EB181E6E1D16003F731D /* RtMidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtMidi.h; sourceTree = "<group>"; };
@@ -316,6 +320,8 @@
 				6504154B1F65B017001D7832 /* Button.hpp */,
 				65F7782C1F6B243600FFA43B /* Slider.cpp */,
 				65F7782D1F6B243600FFA43B /* Slider.hpp */,
+				65C1DA6A1F75B726008DA84A /* Viewport.cpp */,
+				65C1DA6B1F75B726008DA84A /* Viewport.hpp */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -860,6 +866,7 @@
 				65276BB21F486E3400949383 /* OscPrintReceivedElements.cpp in Sources */,
 				65276BB41F486E3400949383 /* OscTypes.cpp in Sources */,
 				65276BB51F486E4300949383 /* ofxSyphonClient.mm in Sources */,
+				65C1DA6C1F75B726008DA84A /* Viewport.cpp in Sources */,
 				650415461F65A3CC001D7832 /* GUI.cpp in Sources */,
 				65308E991F685A0D00106AE5 /* GUIStyle.cpp in Sources */,
 				65276BB61F486E4300949383 /* ofxSyphonServer.mm in Sources */,
@@ -896,6 +903,7 @@
 				658AF5311F6FEA4500576066 /* GUIStyle.hpp in Sources */,
 				658AF5321F6FEA4500576066 /* Primitives.cpp in Sources */,
 				658AF5331F6FEA4500576066 /* Primitives.hpp in Sources */,
+				65C1DA6D1F75B726008DA84A /* Viewport.cpp in Sources */,
 				658AF5341F6FEA4500576066 /* Element.cpp in Sources */,
 				658AF5351F6FEA4500576066 /* Element.hpp in Sources */,
 				658AF5361F6FEA4500576066 /* Button.cpp in Sources */,

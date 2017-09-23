@@ -20,6 +20,9 @@ using json = nlohmann::json;
 
 class Element
 {
+    Element *parent;
+    
+    
 public:
     Boolean hover;
     Boolean pressed;
@@ -27,6 +30,7 @@ public:
     Boolean exited;
     
     ofRectangle rect;
+    ofRectangle visibleRect;
 
     Element();
     ~Element();
@@ -41,10 +45,23 @@ public:
      */
     virtual void draw(NVGcontext* vg);
     
+    void finishDraw(NVGcontext* vg);
+    
     /*!
      Sets the Rectangle 
      */
     virtual void set(json config);
+    
+    /*!
+     Sets the element that will contain this element
+     */
+    void setParent(Element *_parent);
+    
+    /*!
+     Traverse parents and calculate the elements visible rect.
+     This is the actual place on the screen this element occupies
+     */
+    ofRectangle calculateVisibleRect();
     
 };
 

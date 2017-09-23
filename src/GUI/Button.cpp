@@ -54,6 +54,8 @@ void Button::draw(NVGcontext* vg)
         
     }
     drawButton(vg, 1, caption, rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+
+    Element::finishDraw(vg);
 }
 
 

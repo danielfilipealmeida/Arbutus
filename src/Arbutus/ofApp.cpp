@@ -30,14 +30,22 @@ void ofApp::setup(){
         {"column", 0}
     });
 
+    
+    Element *element = GUI::getInstance().add<Element>({
+        {"x", 100},
+        {"y", 100},
+        {"width", 200},
+        {"height", 200},
+    });
 
     Button *button = GUI::getInstance().add<Button>({
-        {"x", 200},
-        {"y", 200},
+        {"x", 10},
+        {"y", 10},
         {"width", 100},
         {"height", 32},
         {"caption", "OK"}
     });
+    button->setParent(element);
     
     button->setOnClick([](Button *button){
         cout << "button clicked!" << button << endl;
@@ -60,7 +68,8 @@ void ofApp::setup(){
         Layers::getInstance().get(0)->setState({{"alpha", 1.0-slider->getValue()}});
         Layers::getInstance().get(1)->setState({{"alpha", slider->getValue()}});
     });
-     
+    
+   
 
 }
 

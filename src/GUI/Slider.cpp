@@ -30,13 +30,13 @@ void Slider::update() {
     
     if(!hover) {
         if (exited && ofGetMousePressed() > 0) {
-            if (ofGetMouseX() < rect.x) value = minValue;
-            if (ofGetMouseX() > rect.x + rect.width) value = maxValue;
+            if (ofGetMouseX() < visibleRect.x) value = minValue;
+            if (ofGetMouseX() > visibleRect.x + visibleRect.width) value = maxValue;
         }
     }
     else {
         if (ofGetMousePressed() > 0) {
-            value = (ofGetMouseX() - rect.x) / (rect.width);
+            value = (ofGetMouseX() - visibleRect.x) / (rect.width);
         }
     }
     
