@@ -23,7 +23,7 @@ public:
     string caption;
     std::function<void(Button *button)> onClick = NULL;
     
-    Button();
+    Button() ;
     ~Button();
     virtual void update();
     virtual void draw(NVGcontext* vg);

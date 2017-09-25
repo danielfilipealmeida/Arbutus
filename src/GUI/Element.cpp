@@ -48,7 +48,7 @@ void Element::update()
 }
 
 void Element::draw(NVGcontext* vg) {
-    if (rect==visibleRect) return;
+    if (rect==visibleRect || parent == NULL) return;
 
     nvgEndFrame(vg);
     ofRectangle parentRect = parent->rect;
@@ -101,4 +101,8 @@ ofRectangle Element::calculateVisibleRect() {
     
  
     return visibleRect;
+}
+
+void Element::description() {
+
 }

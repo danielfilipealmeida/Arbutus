@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "Button.hpp"
 #include "Slider.hpp"
-
+#include "VerticalSlider.hpp"
 
 class GUI
 {

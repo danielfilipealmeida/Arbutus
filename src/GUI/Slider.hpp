@@ -17,16 +17,23 @@ using json = nlohmann::json;
 
 class Slider : public Button
 {
-    float value, maxValue, minValue;
-    std::function<void(Slider *slider)> onChange= NULL;
 public:
+    std::function<void(Slider *slider)> onChange= NULL;
     
-   
+    float value, maxValue, minValue;
+
     
     Slider();
     ~Slider();
     void update();
     void draw(NVGcontext* vg);
+    
+    /*!
+     Calculate the background color according to the slider state
+     */
+    ofColor getBackgroundColor();
+    
+    
     void set(json config);
     void setValue(float _value);
     float getValue();

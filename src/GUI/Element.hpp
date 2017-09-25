@@ -41,10 +41,15 @@ public:
     virtual void update();
     
     /*!
-     Draws. Method to be overriden by childs
+     Draws. Method to be overriden by childs.
+     When overriding this method, the descendent needs always to run this because in here elements inside elements are properly handled.
      */
     virtual void draw(NVGcontext* vg);
     
+    
+    /*!
+     Finishes drawing the element. Important for properly drawing elements inside other elements.
+     */
     void finishDraw(NVGcontext* vg);
     
     /*!
@@ -62,6 +67,11 @@ public:
      This is the actual place on the screen this element occupies
      */
     ofRectangle calculateVisibleRect();
+    
+    /*!
+     Outputs to stdout the state of the element
+     */
+    void description();
     
 };
 

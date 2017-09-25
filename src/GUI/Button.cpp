@@ -10,8 +10,9 @@
 #include "Primitives.hpp"
 #include "GUIStyle.hpp"
 
-Button::Button()
+Button::Button() 
 {
+    
     pushed = false;
     caption = "";
 }

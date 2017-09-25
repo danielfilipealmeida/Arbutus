@@ -68,6 +68,9 @@
 		658AF5391F6FEA4500576066 /* Slider.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 65F7782D1F6B243600FFA43B /* Slider.hpp */; };
 		658AF53A1F6FEA4500576066 /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		658AF53D1F6FEAD600576066 /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 658AF53C1F6FEAD600576066 /* Element.cpp */; };
+		659583B91F76905900EE275D /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 659583B71F76905900EE275D /* VerticalSlider.cpp */; };
+		659583BA1F76905900EE275D /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 659583B71F76905900EE275D /* VerticalSlider.cpp */; };
+		659583BC1F76B7A100EE275D /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 659583BB1F76B7A100EE275D /* VerticalSlider.cpp */; };
 		65C1DA6C1F75B726008DA84A /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C1DA6A1F75B726008DA84A /* Viewport.cpp */; };
 		65C1DA6D1F75B726008DA84A /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C1DA6A1F75B726008DA84A /* Viewport.cpp */; };
 		65E21BC81EC6764F006D1C37 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E21BC61EC6764F006D1C37 /* ofApp.cpp */; };
@@ -157,6 +160,9 @@
 		6532BF4E1F729987008A5761 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Button.cpp; path = CatchCpp/GUI/Button.cpp; sourceTree = "<group>"; };
 		655BFAF81E7355BD00B74446 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		658AF53C1F6FEAD600576066 /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = CatchCpp/GUI/Element.cpp; sourceTree = "<group>"; };
+		659583B71F76905900EE275D /* VerticalSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
+		659583B81F76905900EE275D /* VerticalSlider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VerticalSlider.hpp; path = GUI/VerticalSlider.hpp; sourceTree = "<group>"; };
+		659583BB1F76B7A100EE275D /* VerticalSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = CatchCpp/GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
 		659E25D51E70BCAE00217A12 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		65BC812F1DF8D94600331165 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
 		65BC81311DF8D94600331165 /* SyphonNameboundClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyphonNameboundClient.h; sourceTree = "<group>"; };
@@ -320,6 +326,8 @@
 				6504154B1F65B017001D7832 /* Button.hpp */,
 				65F7782C1F6B243600FFA43B /* Slider.cpp */,
 				65F7782D1F6B243600FFA43B /* Slider.hpp */,
+				659583B71F76905900EE275D /* VerticalSlider.cpp */,
+				659583B81F76905900EE275D /* VerticalSlider.hpp */,
 				65C1DA6A1F75B726008DA84A /* Viewport.cpp */,
 				65C1DA6B1F75B726008DA84A /* Viewport.hpp */,
 			);
@@ -360,6 +368,7 @@
 			children = (
 				658AF53C1F6FEAD600576066 /* Element.cpp */,
 				6532BF4E1F729987008A5761 /* Button.cpp */,
+				659583BB1F76B7A100EE275D /* VerticalSlider.cpp */,
 			);
 			name = GUI;
 			path = ..;
@@ -872,6 +881,7 @@
 				65276BB61F486E4300949383 /* ofxSyphonServer.mm in Sources */,
 				650415551F65B0A5001D7832 /* Primitives.cpp in Sources */,
 				650415521F65B09F001D7832 /* Element.cpp in Sources */,
+				659583B91F76905900EE275D /* VerticalSlider.cpp in Sources */,
 				650415351F6582F4001D7832 /* ofApp.cpp in Sources */,
 				6504153F1F658345001D7832 /* nanovg.c in Sources */,
 				65276BAA1F486DEC00949383 /* RtMidi.cpp in Sources */,
@@ -906,6 +916,7 @@
 				65C1DA6D1F75B726008DA84A /* Viewport.cpp in Sources */,
 				658AF5341F6FEA4500576066 /* Element.cpp in Sources */,
 				658AF5351F6FEA4500576066 /* Element.hpp in Sources */,
+				659583BA1F76905900EE275D /* VerticalSlider.cpp in Sources */,
 				658AF5361F6FEA4500576066 /* Button.cpp in Sources */,
 				658AF5371F6FEA4500576066 /* Button.hpp in Sources */,
 				658AF5381F6FEA4500576066 /* Slider.cpp in Sources */,
@@ -915,6 +926,7 @@
 				65E6BD3E1F4469DB008E4F9E /* ofxXmlSettings.cpp in Sources */,
 				65E6BD321F4467A0008E4F9E /* ofxMidiMessage.cpp in Sources */,
 				65E6BD331F4467B1008E4F9E /* ofxMidi.cpp in Sources */,
+				659583BC1F76B7A100EE275D /* VerticalSlider.cpp in Sources */,
 				65E6BD341F4467C1008E4F9E /* ofxMidiIn.cpp in Sources */,
 				65E6BD351F4467C5008E4F9E /* ofxMidiOut.cpp in Sources */,
 				65E896931E7342BC000D470B /* ofxSyphonServer.mm in Sources */,

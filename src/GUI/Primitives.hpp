@@ -16,7 +16,7 @@
 void print(ofColor color);
 NVGcolor ofColor2NVGColor(ofColor color, unsigned char alpha = 255);
 void drawButton(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor);
-void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor);
+void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor, Boolean vertical = false);
 
 
 

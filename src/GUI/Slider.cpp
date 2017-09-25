@@ -22,6 +22,8 @@ Slider::~Slider()
     
 }
 
+
+
 void Slider::update() {
     float previousValue = value;
     
@@ -47,24 +49,17 @@ void Slider::update() {
     }
 }
 
+ofColor Slider::getBackgroundColor() {
+    if (hover == FALSE) return GUIStyle::getInstance().getBackgroundColor();
+
+    return (pressed) ? GUIStyle::getInstance().getDarkColor() : GUIStyle::getInstance().getLightColor();
+}
+
+
 void Slider::draw(NVGcontext* vg)
 {
-    ofColor backgroundColor;
+    ofColor backgroundColor = getBackgroundColor();
     Element::draw(vg);
-    if (hover == FALSE) {
-        backgroundColor = GUIStyle::getInstance().getBackgroundColor();
-    }
-    else {
-        if (pressed == TRUE) {
-            backgroundColor = GUIStyle::getInstance().getDarkColor();
-            
-        }
-        else  {
-            backgroundColor = GUIStyle::getInstance().getLightColor();
-            
-        }
-        
-    }
     drawSlider(vg, value, caption, rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 }
 

@@ -69,7 +69,18 @@ void ofApp::setup(){
         Layers::getInstance().get(1)->setState({{"alpha", slider->getValue()}});
     });
     
-   
+    VerticalSlider *vslider = GUI::getInstance().add<VerticalSlider>({
+        {"x", 400},
+        {"y", 240},
+        {"width", 32},
+        {"height", 100},
+        {"caption", "Slider2"},
+        {"value", 0.2},
+        {"minValue", -1.0},
+        {"maxValue", 1.0}
+    });
+     button->setParent(NULL);
+
 
 }
 

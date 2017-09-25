@@ -136,6 +136,22 @@ void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rec
             );
 }
 
+void printCenteredTextRotated90(NVGcontext* vg, string text, ofRectangle rect, NVGcolor textColor) {
+    nvgFontSize(vg, 20.0f);
+    nvgFontFace(vg, "sans-bold");
+    nvgTextAlign(vg, NVG_ALIGN_CENTER | NVG_ALIGN_TOP);
+    nvgFillColor(vg, textColor);
+    
+    nvgText(
+        vg,
+        rect.getX() + rect.getWidth() * 0.5f,
+        rect.getY() + rect.getHeight() * 0.5f,
+        text.c_str(),
+        NULL
+    );
+   
+}
+
 void drawButton(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor)
 {
     float cornerRadius = 2.0f;
@@ -144,22 +160,29 @@ void drawButton(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGc
     printCenteredText(vg, preicon, text, rect, textColor);
 }
 
-void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor)
+void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor, Boolean vertical)
 {
     pos = ofClamp(pos, 0,1);
     float cornerRadius = 2.0f;
-    //drawBox(vg, rect, backgroundColor, cornerRadius);
-
+    
     ofRectangle innerRect, outerRect, valueRect;
     innerRect = outerRect = rect;
     shrinkRect(innerRect, 1);
     shrinkRect(outerRect, 0.5);
     
     valueRect = innerRect;
-    valueRect.setWidth(valueRect.getWidth() * pos);
+    if (!vertical ) {
+        valueRect.setWidth(valueRect.getWidth() * pos);
+    }
+    else {
+        valueRect.setHeight(valueRect.getHeight() * pos);
+    }
+    
     drawFilledRoundRect(vg, innerRect, backgroundColor, cornerRadius - 1);
     drawFilledRoundRect(vg, valueRect, ofColor2NVGColor(ofColor::white, 128), cornerRadius - 1);
     drawStrokedRoundRect(vg, outerRect, ofColor2NVGColor(ofColor::black), cornerRadius - 0.5);
     
-    printCenteredText(vg, 0, text, rect, textColor);
+    if (!vertical) printCenteredText(vg, 0, text, rect, textColor);
+    else printCenteredTextRotated90(vg, text, rect, textColor);
 }
+
