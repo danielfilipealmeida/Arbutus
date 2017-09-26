@@ -54,8 +54,8 @@ void ofApp::setup(){
     
     
     Slider *slider = GUI::getInstance().add<Slider>({
-        {"x", 200},
-        {"y", 240},
+        {"x", 0},
+        {"y", 0},
         {"width", 100},
         {"height", 32},
         {"caption", "Slider"},
@@ -79,9 +79,19 @@ void ofApp::setup(){
         {"minValue", -1.0},
         {"maxValue", 1.0}
     });
-     button->setParent(NULL);
+    button->setParent(NULL);
 
 
+    Viewport *viewport = GUI::getInstance().add<Viewport>({
+        {"x", 400},
+        {"y", 100},
+        {"width", 100},
+        {"height", 100},
+        {"totalWidth", 200},
+        {"totalHeight", 200}
+    });
+    slider->setParent(viewport);
+    
 }
 
 //--------------------------------------------------------------

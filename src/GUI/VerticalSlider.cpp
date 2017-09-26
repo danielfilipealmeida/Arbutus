@@ -50,9 +50,10 @@ void VerticalSlider::draw(NVGcontext* vg) {
     ofColor backgroundColor = getBackgroundColor();
     Element::draw(vg);
     drawSlider(vg, value, caption, rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255), true);
+    Element::finishDraw(vg);
 }
 
 void VerticalSlider::set(json config) {
-    cout << config.dump(4) << endl;
+    //cout << config.dump(4) << endl;
     Slider::set(config);
 }

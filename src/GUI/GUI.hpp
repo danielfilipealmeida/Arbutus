@@ -13,6 +13,8 @@
 #include "Button.hpp"
 #include "Slider.hpp"
 #include "VerticalSlider.hpp"
+#include "Viewport.hpp"
+
 
 class GUI
 {

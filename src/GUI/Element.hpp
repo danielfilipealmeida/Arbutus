@@ -73,6 +73,12 @@ public:
      */
     void description();
     
+    
+    /*!
+     Draws a rect around the visible area of the element for debugging purposes
+     */
+    void drawDebugRect(NVGcontext* vg);
+    
 };
 
 #endif /* Element_hpp */

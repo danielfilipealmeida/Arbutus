@@ -57,12 +57,27 @@ void Element::draw(NVGcontext* vg) {
 }
 
 void Element::finishDraw(NVGcontext* vg) {
+    
+    // uncomment to debug
+    //drawDebugRect(vg);
+
     if (rect==visibleRect) return;
     
     nvgEndFrame(vg);
     ofViewport(0, 0, ofGetWidth(), ofGetHeight(), true);
     nvgBeginFrame(vg, ofGetWidth(), ofGetHeight(), 1);
+    
 }
+
+
+void Element::drawDebugRect(NVGcontext* vg) {
+    nvgBeginPath(vg);
+    nvgFillColor(vg, nvgRGB(0,0,0));
+    nvgRect(vg, rect.getX(), rect.getY(), rect.getWidth(), rect.getHeight());
+    nvgStroke(vg);
+
+}
+
 
 void Element::set(json config) {
     if (!config.is_object()) throw("not a json object");
