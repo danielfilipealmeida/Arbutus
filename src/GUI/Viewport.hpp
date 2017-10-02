@@ -13,9 +13,14 @@
 #include "Element.hpp"
 
 
+/*!
+ Implements the Decorator pattern
+*/
 class Viewport : public Element
 {
+    Element *component;
 public:
+    float overflowX, overflowY;
     //ofRectangle totalRect;
     float scrollPositionX, scrollPositionY;
     float totalHeight;
@@ -27,6 +32,18 @@ public:
     
     virtual void update();
     virtual void draw(NVGcontext* vg);
+    
+    /*!
+     Traverse parents and calculate the elements visible rect.
+     This is the actual place on the screen this element occupies
+     */
+    virtual ofRectangle calculateVisibleRect();
+    
+    virtual string getClass() { return "Viewport";}
+    
+    
+    ofRectangle calculateDrawingRectForElement(Element *element);
+
 };
 
 #endif /* Viewport_hpp */

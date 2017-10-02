@@ -30,6 +30,9 @@ public:
     virtual void set(json config);
 
     void setOnClick(std::function<void(Button *button)> _onClick);
+
+    virtual string getClass() { return "Button";}
+
 };
 
 #endif /* Button_hpp */

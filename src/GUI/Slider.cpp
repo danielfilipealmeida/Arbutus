@@ -9,6 +9,7 @@
 #include "Slider.hpp"
 #include "Primitives.hpp"
 #include "GUIStyle.hpp"
+#include "Viewport.hpp"
 
 
 Slider::Slider()
@@ -58,9 +59,15 @@ ofColor Slider::getBackgroundColor() {
 
 void Slider::draw(NVGcontext* vg)
 {
+    ofRectangle drawingRect = rect;
+    
+    if (parent->getClass().compare("Viewport") == 0) {
+        drawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
+    }
+    
     ofColor backgroundColor = getBackgroundColor();
     Element::draw(vg);
-    drawSlider(vg, value, caption, rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    drawSlider(vg, value, caption, drawingRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 
     Element::finishDraw(vg);
 }

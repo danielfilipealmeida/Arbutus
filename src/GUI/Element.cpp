@@ -7,7 +7,8 @@
 //
 
 #include "Element.hpp"
-
+#include "Viewport.hpp"
+#include <typeinfo>
 
 Element::Element()
 {
@@ -115,8 +116,33 @@ ofRectangle Element::calculateVisibleRect() {
     if (excessHeight > 0) rect.height - excessHeight;
     
  
+    if (parent != NULL && parent->getClass().compare("Viewport") == 0) {
+        ofRectangle parentDrawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
+        //visibleRect.x = visibleRect.x + parentDrawingRect.x;
+        //visibleRect.y = visibleRect.y + parentDrawingRect.y;
+        visibleRect.width = visibleRect.width +parentDrawingRect.x;
+        visibleRect.height = visibleRect.height + parentDrawingRect.y;
+        
+    }
+    
     return visibleRect;
 }
+
+
+ofRectangle Element::calculateDrawingRect(ofRectangle rect) {
+    ofRectangle drawingRect = rect;
+    ofRectangle parentDrawingRect;
+    
+    if (parent != NULL && parent->getClass().compare("Viewport") == 0) {
+        parentDrawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
+        drawingRect.x = drawingRect.x + parentDrawingRect.x;
+        drawingRect.y = drawingRect.y + parentDrawingRect.y;
+        
+    }
+
+    return drawingRect;
+}
+
 
 void Element::description() {
 

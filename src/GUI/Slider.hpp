@@ -38,6 +38,9 @@ public:
     void setValue(float _value);
     float getValue();
     void setOnChange(std::function<void(Slider *slider)> _onChange);
+    
+    virtual string getClass() { return "Slider";}
+
 };
 
 #endif /* Slider_hpp */

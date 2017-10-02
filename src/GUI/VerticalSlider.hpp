@@ -21,5 +21,7 @@ public:
     void draw(NVGcontext* vg);
     void set(json config);
 
+    virtual string getClass() { return "VerticalSlider";}
+
 };
 #endif /* VerticalSlider_hpp */

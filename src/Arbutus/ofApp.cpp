@@ -82,6 +82,7 @@ void ofApp::setup(){
     button->setParent(NULL);
 
 
+    
     Viewport *viewport = GUI::getInstance().add<Viewport>({
         {"x", 400},
         {"y", 100},
@@ -91,7 +92,12 @@ void ofApp::setup(){
         {"totalHeight", 200}
     });
     slider->setParent(viewport);
+    viewport->scrollPositionX = 0;
+    viewport->scrollPositionY = 0;
     
+    vslider->setOnChange([viewport](Slider *vslider) {
+        viewport->scrollPositionY = vslider->value;
+    });
 }
 
 //--------------------------------------------------------------
