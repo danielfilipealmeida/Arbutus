@@ -6,6 +6,10 @@
 //
 //
 
+// EVIL! transforms private members into public.
+// used only for testing
+#define protected public
+
 #include <stdio.h>
 #include "catch.hpp"
 #include "Element.hpp"

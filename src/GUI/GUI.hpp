@@ -16,8 +16,15 @@
 #include "Viewport.hpp"
 
 
+/*!
+ @class GUI
+ @abstract
+ @discussion
+ */
 class GUI
 {
+    
+protected:
     int fontNormal, fontBold, fontIcons, fontEmoji;
 
     std::vector<Element*> elements;
@@ -29,9 +36,6 @@ public:
     static GUI& getInstance();
     GUI(GUI const&) = delete;
     void operator=(GUI const&) = delete;
-    
-    //GUI();
-    //~GUI();
     
     /*!
      Updates all elements of the GUI

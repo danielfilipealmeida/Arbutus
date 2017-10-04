@@ -4,7 +4,12 @@
 #include "ofMain.h"
 #include "GUI.hpp"
 
-class ofApp : public ofBaseApp{
+/*!
+ @class ofApp
+ @abstract
+ @discussion
+ */
+class ofApp : public ofBaseApp {
     GUI *gui;
    
     

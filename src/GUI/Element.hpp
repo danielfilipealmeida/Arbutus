@@ -17,17 +17,22 @@
 
 using json = nlohmann::json;
 
-
+/*!
+ @class Element
+ @abstract GUI Root class, from which all other GUI classes descends from
+ @discussion Handles basic state and position/size. Possible events are: hover, pressed and entered. TODO (maybe) callbacks for those events. Element can also contain other elements.
+ */
 class Element 
 {
-    
-    
-public:
+protected:
     Element *parent;
     Boolean hover;
     Boolean pressed;
     Boolean entered;
     Boolean exited;
+   
+    
+public:
     
     /*!
      The rectangle definition in the GUI system.
@@ -46,7 +51,15 @@ public:
      */
     ofRectangle drawingRect;
     
+    /*!
+     ...
+     */
     Element();
+    
+    
+    /*!
+     ...
+     */
     ~Element();
     
     

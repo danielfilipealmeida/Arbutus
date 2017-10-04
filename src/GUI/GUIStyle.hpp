@@ -13,30 +13,78 @@
 #include "ofMain.h"
 
 
+/*!
+ @class TriggerVisualAction
+ @abstract
+ @discussion
+ */
 class GUIStyle
 {
     
     GUIStyle();
     ~GUIStyle();
     
+protected:
+    
     ofColor baseColor, textColor, backgroundColor, darkColor, lightColor;
     float contrast, brightness, saturation;
     
 public:
-    
+
+    /*!
+     ...
+     */
     static GUIStyle& getInstance();
+
+    /*!
+     ...
+     */
     GUIStyle(GUIStyle const&) = delete;
+
+    /*!
+     ...
+     */
     void operator=(GUIStyle const&) = delete;
     
+    /*!
+     ...
+     */
     void calculateColors();
+
+    /*!
+     ...
+     */
     ofColor getTextColor();
-    ofColor getBaseColor();
-    ofColor getBackgroundColor();
-    ofColor getDarkColor();
-    ofColor getLightColor();
-    float getBrightness();
-    float getSaturation();
     
+    /*!
+     ...
+     */
+    ofColor getBaseColor();
+    
+    /*!
+     ...
+     */
+    ofColor getBackgroundColor();
+    
+    /*!
+     ...
+     */
+    ofColor getDarkColor();
+    
+    /*!
+     ...
+     */
+    ofColor getLightColor();
+    
+    /*!
+     ...
+     */
+    float getBrightness();
+    
+    /*!
+     ...
+     */
+    float getSaturation();
     
 };
 

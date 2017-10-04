@@ -15,22 +15,53 @@
 
 
 
-
+/*!
+ @class Button
+ @abstract Implements a simple button
+ @discussion The button have a caption and an associated lambda to be executed whenever it's pushed.
+ */
 class Button : public Element
 {
-public:
+protected:
     Boolean pushed;
     string caption;
     std::function<void(Button *button)> onClick = NULL;
     
+public:
+    
+    /*!
+     ...
+     */
     Button() ;
+    
+    /*!
+     ...
+     */
     ~Button();
+    
+    /*!
+     ...
+     */
     virtual void update();
+    
+    /*!
+     ...
+     */
     virtual void draw(NVGcontext* vg);
+    
+    /*!
+     ...
+     */
     virtual void set(json config);
 
+    /*!
+     ...
+     */
     void setOnClick(std::function<void(Button *button)> _onClick);
 
+    /*!
+     ...
+     */
     virtual string getClass() { return "Button";}
 
 };
