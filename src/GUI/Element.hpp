@@ -85,16 +85,10 @@ public:
      */
     ofRectangle calculateVisibleRect();
     
-    
-    /*!
-     */
-    ofRectangle calculateDrawingRect(ofRectangle rect);
-    
     /*!
      Outputs to stdout the state of the element
      */
-    void description();
-    
+    string description();
     
     /*!
      Draws a rect around the visible area of the element for debugging purposes

@@ -44,19 +44,17 @@ void Viewport::update()
 void Viewport::draw(NVGcontext* vg) {
     Element::draw(vg);
     
-    Element::drawDebugRect(vg);
+    //Element::drawDebugRect(vg);
     
     Element::finishDraw(vg);
-}
-
-ofRectangle Viewport::calculateVisibleRect() {
-    return visibleRect;
-    //return Element::calculateVisibleRect();
 }
 
 
 ofRectangle Viewport::calculateDrawingRectForElement(Element *element) {
     ofRectangle drawingRect;
+    
+    // todo: return empty rect if this isn't a parent of the given element
+    
     
     drawingRect = element->rect;
     

@@ -118,8 +118,6 @@ ofRectangle Element::calculateVisibleRect() {
  
     if (parent != NULL && parent->getClass().compare("Viewport") == 0) {
         ofRectangle parentDrawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
-        //visibleRect.x = visibleRect.x + parentDrawingRect.x;
-        //visibleRect.y = visibleRect.y + parentDrawingRect.y;
         visibleRect.width = visibleRect.width +parentDrawingRect.x;
         visibleRect.height = visibleRect.height + parentDrawingRect.y;
         
@@ -129,21 +127,9 @@ ofRectangle Element::calculateVisibleRect() {
 }
 
 
-ofRectangle Element::calculateDrawingRect(ofRectangle rect) {
-    ofRectangle drawingRect = rect;
-    ofRectangle parentDrawingRect;
+
+string Element::description() {
+    string description;
     
-    if (parent != NULL && parent->getClass().compare("Viewport") == 0) {
-        parentDrawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
-        drawingRect.x = drawingRect.x + parentDrawingRect.x;
-        drawingRect.y = drawingRect.y + parentDrawingRect.y;
-        
-    }
-
-    return drawingRect;
-}
-
-
-void Element::description() {
-
+    return description;
 }
