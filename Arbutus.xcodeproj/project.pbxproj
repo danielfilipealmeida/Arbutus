@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1E77D01F8D857E005507CF /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
+		0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
 		650415341F6582F4001D7832 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504152F1F6582F4001D7832 /* main.cpp */; };
 		650415351F6582F4001D7832 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415301F6582F4001D7832 /* ofApp.cpp */; };
 		650415361F6582F4001D7832 /* set.json in Resources */ = {isa = PBXBuildFile; fileRef = 650415321F6582F4001D7832 /* set.json */; };
-		6504153F1F658345001D7832 /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		650415411F6584C3001D7832 /* HelloWorld-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 650415401F6584C3001D7832 /* HelloWorld-Info.plist */; };
 		650415461F65A3CC001D7832 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415441F65A3CB001D7832 /* GUI.cpp */; };
 		6504154C1F65B017001D7832 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504154A1F65B017001D7832 /* Button.cpp */; };
@@ -45,7 +46,6 @@
 		65276BB41F486E3400949383 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81571DF8D96500331165 /* OscTypes.cpp */; };
 		65276BB51F486E4300949383 /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81361DF8D94600331165 /* ofxSyphonClient.mm */; };
 		65276BB61F486E4300949383 /* ofxSyphonServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81381DF8D94600331165 /* ofxSyphonServer.mm */; };
-		65276BB71F486E4B00949383 /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
 		65276BB81F486ED300949383 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81401DF8D96500331165 /* IpEndpointName.cpp */; };
 		65276BB91F486EDA00949383 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81451DF8D96500331165 /* NetworkingUtils.cpp */; };
 		65276BBA1F486FC100949383 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
@@ -133,13 +133,13 @@
 		650415301F6582F4001D7832 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = Arbutus/ofApp.cpp; sourceTree = "<group>"; };
 		650415311F6582F4001D7832 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = Arbutus/ofApp.h; sourceTree = "<group>"; };
 		650415321F6582F4001D7832 /* set.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = set.json; path = Arbutus/set.json; sourceTree = "<group>"; };
-		650415381F658345001D7832 /* fontstash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fontstash.h; path = Vendor/nanovg/src/fontstash.h; sourceTree = SOURCE_ROOT; };
-		650415391F658345001D7832 /* nanovg_gl_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nanovg_gl_utils.h; path = Vendor/nanovg/src/nanovg_gl_utils.h; sourceTree = SOURCE_ROOT; };
-		6504153A1F658345001D7832 /* nanovg_gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nanovg_gl.h; path = Vendor/nanovg/src/nanovg_gl.h; sourceTree = SOURCE_ROOT; };
-		6504153B1F658345001D7832 /* nanovg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = nanovg.c; path = Vendor/nanovg/src/nanovg.c; sourceTree = SOURCE_ROOT; };
-		6504153C1F658345001D7832 /* nanovg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nanovg.h; path = Vendor/nanovg/src/nanovg.h; sourceTree = SOURCE_ROOT; };
-		6504153D1F658345001D7832 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = Vendor/nanovg/src/stb_image.h; sourceTree = SOURCE_ROOT; };
-		6504153E1F658345001D7832 /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_truetype.h; path = Vendor/nanovg/src/stb_truetype.h; sourceTree = SOURCE_ROOT; };
+		650415381F658345001D7832 /* fontstash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fontstash.h; path = External/nanovg/src/fontstash.h; sourceTree = SOURCE_ROOT; };
+		650415391F658345001D7832 /* nanovg_gl_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nanovg_gl_utils.h; path = External/nanovg/src/nanovg_gl_utils.h; sourceTree = SOURCE_ROOT; };
+		6504153A1F658345001D7832 /* nanovg_gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nanovg_gl.h; path = External/nanovg/src/nanovg_gl.h; sourceTree = SOURCE_ROOT; };
+		6504153B1F658345001D7832 /* nanovg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = nanovg.c; path = External/nanovg/src/nanovg.c; sourceTree = SOURCE_ROOT; };
+		6504153C1F658345001D7832 /* nanovg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nanovg.h; path = External/nanovg/src/nanovg.h; sourceTree = SOURCE_ROOT; };
+		6504153D1F658345001D7832 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_image.h; path = External/nanovg/src/stb_image.h; sourceTree = SOURCE_ROOT; };
+		6504153E1F658345001D7832 /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stb_truetype.h; path = External/nanovg/src/stb_truetype.h; sourceTree = SOURCE_ROOT; };
 		650415401F6584C3001D7832 /* HelloWorld-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "HelloWorld-Info.plist"; path = "Arbutus/HelloWorld-Info.plist"; sourceTree = "<group>"; };
 		650415441F65A3CB001D7832 /* GUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUI.cpp; path = GUI/GUI.cpp; sourceTree = "<group>"; };
 		650415451F65A3CC001D7832 /* GUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GUI.hpp; path = GUI/GUI.hpp; sourceTree = "<group>"; };
@@ -243,10 +243,10 @@
 		65C1EB181E6E1D16003F731D /* RtMidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtMidi.h; sourceTree = "<group>"; };
 		65E21BC61EC6764F006D1C37 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		65E21BC71EC6764F006D1C37 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
-		65E6BD361F44691E008E4F9E /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml.cpp; path = Vendor/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
-		65E6BD371F44691E008E4F9E /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = Vendor/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
-		65E6BD381F44691E008E4F9E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlerror.cpp; path = Vendor/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
-		65E6BD391F44691E008E4F9E /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlparser.cpp; path = Vendor/ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
+		65E6BD361F44691E008E4F9E /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		65E6BD371F44691E008E4F9E /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		65E6BD381F44691E008E4F9E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		65E6BD391F44691E008E4F9E /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		65E6BD431F463A15008E4F9E /* openFrameworksDebug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = openFrameworksDebug.a; path = ../of_v0.9.3_osx_release/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a; sourceTree = "<group>"; };
 		65E6BD451F464E83008E4F9E /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = Vendor/fmodex/libfmodex.dylib; sourceTree = "<group>"; };
 		65E6BD471F464F4E008E4F9E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = Vendor/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework; sourceTree = "<group>"; };
@@ -311,7 +311,8 @@
 				6504153E1F658345001D7832 /* stb_truetype.h */,
 			);
 			name = nanovg;
-			sourceTree = "<group>";
+			path = External/nanovg/src;
+			sourceTree = SOURCE_ROOT;
 		};
 		650415431F65A3B3001D7832 /* GUI */ = {
 			isa = PBXGroup;
@@ -397,15 +398,15 @@
 				65BC81331DF8D94600331165 /* src */,
 			);
 			name = ofxSyphon;
-			sourceTree = "<group>";
+			path = External/ArbutusEngine/External/ofxSyphon;
+			sourceTree = SOURCE_ROOT;
 		};
 		65BC812B1DF8D94600331165 /* libs */ = {
 			isa = PBXGroup;
 			children = (
 				65BC812C1DF8D94600331165 /* Syphon */,
 			);
-			name = libs;
-			path = ofxSyphon/libs;
+			path = libs;
 			sourceTree = "<group>";
 		};
 		65BC812C1DF8D94600331165 /* Syphon */ = {
@@ -453,8 +454,7 @@
 				65BC81391DF8D94600331165 /* ofxSyphonServerDirectory.h */,
 				65BC813A1DF8D94600331165 /* ofxSyphonServerDirectory.mm */,
 			);
-			name = src;
-			path = ofxSyphon/src;
+			path = src;
 			sourceTree = "<group>";
 		};
 		65BC813B1DF8D95600331165 /* ofxOsc */ = {
@@ -463,8 +463,9 @@
 				65BC81591DF8D96500331165 /* src */,
 				65BC813C1DF8D96500331165 /* libs */,
 			);
-			path = ofxOsc;
-			sourceTree = "<group>";
+			name = ofxOsc;
+			path = External/ArbutusEngine/External/openFrameworks/addons/ofxOsc;
+			sourceTree = SOURCE_ROOT;
 		};
 		65BC813C1DF8D96500331165 /* libs */ = {
 			isa = PBXGroup;
@@ -558,7 +559,8 @@
 				65BC81671DF8D9CA00331165 /* src */,
 			);
 			name = ofxMidi;
-			sourceTree = "<group>";
+			path = External/ArbutusEngine/External/ofxMidi;
+			sourceTree = SOURCE_ROOT;
 		};
 		65BC81671DF8D9CA00331165 /* src */ = {
 			isa = PBXGroup;
@@ -578,8 +580,7 @@
 				65BC81911DF8D9CA00331165 /* ofxMidiOut.h */,
 				65BC81921DF8D9CA00331165 /* ofxMidiTypes.h */,
 			);
-			name = src;
-			path = ofxMidi/src;
+			path = src;
 			sourceTree = "<group>";
 		};
 		65BC81681DF8D9CA00331165 /* desktop */ = {
@@ -617,8 +618,9 @@
 				65BC81941DF8D9D600331165 /* libs */,
 				65BC81991DF8D9D600331165 /* src */,
 			);
-			path = ofxXmlSettings;
-			sourceTree = "<group>";
+			name = ofxXmlSettings;
+			path = External/ArbutusEngine/External/openFrameworks/addons/ofxXmlSettings;
+			sourceTree = SOURCE_ROOT;
 		};
 		65BC81941DF8D9D600331165 /* libs */ = {
 			isa = PBXGroup;
@@ -628,8 +630,7 @@
 				65E6BD381F44691E008E4F9E /* tinyxmlerror.cpp */,
 				65E6BD391F44691E008E4F9E /* tinyxmlparser.cpp */,
 			);
-			name = libs;
-			path = Vendor/ofxXmlSettings/libs;
+			path = libs;
 			sourceTree = "<group>";
 		};
 		65BC81991DF8D9D600331165 /* src */ = {
@@ -729,7 +730,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 650455671F47085D00CB3BE5 /* Build configuration list for PBXNativeTarget "HelloWorld" */;
 			buildPhases = (
-				6504152C1F6532ED001D7832 /* ShellScript */,
 				650455551F47085D00CB3BE5 /* Sources */,
 				650455561F47085D00CB3BE5 /* Frameworks */,
 				650455571F47085D00CB3BE5 /* Resources */,
@@ -821,19 +821,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6504152C1F6532ED001D7832 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo \"Creating Vendors folder\"\nmkdir -p Vendor\n\necho \"Copy ofxMidi files\"\ncp -R \"$OF_ADDONS_PATH/ofxMidi\" Vendor/ofxMidi\n\necho \"Copy ofxSyphon files\"\ncp -R \"$OF_ADDONS_PATH/ofxSyphon\" Vendor/ofxSyphon\n\necho \"Copy ofxXmlSettings files\"\ncp -R \"$OF_ADDONS_PATH/ofxXmlSettings\" Vendor/ofxXmlSettings\n\necho \"Copy ofxOsc files\"\ncp -R \"$OF_ADDONS_PATH/ofxOsc\" Vendor/ofxOsc\n\necho \"Copying needed files\"\nmkdir -p Vendor/fmodex\ncp \"$OF_PATH/libs/fmodex/lib/osx/libfmodex.dylib\" Vendor/fmodex/\n\necho \"Copying NanoVG\"\nmkdir -p Vendor/nanovg\ncp -R $NANOVG_PATH/src Vendor/nanovg\ncp -R $NANOVG_PATH/obsolete Vendor/nanovg\n\n";
-		};
 		65E896841E73377E000D470B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -867,6 +854,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */,
+				0C1E77D01F8D857E005507CF /* nanovg.c in Sources */,
 				65276BA41F486DC000949383 /* ofxMidi.cpp in Sources */,
 				65276BAC1F486E0000949383 /* tinyxml.cpp in Sources */,
 				65276BB31F486E3400949383 /* OscReceivedElements.cpp in Sources */,
@@ -886,7 +875,6 @@
 				650415521F65B09F001D7832 /* Element.cpp in Sources */,
 				659583B91F76905900EE275D /* VerticalSlider.cpp in Sources */,
 				650415351F6582F4001D7832 /* ofApp.cpp in Sources */,
-				6504153F1F658345001D7832 /* nanovg.c in Sources */,
 				65276BAA1F486DEC00949383 /* RtMidi.cpp in Sources */,
 				65276BB91F486EDA00949383 /* NetworkingUtils.cpp in Sources */,
 				65276BAB1F486DF700949383 /* ofxXmlSettings.cpp in Sources */,
@@ -894,7 +882,6 @@
 				65276BA31F486DC000949383 /* ofxBaseMidi.cpp in Sources */,
 				65276BA81F486DE100949383 /* ofxRtMidiIn.cpp in Sources */,
 				65276BB01F486E1600949383 /* ofxOscReceiver.cpp in Sources */,
-				65276BB71F486E4B00949383 /* SyphonNameboundClient.m in Sources */,
 				650415341F6582F4001D7832 /* main.cpp in Sources */,
 				65276BAE1F486E0000949383 /* tinyxmlparser.cpp in Sources */,
 				65276BA71F486DD000949383 /* ofxMidiOut.cpp in Sources */,
@@ -964,6 +951,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARBUTUSENGINE_EXTERNAL_PATH = "$(SRCROOT)/External/ArbutusEngine/External/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -991,9 +979,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"\"$(OF_ADDONS_PATH)/ofxSyphon/libs/Syphon/lib/osx/\"",
+					"\"$(OFX_SYPHON_PATH)/libs/Syphon/lib/osx/\"",
 					"\"$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/\"",
-					"$(PROJECT_DIR)/Vendor/ofxSyphon/libs/Syphon/lib/osx",
+					"$(OFX_SYPHON_PATH)/libs/Syphon/lib/osx",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "$(OF_PATH)/libs/glut/lib/osx\"";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -1004,7 +992,7 @@
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -1033,14 +1021,14 @@
 					"$(OF_ADDONS_PATH)/ofxOsc/src",
 					"$(OF_ADDONS_PATH)/ofxOsc/libs/oscpack/src/osc",
 					"$(OF_ADDONS_PATH)/ofxOsc/libs/oscpack/src/**",
-					"$(OF_ADDONS_PATH)/ofxSyphon/src",
 					"$(SRCROOT)/libs/**",
 					src,
 					"$(OF_LIBS_PATH)/glew/include",
 					"$(OF_LIBS_PATH)/tess2/include/**",
-					"\"$(SRCROOT)/Vendor/ofxSyphon/libs/Syphon/src\"",
+					"$(OFX_SYPHON_PATH)/src/**",
+					"\"$(OFX_SYPHON_PATH)/libs/Syphon/src\"/**",
 					"$(ENGINE_PATH)/src/Library/Engine/**",
-					"Vendor/nanovg/**",
+					"$(NANOVG_PATH)/src/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Arbutus/HelloWorld-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1076,9 +1064,10 @@
 				LIB_TESS = "\"$(OF_PATH)/libs/tess2/lib/osx/tess2.a\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				NANOVG_PATH = ../nanovg;
+				NANOVG_PATH = "$(SRCROOT)/External/nanovg/";
+				OFX_SYPHON_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/ofxSyphon";
 				OF_CORE_FRAMEWORKS = "$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a -framework Accelerate -framework AGL -framework AppKit -framework ApplicationServices -framework AudioToolbox -framework AVFoundation -framework Cocoa -framework CoreAudio -framework CoreFoundation -framework CoreMedia -framework CoreServices -framework CoreVideo -framework IOKit -framework OpenGL -framework QuartzCore -framework QuickTime -framework QTKit -framework GLUT";
-				OF_PATH = "$(SRCROOT)/../of_v0.9.8_osx_release";
+				OF_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/openFrameworks";
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
@@ -1094,6 +1083,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARBUTUSENGINE_EXTERNAL_PATH = "$(SRCROOT)/External/ArbutusEngine/External/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1123,15 +1113,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"\"$(OF_ADDONS_PATH)/ofxSyphon/libs/Syphon/lib/osx/\"",
+					"\"$(OFX_SYPHON_PATH)/libs/Syphon/lib/osx/\"",
 					"\"$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/\"",
-					"$(PROJECT_DIR)/Vendor/ofxSyphon/libs/Syphon/lib/osx",
+					"$(OFX_SYPHON_PATH)/libs/Syphon/lib/osx",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "$(OF_PATH)/libs/glut/lib/osx\"";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -1160,14 +1150,14 @@
 					"$(OF_ADDONS_PATH)/ofxOsc/src",
 					"$(OF_ADDONS_PATH)/ofxOsc/libs/oscpack/src/osc",
 					"$(OF_ADDONS_PATH)/ofxOsc/libs/oscpack/src/**",
-					"$(OF_ADDONS_PATH)/ofxSyphon/src",
 					"$(SRCROOT)/libs/**",
 					src,
 					"$(OF_LIBS_PATH)/glew/include",
 					"$(OF_LIBS_PATH)/tess2/include/**",
-					"\"$(SRCROOT)/Vendor/ofxSyphon/libs/Syphon/src\"",
+					"$(OFX_SYPHON_PATH)/src/**",
+					"\"$(OFX_SYPHON_PATH)/libs/Syphon/src\"/**",
 					"$(ENGINE_PATH)/src/Library/Engine/**",
-					"Vendor/nanovg/**",
+					"$(NANOVG_PATH)/src/**",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Arbutus/HelloWorld-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1203,9 +1193,10 @@
 				LIB_TESS = "\"$(OF_PATH)/libs/tess2/lib/osx/tess2.a\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				NANOVG_PATH = ../nanovg;
+				NANOVG_PATH = "$(SRCROOT)/External/nanovg/";
+				OFX_SYPHON_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/ofxSyphon";
 				OF_CORE_FRAMEWORKS = "$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/openFrameworks.a -framework Accelerate -framework AGL -framework AppKit -framework ApplicationServices -framework AudioToolbox -framework AVFoundation -framework Cocoa -framework CoreAudio -framework CoreFoundation -framework CoreMedia -framework CoreServices -framework CoreVideo -framework IOKit -framework OpenGL -framework QuartzCore -framework QuickTime -framework QTKit -framework GLUT";
-				OF_PATH = "$(SRCROOT)/../of_v0.9.8_osx_release";
+				OF_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/openFrameworks";
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
