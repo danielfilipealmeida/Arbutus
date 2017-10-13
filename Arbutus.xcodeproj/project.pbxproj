@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C08AED81F913F8600CE531F /* layerShader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AED61F913F8600CE531F /* layerShader.frag */; };
+		0C08AED91F913F8600CE531F /* layerShader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AED71F913F8600CE531F /* layerShader.vert */; };
+		0C08AEDE1F91413100CE531F /* 002.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AEDC1F91413100CE531F /* 002.mov */; };
+		0C08AEDF1F91413100CE531F /* 001.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AEDD1F91413100CE531F /* 001.mov */; };
 		0C1E77D01F8D857E005507CF /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
 		0C2368051F910B05000EFEB4 /* libArbutusLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1E77DC1F8E52F3005507CF /* libArbutusLib.a */; };
@@ -197,6 +201,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C08AED61F913F8600CE531F /* layerShader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = layerShader.frag; sourceTree = "<group>"; };
+		0C08AED71F913F8600CE531F /* layerShader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = layerShader.vert; sourceTree = "<group>"; };
+		0C08AEDC1F91413100CE531F /* 002.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 002.mov; path = External/ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/002.mov; sourceTree = "<group>"; };
+		0C08AEDD1F91413100CE531F /* 001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 001.mov; path = External/ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/001.mov; sourceTree = "<group>"; };
 		0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArbutusEngine.xcodeproj; path = External/ArbutusEngine/ArbutusEngine.xcodeproj; sourceTree = "<group>"; };
 		0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = External/ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = "<group>"; };
 		6504152F1F6582F4001D7832 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Arbutus/main.cpp; sourceTree = "<group>"; };
@@ -359,6 +367,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C08AEDA1F91405A00CE531F /* GLSL */ = {
+			isa = PBXGroup;
+			children = (
+				0C08AED61F913F8600CE531F /* layerShader.frag */,
+				0C08AED71F913F8600CE531F /* layerShader.vert */,
+			);
+			name = GLSL;
+			sourceTree = "<group>";
+		};
 		0C1E77D41F8E52F3005507CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +398,7 @@
 		6504152D1F6582E4001D7832 /* Arbutus */ = {
 			isa = PBXGroup;
 			children = (
+				0C08AEDA1F91405A00CE531F /* GLSL */,
 				650415401F6584C3001D7832 /* HelloWorld-Info.plist */,
 				6504152F1F6582F4001D7832 /* main.cpp */,
 				650415301F6582F4001D7832 /* ofApp.cpp */,
@@ -786,6 +804,8 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				0C08AEDD1F91413100CE531F /* 001.mov */,
+				0C08AEDC1F91413100CE531F /* 002.mov */,
 				650415601F65DE4D001D7832 /* Resources */,
 				65E6BD471F464F4E008E4F9E /* Syphon.framework */,
 				65E6BD451F464E83008E4F9E /* libfmodex.dylib */,
@@ -952,6 +972,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C08AEDE1F91413100CE531F /* 002.mov in Resources */,
+				0C08AEDF1F91413100CE531F /* 001.mov in Resources */,
+				0C08AED81F913F8600CE531F /* layerShader.frag in Resources */,
+				0C08AED91F913F8600CE531F /* layerShader.vert in Resources */,
 				650415411F6584C3001D7832 /* HelloWorld-Info.plist in Resources */,
 				650415361F6582F4001D7832 /* set.json in Resources */,
 				6504155B1F65DE47001D7832 /* entypo.ttf in Resources */,
@@ -1185,6 +1209,7 @@
 					"$(ENGINE_PATH)/src/Library/Engine/**",
 					"$(NANOVG_PATH)/src/**",
 					"$(LIB_JSON_PATH)",
+					"$(LIB_CATCH_PATH)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Arbutus/HelloWorld-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1197,6 +1222,7 @@
 				LIB_CAIRO1 = "\"$(OF_PATH)/libs/cairo/lib/osx/cairo-script-interpreter.a\"";
 				LIB_CAIRO2 = "\"$(OF_PATH)/libs/cairo/lib/osx/cairo.a\"";
 				LIB_CAIRO3 = "\"$(OF_PATH)/libs/cairo/lib/osx/pixman-1.a\"";
+				LIB_CATCH_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/Catch/single_include/";
 				LIB_FMODEX = "\"$(OF_PATH)/libs/fmodex/lib/osx/libfmodex.dylib\"";
 				LIB_FREEIMAGE = "\"$(OF_PATH)/libs/FreeImage/lib/osx/freeimage.a\"";
 				LIB_FREETYPE = "\"$(OF_PATH)/libs/freetype/lib/osx/freetype.a\"";
@@ -1316,6 +1342,7 @@
 					"$(ENGINE_PATH)/src/Library/Engine/**",
 					"$(NANOVG_PATH)/src/**",
 					"$(LIB_JSON_PATH)",
+					"$(LIB_CATCH_PATH)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Arbutus/HelloWorld-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1328,6 +1355,7 @@
 				LIB_CAIRO1 = "\"$(OF_PATH)/libs/cairo/lib/osx/cairo-script-interpreter.a\"";
 				LIB_CAIRO2 = "\"$(OF_PATH)/libs/cairo/lib/osx/cairo.a\"";
 				LIB_CAIRO3 = "\"$(OF_PATH)/libs/cairo/lib/osx/pixman-1.a\"";
+				LIB_CATCH_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/Catch/single_include/";
 				LIB_FMODEX = "\"$(OF_PATH)/libs/fmodex/lib/osx/libfmodex.dylib\"";
 				LIB_FREEIMAGE = "\"$(OF_PATH)/libs/FreeImage/lib/osx/freeimage.a\"";
 				LIB_FREETYPE = "\"$(OF_PATH)/libs/freetype/lib/osx/freetype.a\"";

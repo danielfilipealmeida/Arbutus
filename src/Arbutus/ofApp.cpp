@@ -21,7 +21,6 @@ void ofApp::setup(){
         cout << "Error: " << exception << endl;
     }
     Set::getInstance().setCurrentScene(0);
-    /*
     engine->play({
         {"layer", 0},
         {"column", 0}
@@ -31,8 +30,6 @@ void ofApp::setup(){
         {"column", 0}
     });
     
-     */
-    engine->play({});
     
     Element *element = GUI::getInstance().add<Element>({
         {"x", 100},
