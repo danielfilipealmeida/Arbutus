@@ -7,3 +7,28 @@
 //
 
 #include "Splitter.hpp"
+
+Splitter::Splitter() {
+    
+}
+
+Splitter::~Splitter()  {
+    
+}
+
+
+void Splitter::set(json config) {
+    
+}
+
+
+
+void Splitter::update() {
+    
+}
+
+
+
+void Splitter::draw(NVGcontext* vg) {
+    
+}
