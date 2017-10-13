@@ -11,10 +11,10 @@
 		0C08AED91F913F8600CE531F /* layerShader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AED71F913F8600CE531F /* layerShader.vert */; };
 		0C08AEDE1F91413100CE531F /* 002.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AEDC1F91413100CE531F /* 002.mov */; };
 		0C08AEDF1F91413100CE531F /* 001.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AEDD1F91413100CE531F /* 001.mov */; };
+		0C08AF041F915E1200CE531F /* libArbutusLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08AEFD1F915B0C00CE531F /* libArbutusLib.a */; };
+		0C08AF051F915E1200CE531F /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08AEE41F915A3900CE531F /* openFrameworksDebug.a */; };
 		0C1E77D01F8D857E005507CF /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
-		0C2368051F910B05000EFEB4 /* libArbutusLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1E77DC1F8E52F3005507CF /* libArbutusLib.a */; };
-		0C2368061F910B80000EFEB4 /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1E77EA1F8E5321005507CF /* openFrameworksDebug.a */; };
 		650415341F6582F4001D7832 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504152F1F6582F4001D7832 /* main.cpp */; };
 		650415351F6582F4001D7832 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415301F6582F4001D7832 /* ofApp.cpp */; };
 		650415361F6582F4001D7832 /* set.json in Resources */ = {isa = PBXBuildFile; fileRef = 650415321F6582F4001D7832 /* set.json */; };
@@ -111,68 +111,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0C1E77DB1F8E52F3005507CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65A186601DF8DF9200BE0219;
-			remoteInfo = ArbutusLib;
-		};
-		0C1E77DD1F8E52F3005507CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 65E896631E72F420000D470B;
-			remoteInfo = "Catch Tests";
-		};
-		0C1E77DF1F8E52F3005507CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 650455591F47085D00CB3BE5;
-			remoteInfo = HelloWorld;
-		};
-		0C1E77E11F8E52F3005507CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 650455891F47A9FE00CB3BE5;
-			remoteInfo = Empty;
-		};
-		0C1E77E31F8E52FC005507CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 65A1865F1DF8DF9200BE0219;
-			remoteInfo = ArbutusLib;
-		};
-		0C1E77E91F8E5321005507CF /* PBXContainerItemProxy */ = {
+		0C08AEE31F915A3900CE531F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
 			remoteInfo = openFrameworks;
 		};
-		0C1E77EB1F8E5328005507CF /* PBXContainerItemProxy */ = {
+		0C08AEFC1F915B0C00CE531F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
-			remoteInfo = openFrameworks;
-		};
-		0C1E77ED1F8E534C005507CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
-			remoteInfo = openFrameworks;
-		};
-		0C1E77EF1F8E5351005507CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 65A1865F1DF8DF9200BE0219;
+			containerPortal = 0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65A186601DF8DF9200BE0219;
 			remoteInfo = ArbutusLib;
+		};
+		0C08AEFE1F915B0C00CE531F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65E896631E72F420000D470B;
+			remoteInfo = "Catch Tests";
+		};
+		0C08AF001F915B0C00CE531F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 650455591F47085D00CB3BE5;
+			remoteInfo = HelloWorld;
+		};
+		0C08AF021F915B0C00CE531F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 650455891F47A9FE00CB3BE5;
+			remoteInfo = Empty;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -203,10 +175,10 @@
 /* Begin PBXFileReference section */
 		0C08AED61F913F8600CE531F /* layerShader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = layerShader.frag; sourceTree = "<group>"; };
 		0C08AED71F913F8600CE531F /* layerShader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = layerShader.vert; sourceTree = "<group>"; };
-		0C08AEDC1F91413100CE531F /* 002.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 002.mov; path = External/ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/002.mov; sourceTree = "<group>"; };
-		0C08AEDD1F91413100CE531F /* 001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 001.mov; path = External/ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/001.mov; sourceTree = "<group>"; };
-		0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArbutusEngine.xcodeproj; path = External/ArbutusEngine/ArbutusEngine.xcodeproj; sourceTree = "<group>"; };
-		0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = External/ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = "<group>"; };
+		0C08AEDC1F91413100CE531F /* 002.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 002.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/002.mov; sourceTree = SOURCE_ROOT; };
+		0C08AEDD1F91413100CE531F /* 001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 001.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/001.mov; sourceTree = SOURCE_ROOT; };
+		0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArbutusEngine.xcodeproj; path = ../ArbutusEngine/ArbutusEngine.xcodeproj; sourceTree = "<group>"; };
+		0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		6504152F1F6582F4001D7832 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Arbutus/main.cpp; sourceTree = "<group>"; };
 		650415301F6582F4001D7832 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = Arbutus/ofApp.cpp; sourceTree = "<group>"; };
 		650415311F6582F4001D7832 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = Arbutus/ofApp.h; sourceTree = "<group>"; };
@@ -327,7 +299,7 @@
 		65E6BD391F44691E008E4F9E /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		65E6BD431F463A15008E4F9E /* osx */ = {isa = PBXFileReference; lastKnownFileType = folder; name = osx; path = External/ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/lib/osx; sourceTree = "<group>"; };
 		65E6BD451F464E83008E4F9E /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = External/ArbutusEngine/External/openFrameworks/libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
-		65E6BD471F464F4E008E4F9E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = External/ArbutusEngine/External/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework; sourceTree = "<group>"; };
+		65E6BD471F464F4E008E4F9E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = ../ArbutusEngine/External/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework; sourceTree = SOURCE_ROOT; };
 		65E896531E72E85B000D470B /* makedocs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = makedocs.sh; sourceTree = "<group>"; };
 		65E896631E72F420000D470B /* Catch Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Catch Tests"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E896651E730453000D470B /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -346,8 +318,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C2368061F910B80000EFEB4 /* openFrameworksDebug.a in Frameworks */,
-				0C2368051F910B05000EFEB4 /* libArbutusLib.a in Frameworks */,
+				0C08AF041F915E1200CE531F /* libArbutusLib.a in Frameworks */,
+				0C08AF051F915E1200CE531F /* openFrameworksDebug.a in Frameworks */,
 				650455711F470ED000CB3BE5 /* Syphon.framework in Frameworks */,
 				6504556F1F470EAC00CB3BE5 /* Foundation.framework in Frameworks */,
 				6504556E1F470EA300CB3BE5 /* CoreMIDI.framework in Frameworks */,
@@ -376,21 +348,21 @@
 			name = GLSL;
 			sourceTree = "<group>";
 		};
-		0C1E77D41F8E52F3005507CF /* Products */ = {
+		0C08AEE01F915A3900CE531F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C1E77DC1F8E52F3005507CF /* libArbutusLib.a */,
-				0C1E77DE1F8E52F3005507CF /* Catch Tests */,
-				0C1E77E01F8E52F3005507CF /* HelloWorld.app */,
-				0C1E77E21F8E52F3005507CF /* Empty.app */,
+				0C08AEE41F915A3900CE531F /* openFrameworksDebug.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0C1E77E61F8E5320005507CF /* Products */ = {
+		0C08AEF61F915B0C00CE531F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C1E77EA1F8E5321005507CF /* openFrameworksDebug.a */,
+				0C08AEFD1F915B0C00CE531F /* libArbutusLib.a */,
+				0C08AEFF1F915B0C00CE531F /* Catch Tests */,
+				0C08AF011F915B0C00CE531F /* HelloWorld.app */,
+				0C08AF031F915B0C00CE531F /* Empty.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -507,8 +479,8 @@
 				65BC81331DF8D94600331165 /* src */,
 			);
 			name = ofxSyphon;
-			path = External/ArbutusEngine/External/ofxSyphon;
-			sourceTree = SOURCE_ROOT;
+			path = ../../ofxSyphon;
+			sourceTree = "<group>";
 		};
 		65BC812B1DF8D94600331165 /* libs */ = {
 			isa = PBXGroup;
@@ -572,9 +544,8 @@
 				65BC81591DF8D96500331165 /* src */,
 				65BC813C1DF8D96500331165 /* libs */,
 			);
-			name = ofxOsc;
-			path = External/ArbutusEngine/External/openFrameworks/addons/ofxOsc;
-			sourceTree = SOURCE_ROOT;
+			path = ofxOsc;
+			sourceTree = "<group>";
 		};
 		65BC813C1DF8D96500331165 /* libs */ = {
 			isa = PBXGroup;
@@ -668,8 +639,8 @@
 				65BC81671DF8D9CA00331165 /* src */,
 			);
 			name = ofxMidi;
-			path = External/ArbutusEngine/External/ofxMidi;
-			sourceTree = SOURCE_ROOT;
+			path = ../../ofxMidi;
+			sourceTree = "<group>";
 		};
 		65BC81671DF8D9CA00331165 /* src */ = {
 			isa = PBXGroup;
@@ -727,9 +698,8 @@
 				65BC81941DF8D9D600331165 /* libs */,
 				65BC81991DF8D9D600331165 /* src */,
 			);
-			name = ofxXmlSettings;
-			path = External/ArbutusEngine/External/openFrameworks/addons/ofxXmlSettings;
-			sourceTree = SOURCE_ROOT;
+			path = ofxXmlSettings;
+			sourceTree = "<group>";
 		};
 		65BC81941DF8D9D600331165 /* libs */ = {
 			isa = PBXGroup;
@@ -798,8 +768,8 @@
 				65BC812A1DF8D8E400331165 /* ofxSyphon */,
 			);
 			name = addons;
-			path = Vendor;
-			sourceTree = "<group>";
+			path = ../ArbutusEngine/External/openFrameworks/addons;
+			sourceTree = SOURCE_ROOT;
 		};
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
@@ -821,8 +791,8 @@
 				65E896631E72F420000D470B /* Catch Tests */,
 				6504CA6A1ECE4DCC00355E4A /* Test Data */,
 				650455591F47085D00CB3BE5 /* HelloWorld.app */,
+				0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */,
 				0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */,
-				0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -850,8 +820,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0C1E77E41F8E52FC005507CF /* PBXTargetDependency */,
-				0C1E77EC1F8E5328005507CF /* PBXTargetDependency */,
 			);
 			name = HelloWorld;
 			productName = HelloWorld;
@@ -871,8 +839,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0C1E77F01F8E5351005507CF /* PBXTargetDependency */,
-				0C1E77EE1F8E534C005507CF /* PBXTargetDependency */,
 			);
 			name = "Catch Tests";
 			productName = catch;
@@ -913,11 +879,11 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0C1E77D41F8E52F3005507CF /* Products */;
-					ProjectRef = 0C1E77D31F8E52F3005507CF /* ArbutusEngine.xcodeproj */;
+					ProductGroup = 0C08AEF61F915B0C00CE531F /* Products */;
+					ProjectRef = 0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */;
 				},
 				{
-					ProductGroup = 0C1E77E61F8E5320005507CF /* Products */;
+					ProductGroup = 0C08AEE01F915A3900CE531F /* Products */;
 					ProjectRef = 0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */;
 				},
 			);
@@ -930,39 +896,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0C1E77DC1F8E52F3005507CF /* libArbutusLib.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libArbutusLib.a;
-			remoteRef = 0C1E77DB1F8E52F3005507CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0C1E77DE1F8E52F3005507CF /* Catch Tests */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "Catch Tests";
-			remoteRef = 0C1E77DD1F8E52F3005507CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0C1E77E01F8E52F3005507CF /* HelloWorld.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = HelloWorld.app;
-			remoteRef = 0C1E77DF1F8E52F3005507CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0C1E77E21F8E52F3005507CF /* Empty.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Empty.app;
-			remoteRef = 0C1E77E11F8E52F3005507CF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0C1E77EA1F8E5321005507CF /* openFrameworksDebug.a */ = {
+		0C08AEE41F915A3900CE531F /* openFrameworksDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = openFrameworksDebug.a;
-			remoteRef = 0C1E77E91F8E5321005507CF /* PBXContainerItemProxy */;
+			remoteRef = 0C08AEE31F915A3900CE531F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C08AEFD1F915B0C00CE531F /* libArbutusLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libArbutusLib.a;
+			remoteRef = 0C08AEFC1F915B0C00CE531F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C08AEFF1F915B0C00CE531F /* Catch Tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Catch Tests";
+			remoteRef = 0C08AEFE1F915B0C00CE531F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C08AF011F915B0C00CE531F /* HelloWorld.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = HelloWorld.app;
+			remoteRef = 0C08AF001F915B0C00CE531F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C08AF031F915B0C00CE531F /* Empty.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Empty.app;
+			remoteRef = 0C08AF021F915B0C00CE531F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1101,35 +1067,12 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		0C1E77E41F8E52FC005507CF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ArbutusLib;
-			targetProxy = 0C1E77E31F8E52FC005507CF /* PBXContainerItemProxy */;
-		};
-		0C1E77EC1F8E5328005507CF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = openFrameworks;
-			targetProxy = 0C1E77EB1F8E5328005507CF /* PBXContainerItemProxy */;
-		};
-		0C1E77EE1F8E534C005507CF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = openFrameworks;
-			targetProxy = 0C1E77ED1F8E534C005507CF /* PBXContainerItemProxy */;
-		};
-		0C1E77F01F8E5351005507CF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ArbutusLib;
-			targetProxy = 0C1E77EF1F8E5351005507CF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		650455681F47085D00CB3BE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARBUTUSENGINE_EXTERNAL_PATH = "$(SRCROOT)/External/ArbutusEngine/External/";
+				ARBUTUSENGINE_EXTERNAL_PATH = "$(ENGINE_PATH)/External/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1153,7 +1096,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				ENGINE_LIB_PATH = "$(ENGINE_PATH)/bin/";
-				ENGINE_PATH = "$(SRCROOT)/External/ArbutusEngine/";
+				ENGINE_PATH = "$(LIB_ARBUTUSENGINE_PATH)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -1181,7 +1124,6 @@
 					src,
 					"\"$(SRCROOT)/libs\"/**",
 					"\"$(SRCROOT)/src/Library/Engine\"",
-					"\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/src\"/**",
 					"$(OF_LIBS_PATH)/boost/include/",
 					"$(OF_LIBS_PATH)/utf8cpp/include",
 					"$(OF_LIBS_PATH)/poco/include",
@@ -1217,6 +1159,7 @@
 					"\"$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/\"",
 					"$(ENGINE_PATH)/bin",
 				);
+				LIB_ARBUTUSENGINE_PATH = ../ArbutusEngine;
 				LIB_BOOST_FS = "\"$(OF_PATH)/libs/boost/lib/osx/boost_filesystem.a\"";
 				LIB_BOOST_SYSTEM = "\"$(OF_PATH)/libs/boost/lib/osx/boost_system.a\"";
 				LIB_CAIRO1 = "\"$(OF_PATH)/libs/cairo/lib/osx/cairo-script-interpreter.a\"";
@@ -1248,6 +1191,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				NANOVG_PATH = "$(SRCROOT)/External/nanovg/";
+				NEW_SETTING = "";
 				OFX_SYPHON_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/ofxSyphon";
 				OF_CORE_FRAMEWORKS = "$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a -framework Accelerate -framework AGL -framework AppKit -framework ApplicationServices -framework AudioToolbox -framework AVFoundation -framework Cocoa -framework CoreAudio -framework CoreFoundation -framework CoreMedia -framework CoreServices -framework CoreVideo -framework IOKit -framework OpenGL -framework QuartzCore -framework QuickTime -framework QTKit -framework GLUT";
 				OF_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/openFrameworks";
@@ -1265,7 +1209,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARBUTUSENGINE_EXTERNAL_PATH = "$(SRCROOT)/External/ArbutusEngine/External/";
+				ARBUTUSENGINE_EXTERNAL_PATH = "$(ENGINE_PATH)/External/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1291,7 +1235,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				ENGINE_LIB_PATH = "$(ENGINE_PATH)/bin/";
-				ENGINE_PATH = "$(SRCROOT)/External/ArbutusEngine/";
+				ENGINE_PATH = "$(LIB_ARBUTUSENGINE_PATH)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
@@ -1314,7 +1258,6 @@
 					src,
 					"\"$(SRCROOT)/libs\"/**",
 					"\"$(SRCROOT)/src/Library/Engine\"",
-					"\"$(SRCROOT)/../../../addons/ofxOsc/libs/oscpack/src\"/**",
 					"$(OF_LIBS_PATH)/boost/include/",
 					"$(OF_LIBS_PATH)/utf8cpp/include",
 					"$(OF_LIBS_PATH)/poco/include",
@@ -1350,6 +1293,7 @@
 					"\"$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/\"",
 					"$(ENGINE_PATH)/bin",
 				);
+				LIB_ARBUTUSENGINE_PATH = ../ArbutusEngine;
 				LIB_BOOST_FS = "\"$(OF_PATH)/libs/boost/lib/osx/boost_filesystem.a\"";
 				LIB_BOOST_SYSTEM = "\"$(OF_PATH)/libs/boost/lib/osx/boost_system.a\"";
 				LIB_CAIRO1 = "\"$(OF_PATH)/libs/cairo/lib/osx/cairo-script-interpreter.a\"";
@@ -1381,6 +1325,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				NANOVG_PATH = "$(SRCROOT)/External/nanovg/";
+				NEW_SETTING = "";
 				OFX_SYPHON_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/ofxSyphon";
 				OF_CORE_FRAMEWORKS = "$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/openFrameworks.a -framework Accelerate -framework AGL -framework AppKit -framework ApplicationServices -framework AudioToolbox -framework AVFoundation -framework Cocoa -framework CoreAudio -framework CoreFoundation -framework CoreMedia -framework CoreServices -framework CoreVideo -framework IOKit -framework OpenGL -framework QuartzCore -framework QuickTime -framework QTKit -framework GLUT";
 				OF_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/openFrameworks";
