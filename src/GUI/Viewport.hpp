@@ -64,6 +64,10 @@ public:
      ...
      */
     ofRectangle calculateDrawingRectForElement(Element *element);
+    
+    void setScrollPositionY(float position);
+    
+    void setScrollPositionX(float position);
 
 };
 

@@ -63,3 +63,12 @@ ofRectangle Viewport::calculateDrawingRectForElement(Element *element) {
 
     return drawingRect;
 }
+
+
+void Viewport::setScrollPositionY(float position) {
+    scrollPositionY = position;
+}
+
+void Viewport::setScrollPositionX(float position) {
+    scrollPositionX = position;
+}

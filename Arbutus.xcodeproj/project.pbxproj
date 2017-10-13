@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0C1E77D01F8D857E005507CF /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
+		0C2368051F910B05000EFEB4 /* libArbutusLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1E77DC1F8E52F3005507CF /* libArbutusLib.a */; };
+		0C2368061F910B80000EFEB4 /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1E77EA1F8E5321005507CF /* openFrameworksDebug.a */; };
 		650415341F6582F4001D7832 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504152F1F6582F4001D7832 /* main.cpp */; };
 		650415351F6582F4001D7832 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415301F6582F4001D7832 /* ofApp.cpp */; };
 		650415361F6582F4001D7832 /* set.json in Resources */ = {isa = PBXBuildFile; fileRef = 650415321F6582F4001D7832 /* set.json */; };
@@ -336,6 +338,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2368061F910B80000EFEB4 /* openFrameworksDebug.a in Frameworks */,
+				0C2368051F910B05000EFEB4 /* libArbutusLib.a in Frameworks */,
 				650455711F470ED000CB3BE5 /* Syphon.framework in Frameworks */,
 				6504556F1F470EAC00CB3BE5 /* Foundation.framework in Frameworks */,
 				6504556E1F470EA300CB3BE5 /* CoreMIDI.framework in Frameworks */,
@@ -1180,6 +1184,7 @@
 					"\"$(OFX_SYPHON_PATH)/libs/Syphon/src\"/**",
 					"$(ENGINE_PATH)/src/Library/Engine/**",
 					"$(NANOVG_PATH)/src/**",
+					"$(LIB_JSON_PATH)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Arbutus/HelloWorld-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1198,6 +1203,7 @@
 				LIB_GLEW = "\"$(OF_PATH)/libs/glew/lib/osx/glew.a\"";
 				LIB_GLFW = "\"$(OF_PATH)/libs/glfw/lib/osx/glfw3.a\"";
 				LIB_GLUT = "\"$(OF_PATH)/libs/glut/lib/osx/GLUT.framework/Versions/A/GLUT\"";
+				LIB_JSON_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/json/src/";
 				LIB_OPENSSL1 = "\"$(OF_PATH)/libs/openssl/lib/osx/crypto.a\"";
 				LIB_OPENSSL2 = "\"$(OF_PATH)/libs/openssl/lib/osx/ssl.a\"";
 				LIB_POCO = "$(LIB_POCO_0) $(LIB_POCO_1) $(LIB_POCO_2) $(LIB_POCO_3) $(LIB_POCO_4) $(LIB_POCO_5) $(LIB_POCO_6) $(LIB_POCO_7) $(LIB_POCO_8) $(LIB_POCO_9)";
@@ -1222,7 +1228,6 @@
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					"\"$(ENGINE_LIB_PATH)/libArbutusLib.a\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = DanielFilipeA.HelloWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1310,6 +1315,7 @@
 					"\"$(OFX_SYPHON_PATH)/libs/Syphon/src\"/**",
 					"$(ENGINE_PATH)/src/Library/Engine/**",
 					"$(NANOVG_PATH)/src/**",
+					"$(LIB_JSON_PATH)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/src/Arbutus/HelloWorld-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1328,6 +1334,7 @@
 				LIB_GLEW = "\"$(OF_PATH)/libs/glew/lib/osx/glew.a\"";
 				LIB_GLFW = "\"$(OF_PATH)/libs/glfw/lib/osx/glfw3.a\"";
 				LIB_GLUT = "\"$(OF_PATH)/libs/glut/lib/osx/GLUT.framework/Versions/A/GLUT\"";
+				LIB_JSON_PATH = "$(ARBUTUSENGINE_EXTERNAL_PATH)/json/src/";
 				LIB_OPENSSL1 = "\"$(OF_PATH)/libs/openssl/lib/osx/crypto.a\"";
 				LIB_OPENSSL2 = "\"$(OF_PATH)/libs/openssl/lib/osx/ssl.a\"";
 				LIB_POCO = "$(LIB_POCO_0) $(LIB_POCO_1) $(LIB_POCO_2) $(LIB_POCO_3) $(LIB_POCO_4) $(LIB_POCO_5) $(LIB_POCO_6) $(LIB_POCO_7) $(LIB_POCO_8) $(LIB_POCO_9)";

@@ -49,6 +49,7 @@ public:
      ...
      */
     virtual string getClass() { return "VerticalSlider";}
+    
 
 };
 #endif /* VerticalSlider_hpp */

@@ -96,3 +96,5 @@ float Slider::getValue() {
 void Slider::setOnChange(std::function<void(Slider *slider)> _onChange) {
     onChange = _onChange;
 }
+
+

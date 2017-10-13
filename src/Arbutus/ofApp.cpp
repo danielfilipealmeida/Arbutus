@@ -21,6 +21,7 @@ void ofApp::setup(){
         cout << "Error: " << exception << endl;
     }
     Set::getInstance().setCurrentScene(0);
+    /*
     engine->play({
         {"layer", 0},
         {"column", 0}
@@ -29,7 +30,9 @@ void ofApp::setup(){
         {"layer", 1},
         {"column", 0}
     });
-
+    
+     */
+    engine->play({});
     
     Element *element = GUI::getInstance().add<Element>({
         {"x", 100},
@@ -65,8 +68,8 @@ void ofApp::setup(){
     });
     slider->setValue(0.7);
     slider->setOnChange([](Slider *slider) {
-        Layers::getInstance().get(0)->setState({{"alpha", 1.0-slider->getValue()}});
-        Layers::getInstance().get(1)->setState({{"alpha", slider->getValue()}});
+        //Layers::getInstance().get(0)->setState({{"alpha", 1.0-slider->getValue()}});
+        //Layers::getInstance().get(1)->setState({{"alpha", slider->getValue()}});
     });
     
     VerticalSlider *vslider = GUI::getInstance().add<VerticalSlider>({
@@ -92,11 +95,11 @@ void ofApp::setup(){
         {"totalHeight", 200}
     });
     slider->setParent(viewport);
-    viewport->scrollPositionX = 0;
-    viewport->scrollPositionY = 0;
+    //viewport->scrollPositionX = 0;
+    //viewport->scrollPositionY = 0;
     
     vslider->setOnChange([viewport](Slider *vslider) {
-        viewport->scrollPositionY = vslider->value;
+        viewport->setScrollPositionY(vslider->getValue());
     });
 }
 
