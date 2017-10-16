@@ -66,9 +66,14 @@ public:
         return guiObject;
     };
     
-    
+    /*!
+     Apply a lambda to all elements in the GUI
+     */
     void forEach(std::function<void (Element *)> lambda);
     
+    /*!
+     Apply a lambda to filter from all elements of the GUI
+     */
     std::vector<Element*> filter(std::function<bool (Element *)> lambda);
 };
 

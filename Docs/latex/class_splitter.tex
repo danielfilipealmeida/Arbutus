@@ -1,0 +1,109 @@
+\hypertarget{class_splitter}{}\section{Splitter Class Reference}
+\label{class_splitter}\index{Splitter@{Splitter}}
+
+
+{\ttfamily \#include $<$Splitter.\+hpp$>$}
+
+Inheritance diagram for Splitter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_splitter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_splitter_ac62b02b8374ebe8dfdf6c34fbd59c2a1}{Splitter} ()
+\item 
+\hyperlink{class_splitter_a43e6a2b28ecf48a2127840a5fbf5fb3f}{$\sim$\+Splitter} ()
+\item 
+void \hyperlink{class_splitter_a38aab36f28b7f5b834fefae247f5c37e}{set} (json config)
+\item 
+void \hyperlink{class_splitter_aab6c9e9479d8208e1959eb9fbfbcdfeb}{update} ()
+\item 
+void \hyperlink{class_splitter_acdda30b580520e68531dfa90511a8514}{draw} (N\+V\+Gcontext $\ast$vg)
+\item 
+void \hyperlink{class_splitter_a4cfa6bad909de07691b290f56de1a175}{add} (\hyperlink{class_element}{Element} $\ast$element, float size)
+\item 
+\mbox{\Hypertarget{class_splitter_a9c611ab26d0cd4b5bdd4098ed55752fc}\label{class_splitter_a9c611ab26d0cd4b5bdd4098ed55752fc}} 
+void {\bfseries calculate\+Childs\+Rects} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_splitter_a9f1eec80a14195e074e93e0d4305d2f0}\label{class_splitter_a9f1eec80a14195e074e93e0d4305d2f0}} 
+void {\bfseries calculate\+Rect} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_splitter_a80d42af90ddecf61e0bd988fa0abc877}\label{class_splitter_a80d42af90ddecf61e0bd988fa0abc877}} 
+Splitter\+Type {\bfseries type}
+\item 
+\mbox{\Hypertarget{class_splitter_a1fe850cd6ee1699cc00ca16b2b2a2992}\label{class_splitter_a1fe850cd6ee1699cc00ca16b2b2a2992}} 
+std\+::vector$<$ \hyperlink{struct_splitter_child}{Splitter\+Child} $>$ {\bfseries childs}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Divides the area of the parent into several elements  Takes the entire area of the parent or the whole screen of no parent. Divides it into the given number of requested zones. each zone needs to define a percentage (float values 0 to 1). the total percentage must be 1. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_splitter_ac62b02b8374ebe8dfdf6c34fbd59c2a1}\label{class_splitter_ac62b02b8374ebe8dfdf6c34fbd59c2a1}} 
+\index{Splitter@{Splitter}!Splitter@{Splitter}}
+\index{Splitter@{Splitter}!Splitter@{Splitter}}
+\subsubsection{\texorpdfstring{Splitter()}{Splitter()}}
+{\footnotesize\ttfamily Splitter\+::\+Splitter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+... \mbox{\Hypertarget{class_splitter_a43e6a2b28ecf48a2127840a5fbf5fb3f}\label{class_splitter_a43e6a2b28ecf48a2127840a5fbf5fb3f}} 
+\index{Splitter@{Splitter}!````~Splitter@{$\sim$\+Splitter}}
+\index{````~Splitter@{$\sim$\+Splitter}!Splitter@{Splitter}}
+\subsubsection{\texorpdfstring{$\sim$\+Splitter()}{~Splitter()}}
+{\footnotesize\ttfamily Splitter\+::$\sim$\+Splitter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+... 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_splitter_a4cfa6bad909de07691b290f56de1a175}\label{class_splitter_a4cfa6bad909de07691b290f56de1a175}} 
+\index{Splitter@{Splitter}!add@{add}}
+\index{add@{add}!Splitter@{Splitter}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Splitter\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{class_element}{Element} $\ast$}]{element,  }\item[{float}]{size }\end{DoxyParamCaption})}
+
+Adds a new element to the splitter at the end \mbox{\Hypertarget{class_splitter_acdda30b580520e68531dfa90511a8514}\label{class_splitter_acdda30b580520e68531dfa90511a8514}} 
+\index{Splitter@{Splitter}!draw@{draw}}
+\index{draw@{draw}!Splitter@{Splitter}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Splitter\+::draw (\begin{DoxyParamCaption}\item[{N\+V\+Gcontext $\ast$}]{vg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+... 
+
+Reimplemented from \hyperlink{class_element_a37c9abed5bec87d9ce0a5e74fb872f34}{Element}.
+
+\mbox{\Hypertarget{class_splitter_a38aab36f28b7f5b834fefae247f5c37e}\label{class_splitter_a38aab36f28b7f5b834fefae247f5c37e}} 
+\index{Splitter@{Splitter}!set@{set}}
+\index{set@{set}!Splitter@{Splitter}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Splitter\+::set (\begin{DoxyParamCaption}\item[{json}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+... 
+
+Reimplemented from \hyperlink{class_element_af89dcf0a470753cf1fecd8556a802c63}{Element}.
+
+\mbox{\Hypertarget{class_splitter_aab6c9e9479d8208e1959eb9fbfbcdfeb}\label{class_splitter_aab6c9e9479d8208e1959eb9fbfbcdfeb}} 
+\index{Splitter@{Splitter}!update@{update}}
+\index{update@{update}!Splitter@{Splitter}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Splitter\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+... 
+
+Reimplemented from \hyperlink{class_element_a35de04f6ab79440bb44083d8b300b87d}{Element}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+G\+U\+I/Splitter.\+hpp\item 
+src/\+G\+U\+I/Splitter.\+cpp\end{DoxyCompactItemize}

@@ -174,6 +174,7 @@
 		0C08AEDC1F91413100CE531F /* 002.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 002.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/002.mov; sourceTree = SOURCE_ROOT; };
 		0C08AEDD1F91413100CE531F /* 001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 001.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/001.mov; sourceTree = SOURCE_ROOT; };
 		0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArbutusEngine.xcodeproj; path = ../ArbutusEngine/ArbutusEngine.xcodeproj; sourceTree = "<group>"; };
+		0C0CB3871F957763004BD8FE /* doxygenconf */ = {isa = PBXFileReference; lastKnownFileType = text; path = doxygenconf; sourceTree = "<group>"; };
 		0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		0CAC587A1F935A2600090CCD /* Splitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Splitter.cpp; path = GUI/Splitter.cpp; sourceTree = "<group>"; };
 		0CAC58801F935A2600090CCD /* Splitter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Splitter.hpp; path = GUI/Splitter.hpp; sourceTree = "<group>"; };
@@ -778,6 +779,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				0C0CB3871F957763004BD8FE /* doxygenconf */,
 				0C08AEDD1F91413100CE531F /* 001.mov */,
 				0C08AEDC1F91413100CE531F /* 002.mov */,
 				650415601F65DE4D001D7832 /* Resources */,
