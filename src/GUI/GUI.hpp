@@ -14,11 +14,11 @@
 #include "Slider.hpp"
 #include "VerticalSlider.hpp"
 #include "Viewport.hpp"
-
+#include "Splitter.hpp"
 
 /*!
  @class GUI
- @abstract
+ @abstract 
  @discussion
  */
 class GUI
@@ -65,6 +65,11 @@ public:
         
         return guiObject;
     };
+    
+    
+    void forEach(std::function<void (Element *)> lambda);
+    
+    std::vector<Element*> filter(std::function<bool (Element *)> lambda);
 };
 
 #endif /* GUI_hpp */

@@ -65,10 +65,25 @@ public:
      */
     ofRectangle calculateDrawingRectForElement(Element *element);
     
+    
+    /*!
+     ...
+     */
     void setScrollPositionY(float position);
     
+    /*!
+     ...
+     */
     void setScrollPositionX(float position);
+    
+    /*!
+     Add a new element to the viewport
+     */
+    Element *add(Element *newElement);
 
+    void resize(ofRectangle newRect);
+    
+ 
 };
 
 #endif /* Viewport_hpp */

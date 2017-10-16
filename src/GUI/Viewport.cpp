@@ -21,6 +21,13 @@ Viewport::~Viewport()  {
 
 
 void Viewport::set(json config) {
+    if (!config.is_object()) {
+        config["x"] = 0;
+        config["y"] = 0;
+        config["width"] = ofGetWidth();
+        config["height"] = ofGetHeight();
+    }
+    
     Element::set(config);
     
     totalWidth = config["totalWidth"].is_number() ? config["totalWidth"].get<float>() : rect.width;
@@ -71,4 +78,40 @@ void Viewport::setScrollPositionY(float position) {
 
 void Viewport::setScrollPositionX(float position) {
     scrollPositionX = position;
+}
+
+Element* Viewport::add(Element *newElement) {
+    std::vector<Element*> childElements = getChildElements();
+    unsigned int elementY;
+    ofRectangle newElementRect = newElement->getRect();
+    
+    elementY = ((childElements.size() == 0) ? 0 : childElements.back()->getRect().y + childElements.back()->getRect().height) + GUI_BORDER;
+
+    newElement->setParent(this);
+    
+    newElement->set({
+        {"x", GUI_BORDER},
+        {"y", elementY},
+        {"width", getRect().width - (2*GUI_BORDER)},
+        {"height", newElementRect.height}
+    });
+
+    return newElement;
+}
+
+void Viewport::resize(ofRectangle newRect) {
+    Element::resize(newRect);
+    
+    for(auto element:getChildElements()) {
+        ofRectangle elementRect = element->getRect();
+        
+        element->set({
+            {"x", elementRect.x},
+            {"y", elementRect.y},
+            {"width",getRect().width - (2*GUI_BORDER)},
+            {"height", elementRect.height}
+        });
+    }
+    
+    
 }

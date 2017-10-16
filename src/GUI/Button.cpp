@@ -12,7 +12,6 @@
 
 Button::Button() 
 {
-    
     pushed = false;
     caption = "";
 }
@@ -54,7 +53,7 @@ void Button::draw(NVGcontext* vg)
         }
         
     }
-    drawButton(vg, 1, caption, rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    drawButton(vg, 1, caption, getRect(), ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 
     Element::finishDraw(vg);
 }
@@ -62,10 +61,10 @@ void Button::draw(NVGcontext* vg)
 
 
 void Button::set(json config) {
-    if (!config.is_object()) throw("not a json object");
+   // if (!config.is_object()) throw("not a json object");
     
     Element::set(config);
-    caption = config["caption"].get<string>();
+    if (config["caption"].is_string()) caption = config["caption"].get<string>();
 }
 
 void Button::setOnClick(std::function<void(Button *button)> _onClick) {

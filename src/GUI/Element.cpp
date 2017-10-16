@@ -9,6 +9,8 @@
 #include "Element.hpp"
 #include "Viewport.hpp"
 #include <typeinfo>
+#include "GUI.hpp"
+
 
 Element::Element()
 {
@@ -17,6 +19,8 @@ Element::Element()
     pressed = FALSE;
     entered = FALSE;
     exited = FALSE;
+    
+    rect.x = rect.y = rect.width = rect.height = -1;
 }
 
 
@@ -60,8 +64,10 @@ void Element::draw(NVGcontext* vg) {
 void Element::finishDraw(NVGcontext* vg) {
     
     // uncomment to debug
-    //drawDebugRect(vg);
-
+#ifdef GUIDEBUG
+    drawDebugRect(vg);
+#endif
+    
     if (rect==visibleRect) return;
     
     nvgEndFrame(vg);
@@ -81,6 +87,18 @@ void Element::drawDebugRect(NVGcontext* vg) {
 
 
 void Element::set(json config) {
+    if (!config.is_object()) return;
+    
+    if (!config["x"].is_number()) return;
+    if (!config["y"].is_number()) return;
+    if (!config["width"].is_number()) return;
+    if (!config["height"].is_number()) return;
+    
+    rect.set(config["x"].get<unsigned int>(),
+             config["y"].get<unsigned int>(),
+             config["width"].get<unsigned int>(),
+             config["height"].get<unsigned int>());
+    /*
     if (!config.is_object()) throw("not a json object");
     if (!config["x"].is_number()) throw("x not defined");
     if (!config["y"].is_number()) throw("x not defined");
@@ -91,11 +109,23 @@ void Element::set(json config) {
              config["y"].get<unsigned int>(),
              config["width"].get<unsigned int>(),
              config["height"].get<unsigned int>());
+     */
 }
+
+
+
+std::vector<Element*> Element::getChildElements() {
+    return GUI::getInstance().filter([this](Element *element) {
+        return element->parent == this;
+    });
+}
+
 
 void Element::setParent(Element *_parent) {
     parent = _parent;
 }
+
+
 
 ofRectangle Element::calculateVisibleRect() {
     if (parent == NULL) {
@@ -115,7 +145,6 @@ ofRectangle Element::calculateVisibleRect() {
     float excessHeight = parentRect.height - (rect.height + rect.y);
     if (excessHeight > 0) rect.height - excessHeight;
     
- 
     if (parent != NULL && parent->getClass().compare("Viewport") == 0) {
         ofRectangle parentDrawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
         visibleRect.width = visibleRect.width +parentDrawingRect.x;
@@ -132,4 +161,30 @@ string Element::description() {
     string description;
     
     return description;
+}
+
+
+ofRectangle Element::getRect() {
+    ofRectangle returnedRect = rect;
+    
+    if (returnedRect.x < 0) {
+        returnedRect.x = GUI_BORDER ;
+    }
+    if (returnedRect.y < 0) {
+        returnedRect.y = GUI_BORDER;
+    }
+    if (returnedRect.width < 0) {
+        returnedRect.width = (parent!=NULL) ? (parent->getRect().width - 2 * GUI_BORDER) : GUI_LINE_HEIGHT * 5;
+    }
+    if (returnedRect.height < 0) {
+        returnedRect.height = GUI_LINE_HEIGHT * 1.5;
+    }
+    
+    return returnedRect;
+    
+}
+
+
+void Element::resize(ofRectangle newRect) {
+    rect = newRect;
 }
