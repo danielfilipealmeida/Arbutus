@@ -169,6 +169,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C03769B1F968FCC0079E842 /* makedocs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = makedocs.sh; sourceTree = "<group>"; };
 		0C08AED61F913F8600CE531F /* layerShader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = layerShader.frag; sourceTree = "<group>"; };
 		0C08AED71F913F8600CE531F /* layerShader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = layerShader.vert; sourceTree = "<group>"; };
 		0C08AEDC1F91413100CE531F /* 002.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 002.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/002.mov; sourceTree = SOURCE_ROOT; };
@@ -780,6 +781,7 @@
 			isa = PBXGroup;
 			children = (
 				0C0CB3871F957763004BD8FE /* doxygenconf */,
+				0C03769B1F968FCC0079E842 /* makedocs.sh */,
 				0C08AEDD1F91413100CE531F /* 001.mov */,
 				0C08AEDC1F91413100CE531F /* 002.mov */,
 				650415601F65DE4D001D7832 /* Resources */,

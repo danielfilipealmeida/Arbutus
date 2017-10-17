@@ -16,26 +16,29 @@
 #include "Viewport.hpp"
 #include "Splitter.hpp"
 
-/*!
- @class GUI
- @abstract 
- @discussion
+/**
+ * \brief Defines a GUI tree
+ *
+ * Used to gather together common parts of a gui. Defines a tree and takes care of the drawing, update and interaction to that gui tree.
  */
 class GUI
 {
     
 protected:
-    int fontNormal, fontBold, fontIcons, fontEmoji;
+    int fontNormal; //!< the normal font id
+    int fontBold;   //!< the bold font id
+    int fontIcons;  //!< the font icons id
+    int fontEmoji;  //!< the emoji font id
 
-    std::vector<Element*> elements;
+    std::vector<Element*> elements; //!< a vector of elements that represent the first layer of a gui. elements can have children and that implements the next layers
     
-    GUI();
-    ~GUI();
+    GUI();  //!< Protected constructor
+    ~GUI(); //!< protected destructor
 public:
     
-    static GUI& getInstance();
-    GUI(GUI const&) = delete;
-    void operator=(GUI const&) = delete;
+    static GUI& getInstance();  //!< the instance getter
+    GUI(GUI const&) = delete;   //!< deletes the constructor by reference copy
+    void operator=(GUI const&) = delete; //!< destroy constructor by equal sign
     
     /*!
      Updates all elements of the GUI

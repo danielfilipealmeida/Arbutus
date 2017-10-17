@@ -118,13 +118,17 @@ void ofApp::guiTest002() {
     viewport1->add(GUI::getInstance().add<Button>({
         {"caption", "Button 1"}
     }));
-    splitter->add(viewport1, 0.5);
+    viewport1->add(GUI::getInstance().add<Slider>({
+        {"caption", "Slider 1"},
+        {"value", 1.0}
+    }));
+    splitter->add(viewport1, 0.3);
     
     Viewport *viewport2 = GUI::getInstance().add<Viewport>({});
     viewport2->add(GUI::getInstance().add<Button>({
         {"caption", "Button 2"}
     }));
-    splitter->add(viewport2, 0.5);
+    splitter->add(viewport2, 0.7);
 }
 
 
