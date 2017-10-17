@@ -17,6 +17,11 @@ typedef enum {
     SPLITTER_VERTICAL
 } SplitterType;
 
+typedef struct {
+    Element *element;
+    float size;
+} SplitterChild;
+
 
 /*!
  @class Splitter
@@ -27,6 +32,11 @@ typedef enum {
 class Splitter : public Element {
 protected:
     SplitterType type;
+    
+    std::vector<SplitterChild> childs;
+    
+    
+    void calculateRect();
     
 public:
     
@@ -54,6 +64,14 @@ public:
      ...
      */
     void draw(NVGcontext* vg);
+    
+    /*!
+     Adds a new element to the splitter at the end
+     */
+    void add(Element* element, float size);
+    
+    
+    void calculateChildsRects();
 
 };
 #endif /* Splitter_hpp */

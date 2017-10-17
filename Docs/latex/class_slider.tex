@@ -1,0 +1,158 @@
+\hypertarget{class_slider}{}\section{Slider Class Reference}
+\label{class_slider}\index{Slider@{Slider}}
+
+
+{\ttfamily \#include $<$Slider.\+hpp$>$}
+
+Inheritance diagram for Slider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_slider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_slider_a535033fada8e25ef7291d2a52e6e437b}{Slider} ()
+\item 
+\hyperlink{class_slider_aaca12abbe07a83f925d66339aa332028}{$\sim$\+Slider} ()
+\item 
+void \hyperlink{class_slider_a8bcc94829fa9c1546097da4e797665cb}{update} ()
+\item 
+void \hyperlink{class_slider_a1db885ef790b09aee48c7344181c5424}{draw} (N\+V\+Gcontext $\ast$vg)
+\item 
+of\+Color \hyperlink{class_slider_aceedad7b0b2355dd3a7923e7befcff67}{get\+Background\+Color} ()
+\item 
+void \hyperlink{class_slider_a834dbe16812e7bd4f0472882b0619ea9}{set} (json config)
+\item 
+void \hyperlink{class_slider_a2b857d6483469bde177871f38e47097e}{set\+Value} (float \+\_\+value)
+\item 
+float \hyperlink{class_slider_a8202efdd0e9c26277e7934949ae87537}{get\+Value} ()
+\item 
+void \hyperlink{class_slider_a2c072af3ce9213e5a097da49d1af8a82}{set\+On\+Change} (std\+::function$<$ void(\hyperlink{class_slider}{Slider} $\ast$slider)$>$ \+\_\+on\+Change)
+\item 
+virtual string \hyperlink{class_slider_a0e917883961af99856847e571a461689}{get\+Class} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_slider_a7e5f83db85bbc87857556df45074219c}\label{class_slider_a7e5f83db85bbc87857556df45074219c}} 
+std\+::function$<$ void(\hyperlink{class_slider}{Slider} $\ast$slider)$>$ {\bfseries on\+Change} = N\+U\+LL
+\item 
+\mbox{\Hypertarget{class_slider_ae7a169abde25f6d0c42837b1b201f11a}\label{class_slider_ae7a169abde25f6d0c42837b1b201f11a}} 
+float {\bfseries value}
+\item 
+\mbox{\Hypertarget{class_slider_aa9c9f7db3c8cbe8da5a7482b3b33dc24}\label{class_slider_aa9c9f7db3c8cbe8da5a7482b3b33dc24}} 
+float {\bfseries max\+Value}
+\item 
+\mbox{\Hypertarget{class_slider_a7addbc31c8368ffd3722d3fb11abeb4d}\label{class_slider_a7addbc31c8368ffd3722d3fb11abeb4d}} 
+float {\bfseries min\+Value}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implements a slider from the button  Descends from the button but adds new behaviour by allowing the user to drag inside and set a value. This value is between a min and a max. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_slider_a535033fada8e25ef7291d2a52e6e437b}\label{class_slider_a535033fada8e25ef7291d2a52e6e437b}} 
+\index{Slider@{Slider}!Slider@{Slider}}
+\index{Slider@{Slider}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{Slider()}{Slider()}}
+{\footnotesize\ttfamily Slider\+::\+Slider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+... \mbox{\Hypertarget{class_slider_aaca12abbe07a83f925d66339aa332028}\label{class_slider_aaca12abbe07a83f925d66339aa332028}} 
+\index{Slider@{Slider}!````~Slider@{$\sim$\+Slider}}
+\index{````~Slider@{$\sim$\+Slider}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{$\sim$\+Slider()}{~Slider()}}
+{\footnotesize\ttfamily Slider\+::$\sim$\+Slider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+... 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_slider_a1db885ef790b09aee48c7344181c5424}\label{class_slider_a1db885ef790b09aee48c7344181c5424}} 
+\index{Slider@{Slider}!draw@{draw}}
+\index{draw@{draw}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Slider\+::draw (\begin{DoxyParamCaption}\item[{N\+V\+Gcontext $\ast$}]{vg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+... 
+
+Reimplemented from \hyperlink{class_button_a3a6ae66dc1ebc663fc12f19ce5cb6840}{Button}.
+
+
+
+Reimplemented in \hyperlink{class_vertical_slider_a6a5ab2800438817cc5a97c475fad9f2f}{Vertical\+Slider}.
+
+\mbox{\Hypertarget{class_slider_aceedad7b0b2355dd3a7923e7befcff67}\label{class_slider_aceedad7b0b2355dd3a7923e7befcff67}} 
+\index{Slider@{Slider}!get\+Background\+Color@{get\+Background\+Color}}
+\index{get\+Background\+Color@{get\+Background\+Color}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{get\+Background\+Color()}{getBackgroundColor()}}
+{\footnotesize\ttfamily of\+Color Slider\+::get\+Background\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculate the background color according to the slider state \mbox{\Hypertarget{class_slider_a0e917883961af99856847e571a461689}\label{class_slider_a0e917883961af99856847e571a461689}} 
+\index{Slider@{Slider}!get\+Class@{get\+Class}}
+\index{get\+Class@{get\+Class}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{get\+Class()}{getClass()}}
+{\footnotesize\ttfamily virtual string Slider\+::get\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+... 
+
+Reimplemented from \hyperlink{class_button_ad22978c530f78e58cb213436b24b37c0}{Button}.
+
+
+
+Reimplemented in \hyperlink{class_vertical_slider_a5e13fb542bdca4cca91f96ca15b28fad}{Vertical\+Slider}.
+
+\mbox{\Hypertarget{class_slider_a8202efdd0e9c26277e7934949ae87537}\label{class_slider_a8202efdd0e9c26277e7934949ae87537}} 
+\index{Slider@{Slider}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{get\+Value()}{getValue()}}
+{\footnotesize\ttfamily float Slider\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+... \mbox{\Hypertarget{class_slider_a834dbe16812e7bd4f0472882b0619ea9}\label{class_slider_a834dbe16812e7bd4f0472882b0619ea9}} 
+\index{Slider@{Slider}!set@{set}}
+\index{set@{set}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Slider\+::set (\begin{DoxyParamCaption}\item[{json}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+... 
+
+Reimplemented from \hyperlink{class_button_a6e7c3b800fae0b1e7765ccdafc88c28e}{Button}.
+
+
+
+Reimplemented in \hyperlink{class_vertical_slider_a35b7771bd63647aa288f16719611b567}{Vertical\+Slider}.
+
+\mbox{\Hypertarget{class_slider_a2c072af3ce9213e5a097da49d1af8a82}\label{class_slider_a2c072af3ce9213e5a097da49d1af8a82}} 
+\index{Slider@{Slider}!set\+On\+Change@{set\+On\+Change}}
+\index{set\+On\+Change@{set\+On\+Change}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{set\+On\+Change()}{setOnChange()}}
+{\footnotesize\ttfamily void Slider\+::set\+On\+Change (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\hyperlink{class_slider}{Slider} $\ast$slider)$>$}]{\+\_\+on\+Change }\end{DoxyParamCaption})}
+
+... \mbox{\Hypertarget{class_slider_a2b857d6483469bde177871f38e47097e}\label{class_slider_a2b857d6483469bde177871f38e47097e}} 
+\index{Slider@{Slider}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{set\+Value()}{setValue()}}
+{\footnotesize\ttfamily void Slider\+::set\+Value (\begin{DoxyParamCaption}\item[{float}]{\+\_\+value }\end{DoxyParamCaption})}
+
+... \mbox{\Hypertarget{class_slider_a8bcc94829fa9c1546097da4e797665cb}\label{class_slider_a8bcc94829fa9c1546097da4e797665cb}} 
+\index{Slider@{Slider}!update@{update}}
+\index{update@{update}!Slider@{Slider}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Slider\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+... 
+
+Reimplemented from \hyperlink{class_button_ad8e030c1c8846d43f3126047d4a3667f}{Button}.
+
+
+
+Reimplemented in \hyperlink{class_vertical_slider_ae868b87e37fbdac6e4906ac6b9ad465d}{Vertical\+Slider}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+G\+U\+I/Slider.\+hpp\item 
+src/\+G\+U\+I/Slider.\+cpp\end{DoxyCompactItemize}

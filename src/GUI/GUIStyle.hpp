@@ -14,9 +14,7 @@
 
 
 /*!
- @class TriggerVisualAction
- @abstract
- @discussion
+ * \brief A class to store a GUI style
  */
 class GUIStyle
 {
@@ -47,42 +45,42 @@ public:
     void operator=(GUIStyle const&) = delete;
     
     /*!
-     ...
+     Calculate all colors of the GUI according Contrast/Brightness/Saturation configuration
      */
     void calculateColors();
 
     /*!
-     ...
+     Text color getter
      */
     ofColor getTextColor();
     
     /*!
-     ...
+     Base color getter
      */
     ofColor getBaseColor();
     
     /*!
-     ...
+     Background color getter
      */
     ofColor getBackgroundColor();
     
     /*!
-     ...
+     Dark color Getter
      */
     ofColor getDarkColor();
     
     /*!
-     ...
+     Light color Getter
      */
     ofColor getLightColor();
     
     /*!
-     ...
+     Brightness getter
      */
     float getBrightness();
     
     /*!
-     ...
+     Saturation getter
      */
     float getSaturation();
     

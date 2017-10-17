@@ -15,6 +15,16 @@
 #include "json.hpp"
 
 
+#define GUIDEBUG
+
+/*!
+ GUI definitions for dimensions
+ */
+#define GUI_LINE_HEIGHT 18
+#define GUI_BORDER GUI_LINE_HEIGHT / 4
+
+
+
 using json = nlohmann::json;
 
 /*!
@@ -87,6 +97,11 @@ public:
      */
     virtual void set(json config);
     
+    /**
+     ...
+     */
+    std::vector<Element*> getChildElements();
+    
     /*!
      Sets the element that will contain this element
      */
@@ -108,6 +123,16 @@ public:
      */
     void drawDebugRect(NVGcontext* vg);
     
+    /*!
+     Get the rectangle definition of the element
+     */
+    ofRectangle getRect();
+    
+    
+    /*!
+     Sets the new rect
+     */
+    virtual void resize(ofRectangle newRect);
 };
 
 #endif /* Element_hpp */

@@ -30,7 +30,6 @@ void Slider::update() {
     
     Button::update();
     
-    
     if(!hover) {
         if (exited && ofGetMousePressed() > 0) {
             if (ofGetMouseX() < visibleRect.x) value = minValue;

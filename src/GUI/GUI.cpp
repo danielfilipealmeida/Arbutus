@@ -90,3 +90,21 @@ void GUI::update()
     }
 }
 
+
+void GUI::forEach(std::function<void (Element *)> lambda) {
+    for(auto element:elements) {
+        lambda(element);
+    }
+}
+
+std::vector<Element*> GUI::filter(std::function<bool (Element *)> lambda) {
+    std::vector<Element*> result;
+    
+    for(auto element:elements) {
+        if (lambda(element) == true) {
+            result.push_back(element);
+        }
+    }
+    
+    return result;
+}
