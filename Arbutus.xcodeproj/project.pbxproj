@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0376A91F96B7E40079E842 /* Preview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0376A71F96B7E40079E842 /* Preview.cpp */; };
+		0C0376AA1F96B7E40079E842 /* Preview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0376A71F96B7E40079E842 /* Preview.cpp */; };
 		0C08AED81F913F8600CE531F /* layerShader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AED61F913F8600CE531F /* layerShader.frag */; };
 		0C08AED91F913F8600CE531F /* layerShader.vert in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AED71F913F8600CE531F /* layerShader.vert */; };
 		0C08AEDE1F91413100CE531F /* 002.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AEDC1F91413100CE531F /* 002.mov */; };
@@ -170,6 +172,8 @@
 
 /* Begin PBXFileReference section */
 		0C03769B1F968FCC0079E842 /* makedocs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = makedocs.sh; sourceTree = "<group>"; };
+		0C0376A71F96B7E40079E842 /* Preview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Preview.cpp; path = GUI/Preview.cpp; sourceTree = "<group>"; };
+		0C0376A81F96B7E40079E842 /* Preview.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Preview.hpp; path = GUI/Preview.hpp; sourceTree = "<group>"; };
 		0C08AED61F913F8600CE531F /* layerShader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = layerShader.frag; sourceTree = "<group>"; };
 		0C08AED71F913F8600CE531F /* layerShader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = layerShader.vert; sourceTree = "<group>"; };
 		0C08AEDC1F91413100CE531F /* 002.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 002.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/002.mov; sourceTree = SOURCE_ROOT; };
@@ -419,6 +423,8 @@
 				0CAC58811F935A9000090CCD /* VerticalSlider.cpp */,
 				0CAC587A1F935A2600090CCD /* Splitter.cpp */,
 				0CAC58801F935A2600090CCD /* Splitter.hpp */,
+				0C0376A71F96B7E40079E842 /* Preview.cpp */,
+				0C0376A81F96B7E40079E842 /* Preview.hpp */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -1012,6 +1018,7 @@
 				65276BA31F486DC000949383 /* ofxBaseMidi.cpp in Sources */,
 				65276BA81F486DE100949383 /* ofxRtMidiIn.cpp in Sources */,
 				65276BB01F486E1600949383 /* ofxOscReceiver.cpp in Sources */,
+				0C0376A91F96B7E40079E842 /* Preview.cpp in Sources */,
 				650415341F6582F4001D7832 /* main.cpp in Sources */,
 				65276BAE1F486E0000949383 /* tinyxmlparser.cpp in Sources */,
 				65276BA71F486DD000949383 /* ofxMidiOut.cpp in Sources */,
@@ -1048,6 +1055,7 @@
 				65E896A11E734F37000D470B /* RtMidi.cpp in Sources */,
 				658AF53D1F6FEAD600576066 /* Element.cpp in Sources */,
 				65E896911E733DD2000D470B /* ofxOscMessage.cpp in Sources */,
+				0C0376AA1F96B7E40079E842 /* Preview.cpp in Sources */,
 				65E896921E734275000D470B /* ofxOscReceiver.cpp in Sources */,
 				655BFAFB1E735A3D00B74446 /* IpEndpointName.cpp in Sources */,
 				65E6BD3A1F44691E008E4F9E /* tinyxml.cpp in Sources */,

@@ -70,3 +70,6 @@ void Button::set(json config) {
 void Button::setOnClick(std::function<void(Button *button)> _onClick) {
     onClick = _onClick;
 }
+
+
+

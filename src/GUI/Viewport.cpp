@@ -82,18 +82,21 @@ void Viewport::setScrollPositionX(float position) {
 
 Element* Viewport::add(Element *newElement) {
     std::vector<Element*> childElements = getChildElements();
-    unsigned int elementY;
+    float elementY, width, height;
     ofRectangle newElementRect = newElement->getRect();
     
-    elementY = ((childElements.size() == 0) ? 0 : childElements.back()->getRect().y + childElements.back()->getRect().height) + GUI_BORDER;
-
+    
     newElement->setParent(this);
+    
+    elementY = ((childElements.size() == 0) ? 0 : childElements.back()->getRect().y + childElements.back()->getRect().height) + GUI_BORDER;
+    width = getRect().width - (2*GUI_BORDER);
+    height = newElement->getHeightForWidth(width);
     
     newElement->set({
         {"x", GUI_BORDER},
         {"y", elementY},
-        {"width", getRect().width - (2*GUI_BORDER)},
-        {"height", newElementRect.height}
+        {"width", width},
+        {"height", height}
     });
 
     return newElement;
@@ -104,14 +107,18 @@ void Viewport::resize(ofRectangle newRect) {
     
     for(auto element:getChildElements()) {
         ofRectangle elementRect = element->getRect();
+        float width, height;
+        
+        width = getRect().width - (2*GUI_BORDER);
+        height = element->getHeightForWidth(width);
         
         element->set({
             {"x", elementRect.x},
             {"y", elementRect.y},
-            {"width",getRect().width - (2*GUI_BORDER)},
-            {"height", elementRect.height}
+            {"width",width},
+            {"height", height}
         });
     }
     
-    
 }
+

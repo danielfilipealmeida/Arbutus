@@ -24,6 +24,7 @@ void Splitter::set(json config) {
     if (!config["height"].is_number()) config["height"] = ofGetHeight();
     
     Element::set(config);
+    calculateChildsRects();
 }
 
 

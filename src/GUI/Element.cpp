@@ -188,3 +188,9 @@ ofRectangle Element::getRect() {
 void Element::resize(ofRectangle newRect) {
     rect = newRect;
 }
+
+
+float Element::getHeightForWidth(float _width) {
+    return GUI_LINE_HEIGHT * 1.5;
+}
+

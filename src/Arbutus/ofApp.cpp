@@ -122,6 +122,10 @@ void ofApp::guiTest002() {
         {"caption", "Slider 1"},
         {"value", 1.0}
     }));
+    Preview *preview = (Preview *) viewport1->add(GUI::getInstance().add<Preview>({
+        
+    }));
+    preview->setBuffer(Engine::getInstance()->getBuffer());
     splitter->add(viewport1, 0.3);
     
     Viewport *viewport2 = GUI::getInstance().add<Viewport>({});
@@ -129,6 +133,8 @@ void ofApp::guiTest002() {
         {"caption", "Button 2"}
     }));
     splitter->add(viewport2, 0.7);
+    
+
 }
 
 

@@ -133,6 +133,9 @@ public:
      Sets the new rect
      */
     virtual void resize(ofRectangle newRect);
+    
+    virtual float getHeightForWidth(float _width);
+    
 };
 
 #endif /* Element_hpp */

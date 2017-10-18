@@ -15,6 +15,8 @@
 #include "VerticalSlider.hpp"
 #include "Viewport.hpp"
 #include "Splitter.hpp"
+#include "Preview.hpp"
+
 
 /**
  * \brief Defines a GUI tree
