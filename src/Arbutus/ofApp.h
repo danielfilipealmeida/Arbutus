@@ -3,6 +3,7 @@
 
 #include "ofMain.h"
 #include "GUI.hpp"
+#include "ControlsGroup.hpp"
 
 /*!
  @class ofApp
@@ -11,7 +12,7 @@
  */
 class ofApp : public ofBaseApp {
     GUI *gui;
-   
+    ControlsGroup layersControls;
     
 	public:
 		void setup();

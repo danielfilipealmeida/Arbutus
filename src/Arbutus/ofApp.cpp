@@ -32,6 +32,8 @@ void ofApp::setup(){
     
     guiTest002();
     
+    layersControls.set(Layers::getInstance().get(0)->getProperties()->getFullState());
+    
     
 
 }
@@ -125,6 +127,10 @@ void ofApp::guiTest002() {
     Preview *preview = (Preview *) viewport1->add(GUI::getInstance().add<Preview>({
         
     }));
+    
+    
+    layersControls.setParentElement(viewport1);
+    
     preview->setBuffer(Engine::getInstance()->getBuffer());
     splitter->add(viewport1, 0.3);
     

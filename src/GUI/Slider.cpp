@@ -74,11 +74,16 @@ void Slider::draw(NVGcontext* vg)
 
 
 void Slider::set(json config) {
-    //cout << config.dump(4) << endl;
+    cout << config.dump(4) << endl;
+    
     Button::set(config);
-    minValue = (config["minValue"].is_number_float()) ? config["minValue"].get<float>() : 0.0;
-    maxValue = (config["maxValue"].is_number_float()) ? config["maxValue"].get<float>() : 1.0;
-    setValue(config["value"].is_number_float() ? config["value"].get<float>() : minValue);
+    minValue = (config["minValue"].is_number_float() && !config["value"].is_null()) ? config["minValue"].get<float>() : 0.0;
+    maxValue = (config["maxValue"].is_number_float() && !config["value"].is_null()) ? config["maxValue"].get<float>() : 1.0;
+    if (!config["value"].is_null()) {
+        value = (config["value"].is_number_float()) ? config["value"].get<float>() : minValue;
+        setValue(value);
+    }
+    
 }
 
 

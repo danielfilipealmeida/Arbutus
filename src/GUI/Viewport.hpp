@@ -14,9 +14,7 @@
 
 
 /*!
- @class Viewport
- @abstract Implements a scrollable area that can contain elements. The Element class already allows this but isn't scrollable. 
- @discussion
+ \brief Implements a scrollable area that can contain elements. The Element class already allows this but isn't scrollable.
  */
 class Viewport : public Element
 {

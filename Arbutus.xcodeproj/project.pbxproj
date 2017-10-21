@@ -17,6 +17,8 @@
 		0C08AF051F915E1200CE531F /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08AEE41F915A3900CE531F /* openFrameworksDebug.a */; };
 		0C1E77D01F8D857E005507CF /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
+		0C628F101F9C053200ADB871 /* ControlsGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */; };
+		0C628F111F9C053200ADB871 /* ControlsGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */; };
 		0CAC58821F935AAE00090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC587A1F935A2600090CCD /* Splitter.cpp */; };
 		0CAC58841F935AE200090CCD /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58831F935AD800090CCD /* Viewport.cpp */; };
 		0CAC58861F938DE900090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58851F938DE900090CCD /* Splitter.cpp */; };
@@ -181,6 +183,8 @@
 		0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArbutusEngine.xcodeproj; path = ../ArbutusEngine/ArbutusEngine.xcodeproj; sourceTree = "<group>"; };
 		0C0CB3871F957763004BD8FE /* doxygenconf */ = {isa = PBXFileReference; lastKnownFileType = text; path = doxygenconf; sourceTree = "<group>"; };
 		0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ControlsGroup.cpp; sourceTree = "<group>"; };
+		0C628F0F1F9C053200ADB871 /* ControlsGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ControlsGroup.hpp; sourceTree = "<group>"; };
 		0CAC587A1F935A2600090CCD /* Splitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Splitter.cpp; path = GUI/Splitter.cpp; sourceTree = "<group>"; };
 		0CAC58801F935A2600090CCD /* Splitter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Splitter.hpp; path = GUI/Splitter.hpp; sourceTree = "<group>"; };
 		0CAC58811F935A9000090CCD /* VerticalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 				650415301F6582F4001D7832 /* ofApp.cpp */,
 				650415311F6582F4001D7832 /* ofApp.h */,
 				650415321F6582F4001D7832 /* set.json */,
+				0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */,
+				0C628F0F1F9C053200ADB871 /* ControlsGroup.hpp */,
 			);
 			name = Arbutus;
 			sourceTree = "<group>";
@@ -990,6 +996,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CAC58841F935AE200090CCD /* Viewport.cpp in Sources */,
+				0C628F101F9C053200ADB871 /* ControlsGroup.cpp in Sources */,
 				659583B91F76905900EE275D /* VerticalSlider.cpp in Sources */,
 				0CAC58821F935AAE00090CCD /* Splitter.cpp in Sources */,
 				0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */,
@@ -1066,6 +1073,7 @@
 				65E6BD3C1F44691E008E4F9E /* tinyxmlparser.cpp in Sources */,
 				65E8969D1E734EEF000D470B /* OscTypes.cpp in Sources */,
 				655BFAFA1E7358C000B74446 /* UdpSocket.cpp in Sources */,
+				0C628F111F9C053200ADB871 /* ControlsGroup.cpp in Sources */,
 				655BFAFD1E735BC100B74446 /* SyphonNameboundClient.m in Sources */,
 				65E8969B1E734EB6000D470B /* ofxRtMidiIn.cpp in Sources */,
 				65E8969C1E734ED7000D470B /* ofxRtMidiOut.cpp in Sources */,

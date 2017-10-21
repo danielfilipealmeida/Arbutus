@@ -103,9 +103,14 @@ public:
     std::vector<Element*> getChildElements();
     
     /*!
-     Sets the element that will contain this element
+     \brief Sets the element that will contain this element
      */
     void setParent(Element *_parent);
+    
+    /*!
+     \brief Adds another element as a child
+     */
+    virtual Element *add(Element *newElement);
     
     /*!
      Traverse parents and calculate the elements visible rect.

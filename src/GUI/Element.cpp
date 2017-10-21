@@ -125,6 +125,11 @@ void Element::setParent(Element *_parent) {
     parent = _parent;
 }
 
+Element *Element::add(Element *newElement) {
+    newElement->setParent(this);
+    
+    return newElement;
+}
 
 
 ofRectangle Element::calculateVisibleRect() {
