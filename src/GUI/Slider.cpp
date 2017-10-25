@@ -38,7 +38,7 @@ void Slider::update() {
     }
     else {
         if (ofGetMousePressed() > 0) {
-            value = (ofGetMouseX() - visibleRect.x) / (rect.width);
+            value = getRealValue((ofGetMouseX() - visibleRect.x) / (rect.width));
         }
     }
     
@@ -56,17 +56,32 @@ ofColor Slider::getBackgroundColor() {
 }
 
 
+float Slider::getNormalizedValue() {
+    float totalAmount;
+    
+    totalAmount = maxValue-minValue;
+    return (value - minValue) / totalAmount;
+}
+
+float Slider::getRealValue(float normalizedValue) {
+    float totalAmount;
+    
+    totalAmount = maxValue - minValue;
+    return normalizedValue * totalAmount + minValue;
+}
+
+
 void Slider::draw(NVGcontext* vg)
 {
     ofRectangle drawingRect = rect;
     
-    if (parent->getClass().compare("Viewport") == 0) {
+    if (parent!= NULL && parent->getClass().compare("Viewport") == 0) {
         drawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
     }
     
     ofColor backgroundColor = getBackgroundColor();
     Element::draw(vg);
-    drawSlider(vg, value, caption, drawingRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    drawSlider(vg, getNormalizedValue(), caption, drawingRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 
     Element::finishDraw(vg);
 }
@@ -77,13 +92,10 @@ void Slider::set(json config) {
     cout << config.dump(4) << endl;
     
     Button::set(config);
-    minValue = (config["minValue"].is_number_float() && !config["value"].is_null()) ? config["minValue"].get<float>() : 0.0;
-    maxValue = (config["maxValue"].is_number_float() && !config["value"].is_null()) ? config["maxValue"].get<float>() : 1.0;
-    if (!config["value"].is_null()) {
-        value = (config["value"].is_number_float()) ? config["value"].get<float>() : minValue;
-        setValue(value);
-    }
     
+    if (!config["minValue"].is_null()) minValue = config["minValue"].is_number_float() ? config["minValue"].get<float>() : 0.0;
+    if (!config["maxValue"].is_null()) maxValue = config["maxValue"].is_number_float() ? config["maxValue"].get<float>() : 1.0;
+    if (!config["value"].is_null()) setValue((config["value"].is_number_float()) ? config["value"].get<float>() : minValue);
 }
 
 

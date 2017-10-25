@@ -27,10 +27,7 @@ void Button::update() {
     
     Element::update();
 
-    if (pressed == FALSE &&
-        previousPressed != pressed
-        )
-    {
+    if (pressed == FALSE && previousPressed != pressed) {
         onClick(this);
     }
 }

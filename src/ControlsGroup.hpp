@@ -18,6 +18,7 @@ class ControlsGroup {
     Element *parentElement;
     
     void createGUIElements();
+    Properties *properties;
     
 public:
     /*!
@@ -43,7 +44,12 @@ public:
     /*!
      \brief ...
      */
-    void addFloat(json _elementData);
+    void setProperties(Properties *_properties);
+    
+    /*!
+     \brief ...
+     */
+    void addFloat(json _elementData, string key);
     
 };
 

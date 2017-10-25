@@ -33,6 +33,7 @@ Element::~Element()
 void Element::update()
 {
     Boolean previousHover = hover;
+    hover = FALSE;
     visibleRect = calculateVisibleRect();
     
     if (!visibleRect.inside(ofGetMouseX(), ofGetMouseY())) {
@@ -145,18 +146,13 @@ ofRectangle Element::calculateVisibleRect() {
     visibleRect.width = rect.width;
     visibleRect.height = rect.height;
     
-    float excessWidth = parentRect.width - (rect.width + rect.x);
-    if (excessWidth > 0) rect.width - excessWidth;
-    float excessHeight = parentRect.height - (rect.height + rect.y);
-    if (excessHeight > 0) rect.height - excessHeight;
-    
-    if (parent != NULL && parent->getClass().compare("Viewport") == 0) {
-        ofRectangle parentDrawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
-        visibleRect.width = visibleRect.width +parentDrawingRect.x;
-        visibleRect.height = visibleRect.height + parentDrawingRect.y;
-        
+    if (parent->getClass().compare("Viewport") == 0) {
+        visibleRect.x = visibleRect.x - ((Viewport *) parent)->getOffsetX();
+        visibleRect.y = visibleRect.y - ((Viewport *) parent)->getOffsetY();
     }
     
+    visibleRect = visibleRect.getIntersection(parentRect);
+
     return visibleRect;
 }
 

@@ -32,6 +32,7 @@ class ofApp : public ofBaseApp {
     
     void guiTest001();
     void guiTest002();
+    void guiTest003();
 };
 
 

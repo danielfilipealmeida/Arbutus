@@ -15,6 +15,10 @@
 		0C08AEDF1F91413100CE531F /* 001.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AEDD1F91413100CE531F /* 001.mov */; };
 		0C08AF041F915E1200CE531F /* libArbutusLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08AEFD1F915B0C00CE531F /* libArbutusLib.a */; };
 		0C08AF051F915E1200CE531F /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08AEE41F915A3900CE531F /* openFrameworksDebug.a */; };
+		0C1150E91F9F64430004CBD5 /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58831F935AD800090CCD /* Viewport.cpp */; };
+		0C1150F01F9F67C70004CBD5 /* libfmodex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */; };
+		0C1150F11F9F67C70004CBD5 /* libfmodex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */; };
+		0C1150F21F9F680E0004CBD5 /* libfmodex.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */; };
 		0C1E77D01F8D857E005507CF /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
 		0C628F101F9C053200ADB871 /* ControlsGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */; };
@@ -90,7 +94,6 @@
 		65E6BD3C1F44691E008E4F9E /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E6BD391F44691E008E4F9E /* tinyxmlparser.cpp */; };
 		65E6BD3E1F4469DB008E4F9E /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC819A1DF8D9D600331165 /* ofxXmlSettings.cpp */; };
 		65E6BD3F1F446BB5008E4F9E /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81451DF8D96500331165 /* NetworkingUtils.cpp */; };
-		65E6BD461F464E83008E4F9E /* libfmodex.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 65E6BD451F464E83008E4F9E /* libfmodex.dylib */; };
 		65E6BD481F464F4E008E4F9E /* Syphon.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 65E6BD471F464F4E008E4F9E /* Syphon.framework */; };
 		65E896661E730453000D470B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E896651E730453000D470B /* main.cpp */; };
 		65E896811E733454000D470B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E8967B1E73311F000D470B /* Foundation.framework */; };
@@ -164,7 +167,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				65E6BD461F464E83008E4F9E /* libfmodex.dylib in Copy Files */,
+				0C1150F21F9F680E0004CBD5 /* libfmodex.dylib in Copy Files */,
 				65E6BD481F464F4E008E4F9E /* Syphon.framework in Copy Files */,
 			);
 			name = "Copy Files";
@@ -182,6 +185,7 @@
 		0C08AEDD1F91413100CE531F /* 001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 001.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/001.mov; sourceTree = SOURCE_ROOT; };
 		0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArbutusEngine.xcodeproj; path = ../ArbutusEngine/ArbutusEngine.xcodeproj; sourceTree = "<group>"; };
 		0C0CB3871F957763004BD8FE /* doxygenconf */ = {isa = PBXFileReference; lastKnownFileType = text; path = doxygenconf; sourceTree = "<group>"; };
+		0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = ../ArbutusEngine/External/openFrameworks/libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
 		0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ControlsGroup.cpp; sourceTree = "<group>"; };
 		0C628F0F1F9C053200ADB871 /* ControlsGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ControlsGroup.hpp; sourceTree = "<group>"; };
@@ -308,7 +312,6 @@
 		65E6BD381F44691E008E4F9E /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
 		65E6BD391F44691E008E4F9E /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		65E6BD431F463A15008E4F9E /* osx */ = {isa = PBXFileReference; lastKnownFileType = folder; name = osx; path = External/ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/lib/osx; sourceTree = "<group>"; };
-		65E6BD451F464E83008E4F9E /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = External/ArbutusEngine/External/openFrameworks/libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
 		65E6BD471F464F4E008E4F9E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = ../ArbutusEngine/External/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework; sourceTree = SOURCE_ROOT; };
 		65E896531E72E85B000D470B /* makedocs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = makedocs.sh; sourceTree = "<group>"; };
 		65E896631E72F420000D470B /* Catch Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Catch Tests"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,6 +334,7 @@
 				0C08AF041F915E1200CE531F /* libArbutusLib.a in Frameworks */,
 				0C08AF051F915E1200CE531F /* openFrameworksDebug.a in Frameworks */,
 				650455711F470ED000CB3BE5 /* Syphon.framework in Frameworks */,
+				0C1150F01F9F67C70004CBD5 /* libfmodex.dylib in Frameworks */,
 				6504556F1F470EAC00CB3BE5 /* Foundation.framework in Frameworks */,
 				6504556E1F470EA300CB3BE5 /* CoreMIDI.framework in Frameworks */,
 			);
@@ -343,6 +347,7 @@
 				655BFAF91E7355BD00B74446 /* CoreMIDI.framework in Frameworks */,
 				65E896811E733454000D470B /* Foundation.framework in Frameworks */,
 				65E896821E73347B000D470B /* Syphon.framework in Frameworks */,
+				0C1150F11F9F67C70004CBD5 /* libfmodex.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,13 +797,13 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */,
 				0C0CB3871F957763004BD8FE /* doxygenconf */,
 				0C03769B1F968FCC0079E842 /* makedocs.sh */,
 				0C08AEDD1F91413100CE531F /* 001.mov */,
 				0C08AEDC1F91413100CE531F /* 002.mov */,
 				650415601F65DE4D001D7832 /* Resources */,
 				65E6BD471F464F4E008E4F9E /* Syphon.framework */,
-				65E6BD451F464E83008E4F9E /* libfmodex.dylib */,
 				65F6C5401F42F08A00270C51 /* README.md */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
@@ -1052,6 +1057,7 @@
 				65E6BD3F1F446BB5008E4F9E /* NetworkingUtils.cpp in Sources */,
 				65E6BD3E1F4469DB008E4F9E /* ofxXmlSettings.cpp in Sources */,
 				65E6BD321F4467A0008E4F9E /* ofxMidiMessage.cpp in Sources */,
+				0C1150E91F9F64430004CBD5 /* Viewport.cpp in Sources */,
 				65E6BD331F4467B1008E4F9E /* ofxMidi.cpp in Sources */,
 				659583BC1F76B7A100EE275D /* VerticalSlider.cpp in Sources */,
 				65E6BD341F4467C1008E4F9E /* ofxMidiIn.cpp in Sources */,
@@ -1178,6 +1184,7 @@
 					"$(inherited)",
 					"\"$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/\"",
 					"$(ENGINE_PATH)/bin",
+					"$(PROJECT_DIR)Engine/External/openFrameworks/libs/fmodex/lib/osx",
 				);
 				LIB_ARBUTUSENGINE_PATH = ../ArbutusEngine;
 				LIB_BOOST_FS = "\"$(OF_PATH)/libs/boost/lib/osx/boost_filesystem.a\"";
@@ -1312,6 +1319,7 @@
 					"$(inherited)",
 					"\"$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/\"",
 					"$(ENGINE_PATH)/bin",
+					"$(PROJECT_DIR)Engine/External/openFrameworks/libs/fmodex/lib/osx",
 				);
 				LIB_ARBUTUSENGINE_PATH = ../ArbutusEngine;
 				LIB_BOOST_FS = "\"$(OF_PATH)/libs/boost/lib/osx/boost_filesystem.a\"";
@@ -1448,6 +1456,7 @@
 					"$(inherited)",
 					"\"$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/\"",
 					"$(ENGINE_PATH)/bin",
+					"$(PROJECT_DIR)Engine/External/openFrameworks/libs/fmodex/lib/osx",
 				);
 				LIB_ARBUTUSENGINE_PATH = ../ArbutusEngine;
 				LIB_BOOST_FS = "\"$(OF_PATH)/libs/boost/lib/osx/boost_filesystem.a\"";
@@ -1580,6 +1589,7 @@
 					"$(inherited)",
 					"\"$(OF_PATH)/libs/openFrameworksCompiled/lib/osx/\"",
 					"$(ENGINE_PATH)/bin",
+					"$(PROJECT_DIR)Engine/External/openFrameworks/libs/fmodex/lib/osx",
 				);
 				LIB_ARBUTUSENGINE_PATH = ../ArbutusEngine;
 				LIB_BOOST_FS = "\"$(OF_PATH)/libs/boost/lib/osx/boost_filesystem.a\"";

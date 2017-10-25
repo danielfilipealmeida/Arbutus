@@ -109,3 +109,15 @@ TEST_CASE("Elements should be properly scrollable inside viewport", "[Viewport]"
     REQUIRE(drawingRect.x == (10 - (viewport->overflowX)));
     REQUIRE(drawingRect.y == (10 - (viewport->overflowY)));
 }
+
+
+// TODO
+TEST_CASE("","[calculateVisibleRect]") {
+    
+}
+
+TEST_CASE("","[calculateDrawingRectForElement]") {
+    
+}
+
+

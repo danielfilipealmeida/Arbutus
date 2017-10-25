@@ -9,14 +9,30 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "src/GUI/Button.cpp"
-            timestampString = "530322963.038964"
+            filePath = "src/GUI/Slider.cpp"
+            timestampString = "530664370.403938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "Button::draw(NVGcontext* vg)"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "Slider::set(json config)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/CatchCpp/GUI/Element.cpp"
+            timestampString = "530576882.455418"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "TEST_CASE(&quot;Test Element&apos;s visible rect with a viewport parent&quot;,&quot;[calculateVisibleRect]&quot;)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

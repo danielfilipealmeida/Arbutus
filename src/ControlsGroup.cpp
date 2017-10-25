@@ -7,6 +7,9 @@
 
 #include "ControlsGroup.hpp"
 
+//#define EXECUTE_SET(FUNC, PARAMS) set(FUNC)((PARAMS))
+#define EXECUTE_SET(func, params) func##params
+
 ControlsGroup::ControlsGroup() {
     parentElement = NULL;
 }
@@ -23,18 +26,20 @@ void ControlsGroup::set(json data)  {
 void ControlsGroup::createGUIElements() {
     if (parentElement == NULL) return;
     
-    for(auto element:controlsFullState) {
-        cout << element.dump() << endl;
-        
+    //for(auto element:controlsFullState) {
+        //cout << element.dump() << endl;
+    
+    for(json::iterator it = controlsFullState.begin(); it != controlsFullState.end(); ++it) {
+        auto element = it.value();
         if (element["type"].get<string>().compare("f") == 0) {
-            addFloat(element);
+            addFloat(element, it.key());
         }
         
     }
 }
 
 
-void ControlsGroup::addFloat(json _elementData) {
+void ControlsGroup::addFloat(json _elementData, string key) {
     json sliderData = {
         {"caption", _elementData["title"].get<string>()},
         {"minValue", (float) _elementData["min"].get<float>()},
@@ -42,13 +47,24 @@ void ControlsGroup::addFloat(json _elementData) {
         {"value", (float) _elementData["value"].get<float>()}
     };
     
-    cout << sliderData.dump(4) << endl;
+    //cout << sliderData.dump(4) << endl;
     
-    Element *newElement = parentElement->add(GUI::getInstance().add<Slider>(sliderData));
+    Slider *newSlider = (Slider *) parentElement->add(GUI::getInstance().add<Slider>(sliderData));
+    newSlider->setOnChange([this, _elementData, key](Slider *slider){
+        
+        if (this->properties == NULL) {
+            return;
+        }
+        properties->set(key, slider->getValue());
+    });
 
 }
 
 
 void ControlsGroup::setParentElement(Element *_element) {
     parentElement = _element;
+}
+
+void ControlsGroup::setProperties(Properties *_properties) {
+    properties = _properties;
 }

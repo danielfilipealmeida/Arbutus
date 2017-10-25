@@ -74,11 +74,19 @@ public:
     void setOnChange(std::function<void(Slider *slider)> _onChange);
     
     /*!
-     ...
+     \brief ...
      */
     virtual string getClass() { return "Slider";}
     
-
+    /*!
+     \brief transform the actual value into a corresponding one from 0 to 1
+     */
+    float getNormalizedValue();
+    
+    /*!
+     \brief transform a normalized value into on that corresponds to a real value inside the slider limis
+     */
+    float getRealValue(float normalizedValue);
 
 };
 

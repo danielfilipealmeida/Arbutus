@@ -59,20 +59,51 @@ public:
     virtual string getClass() { return "Viewport";}
     
     /*!
-     ...
+     \brief what is this for?
      */
     ofRectangle calculateDrawingRectForElement(Element *element);
     
     
     /*!
-     ...
+     \brief
      */
     void setScrollPositionY(float position);
     
     /*!
-     ...
+     \brief ...
      */
     void setScrollPositionX(float position);
+    
+    /*!
+     \brief
+     */
+    float getScrollPositionY();
+
+    /*!
+     \brief
+     */
+    float getScrollPositionX();
+    
+    /*!
+     \brief ...
+     */
+    float getOverflowX();
+    
+    /*!
+     \brief ...
+     */
+    float getOverflowY();
+    
+    /*!
+     \brief ...
+     */
+    float getOffsetX();
+    
+    /*!
+     \brief ...
+     */
+    float getOffsetY();
+    
     
     /*!
      Add a new element to the viewport

@@ -32,8 +32,9 @@ void ofApp::setup(){
     
     guiTest002();
     
-    layersControls.set(Layers::getInstance().get(0)->getProperties()->getFullState());
-    
+    LayerProperties *layerProperties = Layers::getInstance().get(0)->getProperties();
+    layersControls.set(layerProperties->getFullState());
+    layersControls.setProperties(layerProperties);
     
 
 }
@@ -64,7 +65,7 @@ void ofApp::guiTest001() {
     
     
     
-    
+        /*
      Slider *slider = GUI::getInstance().add<Slider>({
      {"x", 0},
      {"y", 0},
@@ -80,6 +81,28 @@ void ofApp::guiTest001() {
      //Layers::getInstance().get(0)->setState({{"alpha", 1.0-slider->getValue()}});
      //Layers::getInstance().get(1)->setState({{"alpha", slider->getValue()}});
      });
+    
+    Slider *slider2 = GUI::getInstance().add<Slider>({
+        {"x", 0},
+        {"y", 40},
+        {"width", 100},
+        {"height", 32},
+        {"caption", "Slider"},
+        {"value", 0.2},
+        {"minValue", -1.0},
+        {"maxValue", 1.0}
+    });
+    Slider *slider3 = GUI::getInstance().add<Slider>({
+        {"x", 0},
+        {"y", 80},
+        {"width", 100},
+        {"height", 32},
+        {"caption", "Slider"},
+        {"value", 0.2},
+        {"minValue", -1.0},
+        {"maxValue", 1.0}
+    });
+         */
      
      VerticalSlider *vslider = GUI::getInstance().add<VerticalSlider>({
      {"x", 400},
@@ -96,15 +119,38 @@ void ofApp::guiTest001() {
      
      
      Viewport *viewport = GUI::getInstance().add<Viewport>({
-     {"x", 400},
-     {"y", 100},
-     {"width", 100},
-     {"height", 100},
+     {"x", 440},
+     {"y", 10},
+     {"width", 250},
+     {"height", 200},
      {"totalWidth", 200},
-     {"totalHeight", 200}
+     {"totalHeight", 400}
      });
-     slider->setParent(viewport);
-     
+     //slider->setParent(viewport);
+    //slider2->setParent(viewport);
+    //slider3->setParent(viewport);
+    
+    for (unsigned int f=0; f<9;f++) {
+        GUI::getInstance().add<Slider>({
+            {"x", 4},
+            {"y", (4 + f * 34)},
+            {"width", 100},
+            {"height", 32},
+            {"caption", "Slider"},
+            {"value", 0.2},
+            {"minValue", -1.0},
+            {"maxValue", 1.0}
+        })->setParent(viewport);
+        
+        GUI::getInstance().add<Button>({
+            {"x",110},
+            {"y", (4 + f * 34)},
+            {"width", 100},
+            {"height", 32},
+            {"caption", "OK"}
+        })->setParent(viewport);
+    }
+   
      
      vslider->setOnChange([viewport](Slider *vslider) {
      viewport->setScrollPositionY(vslider->getValue());
@@ -122,8 +168,18 @@ void ofApp::guiTest002() {
     }));
     viewport1->add(GUI::getInstance().add<Slider>({
         {"caption", "Slider 1"},
+        {"minValue", -1.0},
+        {"maxValue", 2.0},
         {"value", 1.0}
     }));
+
+    viewport1->add(GUI::getInstance().add<Slider>({
+        {"caption", "Slider 2"},
+        {"minValue", -3.0},
+        {"maxValue", 2.0},
+        {"value", 1.0}
+    }));
+    
     Preview *preview = (Preview *) viewport1->add(GUI::getInstance().add<Preview>({
         
     }));
@@ -141,6 +197,26 @@ void ofApp::guiTest002() {
     splitter->add(viewport2, 0.7);
     
 
+}
+
+void ofApp::guiTest003() {
+    for (unsigned int f=0; f<6;f ++) {
+        
+        GUI::getInstance().add<Slider>({
+            {"x", 4},
+            {"y", (4 + f*36)},
+            {"width", 100},
+            {"height", 32},
+            {"caption", "Slider"},
+            {"value", 0.2},
+            {"minValue", -1.0},
+            {"maxValue", 1.0}
+        });
+    }
+    
+    
+    
+    
 }
 
 

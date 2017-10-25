@@ -122,3 +122,27 @@ void Viewport::resize(ofRectangle newRect) {
     
 }
 
+float Viewport::getScrollPositionY() {
+       return scrollPositionY;
+}
+
+float Viewport::getScrollPositionX() {
+    return scrollPositionX;
+}
+
+float Viewport::getOverflowX() {
+    return overflowX;
+}
+
+float Viewport::getOverflowY() {
+    return overflowY;
+}
+
+float Viewport::getOffsetX() {
+    return scrollPositionX * overflowX;
+}
+
+
+float Viewport::getOffsetY() {
+    return scrollPositionY * overflowY;
+}

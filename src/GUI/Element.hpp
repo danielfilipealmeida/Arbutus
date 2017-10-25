@@ -15,7 +15,7 @@
 #include "json.hpp"
 
 
-#define GUIDEBUG
+//#define GUIDEBUG
 
 /*!
  GUI definitions for dimensions
@@ -113,18 +113,19 @@ public:
     virtual Element *add(Element *newElement);
     
     /*!
-     Traverse parents and calculate the elements visible rect.
-     This is the actual place on the screen this element occupies
+     \brief Traverse parents and calculate the elements visible rect, in screen coordinates.
+     
+     This is the actual place on the screen this element occupies.
      */
     ofRectangle calculateVisibleRect();
     
     /*!
-     Outputs to stdout the state of the element
+     \brief Outputs to stdout the state of the element
      */
     string description();
     
     /*!
-     Draws a rect around the visible area of the element for debugging purposes
+     \brief Draws a rect around the visible area of the element for debugging purposes
      */
     void drawDebugRect(NVGcontext* vg);
     
@@ -135,7 +136,7 @@ public:
     
     
     /*!
-     Sets the new rect
+     \brief Sets the new rect
      */
     virtual void resize(ofRectangle newRect);
     
