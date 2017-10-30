@@ -195,8 +195,8 @@
 		0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ControlsGroup.cpp; path = Arbutus/ControlsGroup.cpp; sourceTree = "<group>"; };
 		0C628F0F1F9C053200ADB871 /* ControlsGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ControlsGroup.hpp; path = Arbutus/ControlsGroup.hpp; sourceTree = "<group>"; };
-		0C9895FB1FA50645003B47BD /* Windows.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Windows.cpp; sourceTree = "<group>"; };
-		0C9895FC1FA50645003B47BD /* Windows.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Windows.hpp; sourceTree = "<group>"; };
+		0C9895FB1FA50645003B47BD /* Windows.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Windows.cpp; path = Arbutus/Windows.cpp; sourceTree = "<group>"; };
+		0C9895FC1FA50645003B47BD /* Windows.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Windows.hpp; path = Arbutus/Windows.hpp; sourceTree = "<group>"; };
 		0CAC587A1F935A2600090CCD /* Splitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Splitter.cpp; path = GUI/Splitter.cpp; sourceTree = "<group>"; };
 		0CAC58801F935A2600090CCD /* Splitter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Splitter.hpp; path = GUI/Splitter.hpp; sourceTree = "<group>"; };
 		0CAC58811F935A9000090CCD /* VerticalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
