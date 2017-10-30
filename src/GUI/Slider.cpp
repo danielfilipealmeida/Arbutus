@@ -42,9 +42,7 @@ void Slider::update() {
         }
     }
     
-    if (previousValue != value &&
-        onChange != NULL)
-    {
+    if (previousValue != value && onChange != NULL) {
         onChange(this);
     }
 }
@@ -73,16 +71,10 @@ float Slider::getRealValue(float normalizedValue) {
 
 void Slider::draw(NVGcontext* vg)
 {
-    ofRectangle drawingRect = rect;
-    
-    if (parent!= NULL && parent->getClass().compare("Viewport") == 0) {
-        drawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
-    }
-    
+    ofRectangle drawingRect = Element::getDrawingRec();
     ofColor backgroundColor = getBackgroundColor();
     Element::draw(vg);
     drawSlider(vg, getNormalizedValue(), caption, drawingRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
-
     Element::finishDraw(vg);
 }
 

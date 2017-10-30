@@ -24,13 +24,8 @@ GUIStyle::~GUIStyle() {
 
 void GUIStyle::calculateColors() {
     backgroundColor = baseColor;
-    //backgroundColor.setSaturation(saturation);
     lightColor = backgroundColor + brightness;
-    
-    //lightColor.setBrightness(10);
     darkColor = backgroundColor - brightness;
-    //darkColor.setBrightness(brightness);
-
 }
 
 GUIStyle& GUIStyle::getInstance() {

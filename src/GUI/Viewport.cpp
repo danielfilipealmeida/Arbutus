@@ -103,7 +103,11 @@ Element* Viewport::add(Element *newElement) {
 }
 
 void Viewport::resize(ofRectangle newRect) {
+    float currentY = GUI_BORDER;
+    
     Element::resize(newRect);
+    
+    
     
     for(auto element:getChildElements()) {
         ofRectangle elementRect = element->getRect();
@@ -113,11 +117,12 @@ void Viewport::resize(ofRectangle newRect) {
         height = element->getHeightForWidth(width);
         
         element->set({
-            {"x", elementRect.x},
-            {"y", elementRect.y},
+            {"x", GUI_BORDER},
+            {"y", currentY},
             {"width",width},
             {"height", height}
         });
+        currentY = currentY + height + GUI_BORDER;
     }
     
 }

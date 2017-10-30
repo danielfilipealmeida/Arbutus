@@ -19,10 +19,14 @@
 		0C1150F01F9F67C70004CBD5 /* libfmodex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */; };
 		0C1150F11F9F67C70004CBD5 /* libfmodex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */; };
 		0C1150F21F9F680E0004CBD5 /* libfmodex.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */; };
+		0C1AB0241FA296E1005E42DB /* AppGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C1AB0221FA296E1005E42DB /* AppGUI.cpp */; };
+		0C1AB0251FA296E1005E42DB /* AppGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C1AB0221FA296E1005E42DB /* AppGUI.cpp */; };
 		0C1E77D01F8D857E005507CF /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 6504153B1F658345001D7832 /* nanovg.c */; };
 		0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
 		0C628F101F9C053200ADB871 /* ControlsGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */; };
 		0C628F111F9C053200ADB871 /* ControlsGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */; };
+		0C9895FD1FA50645003B47BD /* Windows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C9895FB1FA50645003B47BD /* Windows.cpp */; };
+		0C9895FE1FA50645003B47BD /* Windows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C9895FB1FA50645003B47BD /* Windows.cpp */; };
 		0CAC58821F935AAE00090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC587A1F935A2600090CCD /* Splitter.cpp */; };
 		0CAC58841F935AE200090CCD /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58831F935AD800090CCD /* Viewport.cpp */; };
 		0CAC58861F938DE900090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58851F938DE900090CCD /* Splitter.cpp */; };
@@ -186,9 +190,13 @@
 		0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArbutusEngine.xcodeproj; path = ../ArbutusEngine/ArbutusEngine.xcodeproj; sourceTree = "<group>"; };
 		0C0CB3871F957763004BD8FE /* doxygenconf */ = {isa = PBXFileReference; lastKnownFileType = text; path = doxygenconf; sourceTree = "<group>"; };
 		0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = ../ArbutusEngine/External/openFrameworks/libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
+		0C1AB0221FA296E1005E42DB /* AppGUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppGUI.cpp; path = Arbutus/AppGUI.cpp; sourceTree = "<group>"; };
+		0C1AB0231FA296E1005E42DB /* AppGUI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = AppGUI.hpp; path = Arbutus/AppGUI.hpp; sourceTree = "<group>"; };
 		0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../ArbutusEngine/External/openFrameworks/libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
-		0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ControlsGroup.cpp; sourceTree = "<group>"; };
-		0C628F0F1F9C053200ADB871 /* ControlsGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ControlsGroup.hpp; sourceTree = "<group>"; };
+		0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ControlsGroup.cpp; path = Arbutus/ControlsGroup.cpp; sourceTree = "<group>"; };
+		0C628F0F1F9C053200ADB871 /* ControlsGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ControlsGroup.hpp; path = Arbutus/ControlsGroup.hpp; sourceTree = "<group>"; };
+		0C9895FB1FA50645003B47BD /* Windows.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Windows.cpp; sourceTree = "<group>"; };
+		0C9895FC1FA50645003B47BD /* Windows.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Windows.hpp; sourceTree = "<group>"; };
 		0CAC587A1F935A2600090CCD /* Splitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Splitter.cpp; path = GUI/Splitter.cpp; sourceTree = "<group>"; };
 		0CAC58801F935A2600090CCD /* Splitter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Splitter.hpp; path = GUI/Splitter.hpp; sourceTree = "<group>"; };
 		0CAC58811F935A9000090CCD /* VerticalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
@@ -393,6 +401,10 @@
 				650415321F6582F4001D7832 /* set.json */,
 				0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */,
 				0C628F0F1F9C053200ADB871 /* ControlsGroup.hpp */,
+				0C1AB0221FA296E1005E42DB /* AppGUI.cpp */,
+				0C1AB0231FA296E1005E42DB /* AppGUI.hpp */,
+				0C9895FB1FA50645003B47BD /* Windows.cpp */,
+				0C9895FC1FA50645003B47BD /* Windows.hpp */,
 			);
 			name = Arbutus;
 			sourceTree = "<group>";
@@ -824,9 +836,9 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6504152D1F6582E4001D7832 /* Arbutus */,
 				650415431F65A3B3001D7832 /* GUI */,
 				650415371F65832D001D7832 /* nanovg */,
-				6504152D1F6582E4001D7832 /* Arbutus */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1004,6 +1016,7 @@
 				0C628F101F9C053200ADB871 /* ControlsGroup.cpp in Sources */,
 				659583B91F76905900EE275D /* VerticalSlider.cpp in Sources */,
 				0CAC58821F935AAE00090CCD /* Splitter.cpp in Sources */,
+				0C1AB0241FA296E1005E42DB /* AppGUI.cpp in Sources */,
 				0C1E77D21F8D8690005507CF /* SyphonNameboundClient.m in Sources */,
 				0C1E77D01F8D857E005507CF /* nanovg.c in Sources */,
 				65276BA41F486DC000949383 /* ofxMidi.cpp in Sources */,
@@ -1030,6 +1043,7 @@
 				65276BA31F486DC000949383 /* ofxBaseMidi.cpp in Sources */,
 				65276BA81F486DE100949383 /* ofxRtMidiIn.cpp in Sources */,
 				65276BB01F486E1600949383 /* ofxOscReceiver.cpp in Sources */,
+				0C9895FD1FA50645003B47BD /* Windows.cpp in Sources */,
 				0C0376A91F96B7E40079E842 /* Preview.cpp in Sources */,
 				650415341F6582F4001D7832 /* main.cpp in Sources */,
 				65276BAE1F486E0000949383 /* tinyxmlparser.cpp in Sources */,
@@ -1056,6 +1070,7 @@
 				658AF53A1F6FEA4500576066 /* nanovg.c in Sources */,
 				65E6BD3F1F446BB5008E4F9E /* NetworkingUtils.cpp in Sources */,
 				65E6BD3E1F4469DB008E4F9E /* ofxXmlSettings.cpp in Sources */,
+				0C9895FE1FA50645003B47BD /* Windows.cpp in Sources */,
 				65E6BD321F4467A0008E4F9E /* ofxMidiMessage.cpp in Sources */,
 				0C1150E91F9F64430004CBD5 /* Viewport.cpp in Sources */,
 				65E6BD331F4467B1008E4F9E /* ofxMidi.cpp in Sources */,
@@ -1066,6 +1081,7 @@
 				65E896941E734340000D470B /* ofxSyphonClient.mm in Sources */,
 				650A1E181F8407A60061CFB6 /* Viewport.cpp in Sources */,
 				65E896A11E734F37000D470B /* RtMidi.cpp in Sources */,
+				0C1AB0251FA296E1005E42DB /* AppGUI.cpp in Sources */,
 				658AF53D1F6FEAD600576066 /* Element.cpp in Sources */,
 				65E896911E733DD2000D470B /* ofxOscMessage.cpp in Sources */,
 				0C0376AA1F96B7E40079E842 /* Preview.cpp in Sources */,

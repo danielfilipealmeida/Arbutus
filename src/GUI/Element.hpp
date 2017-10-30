@@ -20,7 +20,7 @@
 /*!
  GUI definitions for dimensions
  */
-#define GUI_LINE_HEIGHT 18
+#define GUI_LINE_HEIGHT 16
 #define GUI_BORDER GUI_LINE_HEIGHT / 4
 
 
@@ -118,6 +118,11 @@ public:
      This is the actual place on the screen this element occupies.
      */
     ofRectangle calculateVisibleRect();
+    
+    /*!
+     \brief Returns the zone to draw
+     */
+    ofRectangle getDrawingRec();
     
     /*!
      \brief Outputs to stdout the state of the element

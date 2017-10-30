@@ -4,15 +4,21 @@
 #include "ofMain.h"
 #include "GUI.hpp"
 #include "ControlsGroup.hpp"
+#include "AppGUI.hpp"
+#include "Windows.hpp"
 
 /*!
  @class ofApp
- @abstract
- @discussion
+ @abstract ...
+ @discussion ...
  */
 class ofApp : public ofBaseApp {
-    GUI *gui;
-    ControlsGroup layersControls;
+    //GUI *gui;
+    //ControlsGroup layersControls;
+    
+    AppGUI appGui;
+    Windows windows;
+    shared_ptr<ofAppBaseWindow> window;
     
 	public:
 		void setup();
@@ -29,10 +35,12 @@ class ofApp : public ofBaseApp {
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    
+    void setWindow(shared_ptr<ofAppBaseWindow> _window) {window = _window;}
+    /*
     void guiTest001();
     void guiTest002();
     void guiTest003();
+     */
 };
 
 

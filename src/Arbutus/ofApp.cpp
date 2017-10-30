@@ -30,16 +30,19 @@ void ofApp::setup(){
         {"column", 0}
     });
     
-    guiTest002();
+    appGui.setup();
+    //guiTest002();
     
+    /*
     LayerProperties *layerProperties = Layers::getInstance().get(0)->getProperties();
     layersControls.set(layerProperties->getFullState());
     layersControls.setProperties(layerProperties);
-    
+    */
 
+    windows.add(window);
 }
 
-
+/*
 
 void ofApp::guiTest001() {
     
@@ -63,47 +66,6 @@ void ofApp::guiTest001() {
         cout << "button clicked!" << button << endl;
     });
     
-    
-    
-        /*
-     Slider *slider = GUI::getInstance().add<Slider>({
-     {"x", 0},
-     {"y", 0},
-     {"width", 100},
-     {"height", 32},
-     {"caption", "Slider"},
-     {"value", 0.2},
-     {"minValue", -1.0},
-     {"maxValue", 1.0}
-     });
-     slider->setValue(0.7);
-     slider->setOnChange([](Slider *slider) {
-     //Layers::getInstance().get(0)->setState({{"alpha", 1.0-slider->getValue()}});
-     //Layers::getInstance().get(1)->setState({{"alpha", slider->getValue()}});
-     });
-    
-    Slider *slider2 = GUI::getInstance().add<Slider>({
-        {"x", 0},
-        {"y", 40},
-        {"width", 100},
-        {"height", 32},
-        {"caption", "Slider"},
-        {"value", 0.2},
-        {"minValue", -1.0},
-        {"maxValue", 1.0}
-    });
-    Slider *slider3 = GUI::getInstance().add<Slider>({
-        {"x", 0},
-        {"y", 80},
-        {"width", 100},
-        {"height", 32},
-        {"caption", "Slider"},
-        {"value", 0.2},
-        {"minValue", -1.0},
-        {"maxValue", 1.0}
-    });
-         */
-     
      VerticalSlider *vslider = GUI::getInstance().add<VerticalSlider>({
      {"x", 400},
      {"y", 240},
@@ -119,16 +81,14 @@ void ofApp::guiTest001() {
      
      
      Viewport *viewport = GUI::getInstance().add<Viewport>({
-     {"x", 440},
-     {"y", 10},
-     {"width", 250},
-     {"height", 200},
-     {"totalWidth", 200},
-     {"totalHeight", 400}
+         {"x", 440},
+         {"y", 10},
+         {"width", 250},
+         {"height", 200},
+         {"totalWidth", 200},
+         {"totalHeight", 400}
      });
-     //slider->setParent(viewport);
-    //slider2->setParent(viewport);
-    //slider3->setParent(viewport);
+
     
     for (unsigned int f=0; f<9;f++) {
         GUI::getInstance().add<Slider>({
@@ -163,32 +123,26 @@ void ofApp::guiTest002() {
         {"mode", SPLITTER_VERTICAL}
     });
     Viewport *viewport1 = GUI::getInstance().add<Viewport>({});
-    viewport1->add(GUI::getInstance().add<Button>({
-        {"caption", "Button 1"}
-    }));
-    viewport1->add(GUI::getInstance().add<Slider>({
-        {"caption", "Slider 1"},
-        {"minValue", -1.0},
-        {"maxValue", 2.0},
-        {"value", 1.0}
-    }));
 
-    viewport1->add(GUI::getInstance().add<Slider>({
-        {"caption", "Slider 2"},
-        {"minValue", -3.0},
-        {"maxValue", 2.0},
-        {"value", 1.0}
-    }));
+    splitter->add(viewport1, 0.20);
     
-    Preview *preview = (Preview *) viewport1->add(GUI::getInstance().add<Preview>({
-        
+    Preview *previewOutput = (Preview *) viewport1->add(GUI::getInstance().add<Preview>({
+        {"caption", "Output"}
     }));
-    
+    previewOutput->setBuffer(Engine::getInstance()->getBuffer());
+    Preview *previewChannel1 = (Preview *) viewport1->add(GUI::getInstance().add<Preview>({
+        {"caption", "Layer 1"}
+    }));
+     previewChannel1->setBuffer(Layers::getInstance().get(0)->getBuffer());
+    Preview *previewChannel2 = (Preview *) viewport1->add(GUI::getInstance().add<Preview>({
+        {"caption", "Layer 2"}
+    }));
+    previewChannel2->setBuffer(Layers::getInstance().get(1)->getBuffer());
     
     layersControls.setParentElement(viewport1);
     
-    preview->setBuffer(Engine::getInstance()->getBuffer());
-    splitter->add(viewport1, 0.3);
+   
+    
     
     Viewport *viewport2 = GUI::getInstance().add<Viewport>({});
     viewport2->add(GUI::getInstance().add<Button>({
@@ -213,12 +167,8 @@ void ofApp::guiTest003() {
             {"maxValue", 1.0}
         });
     }
-    
-    
-    
-    
 }
-
+*/
 
 //--------------------------------------------------------------
 void ofApp::update(){
@@ -229,9 +179,10 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    Engine::getInstance()->drawOutput();
+    //Engine::getInstance()->drawOutput();
     GUI::getInstance().draw();
-    
+    //windows.drawWindow(0);
+    ofGetWindowPtr()->makeCurrent();
     //cout << "val: " << val << endl;
 }
 

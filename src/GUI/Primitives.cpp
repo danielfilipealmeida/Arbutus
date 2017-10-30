@@ -9,6 +9,8 @@
 #include "Primitives.hpp"
 #include "GUIStyle.hpp"
 
+#define FONTSIZE 16.0f
+
 // Returns 1 if col.rgba is 0.0f,0.0f,0.0f,0.0f, 0 otherwise
 int isBlack(NVGcolor col)
 {
@@ -57,6 +59,15 @@ NVGcolor ofColor2NVGColor(ofColor color, unsigned char alpha) {
     return nvgRGBA(color.r, color.g, color.b, alpha);
 }
 
+void drawFilledRect(NVGcontext* vg, ofRectangle rect, NVGcolor col) {
+    nvgBeginPath(vg);
+    nvgFillColor(vg, col);
+    nvgRect(vg, rect.getX(),
+            rect.getY(),
+            rect.getWidth(),
+            rect.getHeight());
+    nvgFill(vg);
+}
 
 void drawFilledRoundRect(NVGcontext* vg, ofRectangle rect, NVGcolor col, float cornerRadius) {
     nvgBeginPath(vg);
@@ -94,18 +105,31 @@ void drawBox(NVGcontext* vg, ofRectangle rect, NVGcolor col, float cornerRadius)
     ofRectangle innerRect, outerRect;
     innerRect = outerRect = rect;
     shrinkRect(innerRect, 1);
-    shrinkRect(outerRect, 0.5);
+    //shrinkRect(outerRect, 0.5);
     
     drawFilledRoundRect(vg, innerRect, col, cornerRadius - 1);
     drawStrokedRoundRect(vg, outerRect, ofColor2NVGColor(ofColor::black, 255), cornerRadius - 0.5);
 }
 
 
+void printText(NVGcontext* vg, string text, float x, float y, NVGcolor textColor) {
+    nvgFontSize(vg, FONTSIZE);
+    nvgFontFace(vg, "sans-bold");
+    nvgFillColor(vg, textColor);
+    nvgText(
+            vg,
+            x,
+            y,
+            text.c_str(),
+            NULL
+            );
+}
+
 void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor textColor) {
     float tw = 0, iw = 0;
     char icon[8];
     
-    nvgFontSize(vg, 20.0f);
+    nvgFontSize(vg, FONTSIZE);
     nvgFontFace(vg, "sans-bold");
     tw = nvgTextBounds(vg, 0,0, text.c_str(), NULL, NULL);
     if (preicon != 0) {
@@ -122,7 +146,7 @@ void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rec
                 );
     }
     
-    nvgFontSize(vg, 20.0f);
+    nvgFontSize(vg, FONTSIZE);
     nvgFontFace(vg, "sans-bold");
     nvgTextAlign(vg, NVG_ALIGN_LEFT | NVG_ALIGN_MIDDLE);
     
@@ -136,8 +160,9 @@ void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rec
             );
 }
 
+
 void printCenteredTextRotated90(NVGcontext* vg, string text, ofRectangle rect, NVGcolor textColor) {
-    nvgFontSize(vg, 20.0f);
+    nvgFontSize(vg, FONTSIZE);
     nvgFontFace(vg, "sans-bold");
     nvgTextAlign(vg, NVG_ALIGN_CENTER | NVG_ALIGN_TOP);
     nvgFillColor(vg, textColor);
@@ -168,7 +193,7 @@ void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcol
     ofRectangle innerRect, outerRect, valueRect;
     innerRect = outerRect = rect;
     shrinkRect(innerRect, 1);
-    shrinkRect(outerRect, 0.5);
+    //shrinkRect(outerRect, 0.5);
     
     valueRect = innerRect;
     if (!vertical ) {

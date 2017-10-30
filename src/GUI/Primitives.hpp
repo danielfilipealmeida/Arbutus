@@ -14,13 +14,12 @@
 #include "nanovg.h"
 
 /*!
- ...
+ \brief Prints the information of an openFrameworks color
  */
 void print(ofColor color);
 
 /*!
- Convert ofColor to NVGColor
-
+ \brief Convert ofColor (openFrameworks) to NVGColor (nano)
  */
 NVGcolor ofColor2NVGColor(ofColor color, unsigned char alpha = 255);
 
@@ -44,5 +43,12 @@ void drawBox(NVGcontext* vg, ofRectangle rect, NVGcolor col, float cornerRadius)
  Makes the rect smaller by the given amount of pixels
  */
 void shrinkRect(ofRectangle &rect, float pixels);
+
+void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor textColor);
+
+void printText(NVGcontext* vg, string text, float x, float y, NVGcolor textColor);
+
+void drawFilledRect(NVGcontext* vg, ofRectangle rect, NVGcolor col);
+
 
 #endif /* Primitives_hpp */

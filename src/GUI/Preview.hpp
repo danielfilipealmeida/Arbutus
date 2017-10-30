@@ -13,6 +13,7 @@
 
 class Preview : public Element {
     ofFbo *fbo;
+    string caption;
     
 public:
     /*!

@@ -33,6 +33,7 @@ class Splitter : public Element {
 protected:
     SplitterType type;                  //!< the type of spliter (vertical/horizontal)
     
+    
     std::vector<SplitterChild> childs; //!< a vector with all the splitter childs
     
     /*!

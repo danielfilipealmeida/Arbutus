@@ -62,6 +62,16 @@ void Element::draw(NVGcontext* vg) {
     nvgBeginFrame(vg, parentRect.width, parentRect.height, 1);
 }
 
+ofRectangle Element::getDrawingRec() {
+    ofRectangle drawingRect = rect;
+    
+    if (parent!= NULL && parent->getClass().compare("Viewport") == 0) {
+        drawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
+    }
+    
+    return drawingRect;
+}
+
 void Element::finishDraw(NVGcontext* vg) {
     
     // uncomment to debug
