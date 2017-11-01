@@ -11,12 +11,15 @@
 
 #include <stdio.h>
 #include "Button.hpp"
+#include "ToggleButton.hpp"
 #include "Slider.hpp"
 #include "VerticalSlider.hpp"
 #include "Viewport.hpp"
 #include "Splitter.hpp"
 #include "Preview.hpp"
-
+#include "Label.hpp"
+#include "ButtonGroup.hpp"
+#include "ToggleButtonGroup.hpp"
 
 /**
  * \brief Defines a GUI tree

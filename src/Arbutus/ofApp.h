@@ -36,6 +36,8 @@ class ofApp : public ofBaseApp {
 		void gotMessage(ofMessage msg);
     
     void setWindow(shared_ptr<ofAppBaseWindow> _window) {window = _window;}
+    
+    void guiTest001();
     /*
     void guiTest001();
     void guiTest002();

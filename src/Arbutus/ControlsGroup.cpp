@@ -27,20 +27,7 @@ void ControlsGroup::set(json data)  {
 
 void ControlsGroup::createGUIElements() {
     if (parentElement == NULL) return;
-    
-    //cout << controlsFullState.flatten().dump(4)<<endl;
-   
-    
-    /*
-    for(json::iterator it = controlsFullState.begin(); it != controlsFullState.end(); ++it) {
-        auto element = it.value();
-        if (element["type"].get<string>().compare("f") == 0) {
-            addFloat(element, it.key());
-        }
-    }
-     */
-    //cout << controlsDisplayOrder.dump(4) << endl;
-    
+
     for(auto item:controlsDisplayOrder) {
         string controlName = item.get<string>();
         auto element = controlsFullState[controlName];
@@ -48,8 +35,6 @@ void ControlsGroup::createGUIElements() {
         if (element["type"].get<string>().compare("f") == 0) {
             addFloat(element, controlName);
         }
-         
-       
     }
 }
 

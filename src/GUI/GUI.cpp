@@ -56,6 +56,8 @@ void GUI::loadFonts() {
     fontEmoji = nvgCreateFont(vg, "emoji", "../Resources/NotoEmoji-Regular.ttf");
     if (fontEmoji == -1) throw("Could not add font emoji");
 
+    nvgAddFallbackFontId(vg, fontNormal, fontEmoji);
+    nvgAddFallbackFontId(vg, fontBold, fontEmoji);
 }
 
 

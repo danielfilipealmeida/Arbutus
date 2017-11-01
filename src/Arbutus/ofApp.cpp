@@ -30,19 +30,80 @@ void ofApp::setup(){
         {"column", 0}
     });
     
-    appGui.setup();
-    //guiTest002();
+    //appGui.setup();
+    guiTest001();
     
-    /*
-    LayerProperties *layerProperties = Layers::getInstance().get(0)->getProperties();
-    layersControls.set(layerProperties->getFullState());
-    layersControls.setProperties(layerProperties);
-    */
 
     windows.add(window);
     
-    //ofBackground(GUIStyle::getInstance().getBackgroundColor());
     
+}
+
+
+void ofApp::guiTest001() {
+    Label *label = GUI::getInstance().add<Label>({
+        {"x", 100},
+        {"y", 100},
+        {"width", 200},
+        {"height", 32},
+        {"caption", "My Label"}
+    });
+    
+    ButtonGroup *buttonGroup = GUI::getInstance().add<ButtonGroup>({
+        {"x", 100},
+        {"y", 200},
+        {"width", 200},
+        {"height", 32},
+        {"value", 1},
+        {"options",
+            {
+                {
+                    {"title", "Left"},
+                    {"value", 1},
+                    {"icon", 10}
+                },
+                {
+                    {"title", "Right"},
+                    {"value", 2}
+                }
+            }
+        }
+    });
+    buttonGroup->setOnClick([](ButtonGroup *bg) {
+        cout << bg->getLastClickedButtonData().dump(4) << endl;
+    });
+    
+    ToggleButton *toggleButton = GUI::getInstance().add<ToggleButton>({
+        {"x", 400},
+        {"y", 100},
+        {"width", 200},
+        {"height", 32},
+        {"caption", "My Toggle Button"}
+    });
+    toggleButton->setOnClick([](ToggleButton *tb) {
+        cout << (tb->isPushed() ? "Pushed" : "Not pushed") << endl;
+    });
+    
+    ToggleButtonGroup *toggleButtonGroup = GUI::getInstance().add<ToggleButtonGroup>({
+        {"x", 400},
+        {"y", 200},
+        {"width", 200},
+        {"height", 32},
+        {"value", 1},
+        {"options",
+            {
+                {
+                    {"title", "Left toggle"},
+                    {"value", 1},
+                    {"icon", 10}
+                },
+                {
+                    {"title", "Right toggle"},
+                    {"value", 2}
+                }
+            }
+        }
+    });
 }
 
 /*

@@ -131,11 +131,12 @@ void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rec
     
     nvgFontSize(vg, FONTSIZE);
     nvgFontFace(vg, "sans-bold");
+    nvgFillColor(vg, textColor);
+    
     tw = nvgTextBounds(vg, 0,0, text.c_str(), NULL, NULL);
     if (preicon != 0) {
         nvgFontSize(vg, rect.getHeight() * 1.3f);
         nvgFontFace(vg, "icons");
-        nvgFillColor(vg, nvgRGBA(255,255,255,96));
         nvgTextAlign(vg,NVG_ALIGN_LEFT|NVG_ALIGN_MIDDLE);
         nvgText(
                 vg,
@@ -150,7 +151,6 @@ void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rec
     nvgFontFace(vg, "sans-bold");
     nvgTextAlign(vg, NVG_ALIGN_LEFT | NVG_ALIGN_MIDDLE);
     
-    nvgFillColor(vg, textColor);
     nvgText(
             vg,
             rect.getX() + rect.getWidth() * 0.5f - tw * 0.5f + iw * 0.25f,
@@ -204,7 +204,7 @@ void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcol
     }
     
     drawFilledRoundRect(vg, innerRect, backgroundColor, cornerRadius - 1);
-    drawFilledRoundRect(vg, valueRect, ofColor2NVGColor(ofColor::white, 128), cornerRadius - 1);
+    drawFilledRoundRect(vg, valueRect, ofColor2NVGColor(ofColor::white, 64), cornerRadius - 1);
     drawStrokedRoundRect(vg, outerRect, ofColor2NVGColor(ofColor::black), cornerRadius - 0.5);
     
     if (!vertical) printCenteredText(vg, 0, text, rect, textColor);

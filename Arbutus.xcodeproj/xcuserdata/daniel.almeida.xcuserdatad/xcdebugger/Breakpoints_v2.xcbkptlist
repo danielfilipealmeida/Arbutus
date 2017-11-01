@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Arbutus/main.cpp"
-            timestampString = "531099121.354654"
+            timestampString = "531262880.799337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ArbutusEngine/src/Library/Engine/Properties/VisualInstancesProperties.mm"
-            timestampString = "531243061.443794"
+            timestampString = "531269715.165512"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -54,16 +54,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../ArbutusEngine/src/Library/Engine/Properties/VisualInstancesProperties.mm"
-            timestampString = "531243061.444614"
+            filePath = "src/GUI/ButtonGroup.cpp"
+            timestampString = "531269715.165808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
-            landmarkName = "VisualInstancesProperties::set(string property, float value)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "ButtonGroup::createButtons()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

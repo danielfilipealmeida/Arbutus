@@ -15,6 +15,10 @@
 		0C08AEDF1F91413100CE531F /* 001.mov in Resources */ = {isa = PBXBuildFile; fileRef = 0C08AEDD1F91413100CE531F /* 001.mov */; };
 		0C08AF041F915E1200CE531F /* libArbutusLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08AEFD1F915B0C00CE531F /* libArbutusLib.a */; };
 		0C08AF051F915E1200CE531F /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08AEE41F915A3900CE531F /* openFrameworksDebug.a */; };
+		0C0B6A051FAA263B0055202F /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B6A031FAA263A0055202F /* Label.cpp */; };
+		0C0B6A061FAA263B0055202F /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B6A031FAA263A0055202F /* Label.cpp */; };
+		0C0B6A0E1FAA2CAD0055202F /* ButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B6A0C1FAA2CAD0055202F /* ButtonGroup.cpp */; };
+		0C0B6A0F1FAA2CAD0055202F /* ButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C0B6A0C1FAA2CAD0055202F /* ButtonGroup.cpp */; };
 		0C1150E91F9F64430004CBD5 /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58831F935AD800090CCD /* Viewport.cpp */; };
 		0C1150F01F9F67C70004CBD5 /* libfmodex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */; };
 		0C1150F11F9F67C70004CBD5 /* libfmodex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */; };
@@ -31,6 +35,10 @@
 		0CAC58841F935AE200090CCD /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58831F935AD800090CCD /* Viewport.cpp */; };
 		0CAC58861F938DE900090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58851F938DE900090CCD /* Splitter.cpp */; };
 		0CAC58871F94108500090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC587A1F935A2600090CCD /* Splitter.cpp */; };
+		0CC9E3DA1FAA76B200861CC8 /* ToggleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CC9E3D81FAA76B200861CC8 /* ToggleButton.cpp */; };
+		0CC9E3DB1FAA76B200861CC8 /* ToggleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CC9E3D81FAA76B200861CC8 /* ToggleButton.cpp */; };
+		0CC9E3E31FAA7DDF00861CC8 /* ToggleButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CC9E3E11FAA7DDF00861CC8 /* ToggleButtonGroup.cpp */; };
+		0CC9E3E41FAA7DDF00861CC8 /* ToggleButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CC9E3E11FAA7DDF00861CC8 /* ToggleButtonGroup.cpp */; };
 		650415341F6582F4001D7832 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6504152F1F6582F4001D7832 /* main.cpp */; };
 		650415351F6582F4001D7832 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650415301F6582F4001D7832 /* ofApp.cpp */; };
 		650415361F6582F4001D7832 /* set.json in Resources */ = {isa = PBXBuildFile; fileRef = 650415321F6582F4001D7832 /* set.json */; };
@@ -188,6 +196,10 @@
 		0C08AEDC1F91413100CE531F /* 002.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 002.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/002.mov; sourceTree = SOURCE_ROOT; };
 		0C08AEDD1F91413100CE531F /* 001.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = 001.mov; path = ../ArbutusEngine/src/CatchCpp/Fixtures/FileHandling/001.mov; sourceTree = SOURCE_ROOT; };
 		0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArbutusEngine.xcodeproj; path = ../ArbutusEngine/ArbutusEngine.xcodeproj; sourceTree = "<group>"; };
+		0C0B6A031FAA263A0055202F /* Label.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Label.cpp; path = GUI/Label.cpp; sourceTree = "<group>"; };
+		0C0B6A041FAA263B0055202F /* Label.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Label.hpp; path = GUI/Label.hpp; sourceTree = "<group>"; };
+		0C0B6A0C1FAA2CAD0055202F /* ButtonGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ButtonGroup.cpp; path = GUI/ButtonGroup.cpp; sourceTree = "<group>"; };
+		0C0B6A0D1FAA2CAD0055202F /* ButtonGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ButtonGroup.hpp; path = GUI/ButtonGroup.hpp; sourceTree = "<group>"; };
 		0C0CB3871F957763004BD8FE /* doxygenconf */ = {isa = PBXFileReference; lastKnownFileType = text; path = doxygenconf; sourceTree = "<group>"; };
 		0C1150EF1F9F67C70004CBD5 /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = ../ArbutusEngine/External/openFrameworks/libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
 		0C1AB0221FA296E1005E42DB /* AppGUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppGUI.cpp; path = Arbutus/AppGUI.cpp; sourceTree = "<group>"; };
@@ -202,6 +214,10 @@
 		0CAC58811F935A9000090CCD /* VerticalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
 		0CAC58831F935AD800090CCD /* Viewport.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Viewport.cpp; path = GUI/Viewport.cpp; sourceTree = "<group>"; };
 		0CAC58851F938DE900090CCD /* Splitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Splitter.cpp; path = CatchCpp/GUI/Splitter.cpp; sourceTree = "<group>"; };
+		0CC9E3D81FAA76B200861CC8 /* ToggleButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ToggleButton.cpp; path = GUI/ToggleButton.cpp; sourceTree = "<group>"; };
+		0CC9E3D91FAA76B200861CC8 /* ToggleButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ToggleButton.hpp; path = GUI/ToggleButton.hpp; sourceTree = "<group>"; };
+		0CC9E3E11FAA7DDF00861CC8 /* ToggleButtonGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ToggleButtonGroup.cpp; path = GUI/ToggleButtonGroup.cpp; sourceTree = "<group>"; };
+		0CC9E3E21FAA7DDF00861CC8 /* ToggleButtonGroup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ToggleButtonGroup.hpp; path = GUI/ToggleButtonGroup.hpp; sourceTree = "<group>"; };
 		6504152F1F6582F4001D7832 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Arbutus/main.cpp; sourceTree = "<group>"; };
 		650415301F6582F4001D7832 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = Arbutus/ofApp.cpp; sourceTree = "<group>"; };
 		650415311F6582F4001D7832 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = Arbutus/ofApp.h; sourceTree = "<group>"; };
@@ -435,8 +451,12 @@
 				650415541F65B0A5001D7832 /* Primitives.hpp */,
 				650415501F65B09F001D7832 /* Element.cpp */,
 				650415511F65B09F001D7832 /* Element.hpp */,
+				0C0B6A031FAA263A0055202F /* Label.cpp */,
+				0C0B6A041FAA263B0055202F /* Label.hpp */,
 				6504154A1F65B017001D7832 /* Button.cpp */,
 				6504154B1F65B017001D7832 /* Button.hpp */,
+				0CC9E3D81FAA76B200861CC8 /* ToggleButton.cpp */,
+				0CC9E3D91FAA76B200861CC8 /* ToggleButton.hpp */,
 				65F7782C1F6B243600FFA43B /* Slider.cpp */,
 				65F7782D1F6B243600FFA43B /* Slider.hpp */,
 				65C1DA6B1F75B726008DA84A /* Viewport.hpp */,
@@ -448,6 +468,10 @@
 				0CAC58801F935A2600090CCD /* Splitter.hpp */,
 				0C0376A71F96B7E40079E842 /* Preview.cpp */,
 				0C0376A81F96B7E40079E842 /* Preview.hpp */,
+				0C0B6A0C1FAA2CAD0055202F /* ButtonGroup.cpp */,
+				0C0B6A0D1FAA2CAD0055202F /* ButtonGroup.hpp */,
+				0CC9E3E11FAA7DDF00861CC8 /* ToggleButtonGroup.cpp */,
+				0CC9E3E21FAA7DDF00861CC8 /* ToggleButtonGroup.hpp */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -1026,8 +1050,10 @@
 				65F7782E1F6B243600FFA43B /* Slider.cpp in Sources */,
 				65276BA91F486DE600949383 /* ofxRtMidiOut.cpp in Sources */,
 				6504154C1F65B017001D7832 /* Button.cpp in Sources */,
+				0CC9E3DA1FAA76B200861CC8 /* ToggleButton.cpp in Sources */,
 				65276BA61F486DD000949383 /* ofxMidiMessage.cpp in Sources */,
 				65276BB21F486E3400949383 /* OscPrintReceivedElements.cpp in Sources */,
+				0CC9E3E31FAA7DDF00861CC8 /* ToggleButtonGroup.cpp in Sources */,
 				65276BB41F486E3400949383 /* OscTypes.cpp in Sources */,
 				65276BB51F486E4300949383 /* ofxSyphonClient.mm in Sources */,
 				650415461F65A3CC001D7832 /* GUI.cpp in Sources */,
@@ -1039,6 +1065,7 @@
 				65276BAA1F486DEC00949383 /* RtMidi.cpp in Sources */,
 				65276BB91F486EDA00949383 /* NetworkingUtils.cpp in Sources */,
 				65276BAB1F486DF700949383 /* ofxXmlSettings.cpp in Sources */,
+				0C0B6A051FAA263B0055202F /* Label.cpp in Sources */,
 				65276BBA1F486FC100949383 /* UdpSocket.cpp in Sources */,
 				65276BA31F486DC000949383 /* ofxBaseMidi.cpp in Sources */,
 				65276BA81F486DE100949383 /* ofxRtMidiIn.cpp in Sources */,
@@ -1046,6 +1073,7 @@
 				0C9895FD1FA50645003B47BD /* Windows.cpp in Sources */,
 				0C0376A91F96B7E40079E842 /* Preview.cpp in Sources */,
 				650415341F6582F4001D7832 /* main.cpp in Sources */,
+				0C0B6A0E1FAA2CAD0055202F /* ButtonGroup.cpp in Sources */,
 				65276BAE1F486E0000949383 /* tinyxmlparser.cpp in Sources */,
 				65276BA71F486DD000949383 /* ofxMidiOut.cpp in Sources */,
 				65276BAF1F486E0E00949383 /* ofxOscMessage.cpp in Sources */,
@@ -1071,6 +1099,7 @@
 				65E6BD3F1F446BB5008E4F9E /* NetworkingUtils.cpp in Sources */,
 				65E6BD3E1F4469DB008E4F9E /* ofxXmlSettings.cpp in Sources */,
 				0C9895FE1FA50645003B47BD /* Windows.cpp in Sources */,
+				0C0B6A061FAA263B0055202F /* Label.cpp in Sources */,
 				65E6BD321F4467A0008E4F9E /* ofxMidiMessage.cpp in Sources */,
 				0C1150E91F9F64430004CBD5 /* Viewport.cpp in Sources */,
 				65E6BD331F4467B1008E4F9E /* ofxMidi.cpp in Sources */,
@@ -1088,6 +1117,8 @@
 				65E896921E734275000D470B /* ofxOscReceiver.cpp in Sources */,
 				655BFAFB1E735A3D00B74446 /* IpEndpointName.cpp in Sources */,
 				65E6BD3A1F44691E008E4F9E /* tinyxml.cpp in Sources */,
+				0C0B6A0F1FAA2CAD0055202F /* ButtonGroup.cpp in Sources */,
+				0CC9E3DB1FAA76B200861CC8 /* ToggleButton.cpp in Sources */,
 				65E6BD3B1F44691E008E4F9E /* tinyxmlerror.cpp in Sources */,
 				65E8969F1E734F02000D470B /* OscPrintReceivedElements.cpp in Sources */,
 				65E896A01E734F05000D470B /* OscOutboundPacketStream.cpp in Sources */,
@@ -1097,6 +1128,7 @@
 				655BFAFA1E7358C000B74446 /* UdpSocket.cpp in Sources */,
 				0C628F111F9C053200ADB871 /* ControlsGroup.cpp in Sources */,
 				655BFAFD1E735BC100B74446 /* SyphonNameboundClient.m in Sources */,
+				0CC9E3E41FAA7DDF00861CC8 /* ToggleButtonGroup.cpp in Sources */,
 				65E8969B1E734EB6000D470B /* ofxRtMidiIn.cpp in Sources */,
 				65E8969C1E734ED7000D470B /* ofxRtMidiOut.cpp in Sources */,
 				0CAC58861F938DE900090CCD /* Splitter.cpp in Sources */,

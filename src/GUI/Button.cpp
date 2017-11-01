@@ -41,16 +41,9 @@ void Button::draw(NVGcontext* vg)
         backgroundColor = GUIStyle::getInstance().getBackgroundColor();
     }
     else {
-        if (pressed == TRUE) {
-            backgroundColor = GUIStyle::getInstance().getDarkColor();
-
-        }
-        else  {
-            backgroundColor = GUIStyle::getInstance().getLightColor();
-        }
-        
+        backgroundColor = pressed ? GUIStyle::getInstance().getDarkColor() : GUIStyle::getInstance().getLightColor();
     }
-    drawButton(vg, 1, caption, getRect(), ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    drawButton(vg, icon, caption, getRect(), ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 
     Element::finishDraw(vg);
 }
@@ -60,6 +53,8 @@ void Button::draw(NVGcontext* vg)
 void Button::set(json config) {
     Element::set(config);
     if (config["caption"].is_string()) caption = config["caption"].get<string>();
+    icon = (config["icon"].is_number_unsigned()) ? config["icon"].get<unsigned int>() : 0;
+    
 }
 
 void Button::setOnClick(std::function<void(Button *button)> _onClick) {

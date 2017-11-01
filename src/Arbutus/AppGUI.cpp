@@ -62,6 +62,7 @@ Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
         "zoomY",
         "centerX",
         "centerY",
+        "effects_drywet"
     }));
     controls.set(visualInstanceProperties->getFullState());
     
