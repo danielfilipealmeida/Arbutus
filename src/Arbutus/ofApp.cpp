@@ -1,17 +1,17 @@
 #include "ofApp.h"
 #include "Engine.h"
 #include "JsonLoad.hpp"
+#include "GUIStyle.hpp"
 
 
 
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofSetWindowTitle("Arbutus");
-    
-    cout << ofFilePath::getCurrentExeDir() << endl;
     Engine *engine = new Engine();
     string filePath = ofFilePath::getCurrentExeDir() + "../Resources/set.json";
+    
+    ofSetWindowTitle("Arbutus");
     
     
     try {
@@ -40,6 +40,9 @@ void ofApp::setup(){
     */
 
     windows.add(window);
+    
+    //ofBackground(GUIStyle::getInstance().getBackgroundColor());
+    
 }
 
 /*
@@ -174,11 +177,13 @@ void ofApp::guiTest003() {
 void ofApp::update(){
     Engine::getInstance()->render();
     GUI::getInstance().update();
+    
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofClear(GUIStyle::getInstance().getDarkColor());
     //Engine::getInstance()->drawOutput();
     GUI::getInstance().draw();
     //windows.drawWindow(0);

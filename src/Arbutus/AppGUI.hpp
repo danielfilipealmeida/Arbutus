@@ -24,6 +24,7 @@ public:
     void setup();
     Element* getMainOutputViewport();
     Element* getLayerViewport(unsigned int layerNumber);
+    Element* getVisualInstanceAtLayer(unsigned int layerNumber);
 };
 
 #endif /* AppGUI_hpp */

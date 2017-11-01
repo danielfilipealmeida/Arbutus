@@ -81,8 +81,6 @@ void Slider::draw(NVGcontext* vg)
 
 
 void Slider::set(json config) {
-    cout << config.dump(4) << endl;
-    
     Button::set(config);
     
     if (!config["minValue"].is_null()) minValue = config["minValue"].is_number_float() ? config["minValue"].get<float>() : 0.0;

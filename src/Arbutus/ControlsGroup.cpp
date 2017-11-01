@@ -21,21 +21,35 @@ ControlsGroup::~ControlsGroup()  {
 
 void ControlsGroup::set(json data)  {
     controlsFullState = data;
+    cout << data.dump(4) << endl;
     createGUIElements();
 }
 
 void ControlsGroup::createGUIElements() {
     if (parentElement == NULL) return;
     
-    //for(auto element:controlsFullState) {
-        //cout << element.dump() << endl;
+    //cout << controlsFullState.flatten().dump(4)<<endl;
+   
     
+    /*
     for(json::iterator it = controlsFullState.begin(); it != controlsFullState.end(); ++it) {
         auto element = it.value();
         if (element["type"].get<string>().compare("f") == 0) {
             addFloat(element, it.key());
         }
+    }
+     */
+    //cout << controlsDisplayOrder.dump(4) << endl;
+    
+    for(auto item:controlsDisplayOrder) {
+        string controlName = item.get<string>();
+        auto element = controlsFullState[controlName];
         
+        if (element["type"].get<string>().compare("f") == 0) {
+            addFloat(element, controlName);
+        }
+         
+       
     }
 }
 
@@ -66,4 +80,8 @@ void ControlsGroup::setParentElement(Element *_element) {
 
 void ControlsGroup::setProperties(Properties *_properties) {
     properties = _properties;
+}
+
+void ControlsGroup::setControlsDisplayOrder(json _displayOrder) {
+    controlsDisplayOrder = _displayOrder;
 }

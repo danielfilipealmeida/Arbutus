@@ -4,16 +4,16 @@
 //
 //  Created by Daniel Almeida on 12/09/17.
 //
-//
+//git
 
 #include "GUIStyle.hpp"
 
 
 GUIStyle::GUIStyle() {
-    baseColor = ofColor::forestGreen;
+    baseColor = ofColor::dimGray;
     textColor = ofColor::white;
     saturation = 0.1;
-    brightness = 60;
+    brightness = 20;
     calculateColors();
 }
 

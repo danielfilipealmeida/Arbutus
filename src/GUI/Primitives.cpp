@@ -14,11 +14,11 @@
 // Returns 1 if col.rgba is 0.0f,0.0f,0.0f,0.0f, 0 otherwise
 int isBlack(NVGcolor col)
 {
-    if( col.r == 0.0f && col.g == 0.0f && col.b == 0.0f && col.a == 0.0f )
-    {
-        return 1;
-    }
-    return 0;
+    return (
+            col.r == 0.0f &&
+            col.g == 0.0f &&
+            col.b == 0.0f &&
+            col.a == 0.0f ) ? 1 : 0;
 }
 
 static char* cpToUTF8(int cp, char* str)

@@ -22,7 +22,9 @@ void AppGUI::setup() {
     
     splitter->add(getMainOutputViewport(), 0.20);
     splitter->add(getLayerViewport(0), 0.20);
+    splitter->add(getVisualInstanceAtLayer(0), 0.20);
     splitter->add(getLayerViewport(1), 0.20);
+    splitter->add(getVisualInstanceAtLayer(0), 0.20);
 }
 
 Element* AppGUI::getMainOutputViewport(){
@@ -39,7 +41,34 @@ Element* AppGUI::getMainOutputViewport(){
     return viewport;
 }
 
-Element* AppGUI::getLayerViewport(unsigned int layerNumber) {
+Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
+    Viewport *viewport;
+    Layer *layer;
+    VisualInstance *visualInstance;
+    VisualInstancesProperties *visualInstanceProperties;
+    ControlsGroup controls;
+    
+    viewport = GUI::getInstance().add<Viewport>({});
+    layer = Layers::getInstance().get(layerNumber);
+    visualInstance = layer->getActiveInstance();
+    visualInstanceProperties = visualInstance->getProperties();
+    controls.setParentElement(viewport);
+    controls.setProperties(visualInstanceProperties);
+    controls.setControlsDisplayOrder(json::array({
+        "startPercentage",
+        "endPercentage",
+        "percentagePlayed",
+        "zoomX",
+        "zoomY",
+        "centerX",
+        "centerY",
+    }));
+    controls.set(visualInstanceProperties->getFullState());
+    
+    return viewport;
+}
+
+Element* AppGUI::getLayerViewport(unsigned int layerNumber){
     Viewport *viewport;
     Preview *previewOutput;
     Layer *layer;
@@ -59,9 +88,19 @@ Element* AppGUI::getLayerViewport(unsigned int layerNumber) {
     layerProperties = layer->getProperties();
     controls.setParentElement(viewport);
     controls.setProperties(layerProperties);
+    controls.setControlsDisplayOrder(json::array({
+        "alpha",
+        "brightness",
+        "saturation",
+        "contrast",
+        "red",
+        "green",
+        "blue",
+        "blurH",
+        "blurV",
+        "blendMode"
+    }));
     controls.set(layerProperties->getFullState());
-    
-    
     
     return viewport;
 }

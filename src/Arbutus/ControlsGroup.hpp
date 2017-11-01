@@ -15,10 +15,12 @@
 
 class ControlsGroup {
     json controlsFullState;
+    json controlsDisplayOrder;
     Element *parentElement;
     
     void createGUIElements();
     Properties *properties;
+    
     
 public:
     /*!
@@ -50,6 +52,12 @@ public:
      \brief ...
      */
     void addFloat(json _elementData, string key);
+    
+    
+    /*!
+     \brief ...
+     */
+    void setControlsDisplayOrder(json _displayOrder);
     
 };
 
