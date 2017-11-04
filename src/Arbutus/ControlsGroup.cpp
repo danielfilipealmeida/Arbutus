@@ -31,10 +31,15 @@ void ControlsGroup::createGUIElements() {
     for(auto item:controlsDisplayOrder) {
         string controlName = item.get<string>();
         auto element = controlsFullState[controlName];
+        string type = element["type"].get<string>();
         
-        if (element["type"].get<string>().compare("f") == 0) {
+        if (type.compare("f") == 0) {
             addFloat(element, controlName);
         }
+        else if (type.compare("button_group") == 0) {
+            addButtonGroup(element, controlName);
+        }
+        
     }
 }
 
@@ -55,7 +60,19 @@ void ControlsGroup::addFloat(json _elementData, string key) {
         }
         properties->set(key, slider->getValue());
     });
+}
 
+void ControlsGroup::addButtonGroup(json _elementData, string key) {
+    json buttonGroupData = {
+        {"caption", _elementData["title"].get<string>()},
+        {"options", _elementData["options"]},
+        {"value", (float) _elementData["value"].get<float>()}
+        
+    };
+    cout << _elementData.dump(4) << endl;
+    
+    ButtonGroup *buttonGroup = (ButtonGroup *) parentElement->add(GUI::getInstance().add<ButtonGroup>(buttonGroupData));
+    
 }
 
 

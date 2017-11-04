@@ -116,12 +116,20 @@ void Viewport::resize(ofRectangle newRect) {
         width = getRect().width - (2*GUI_BORDER);
         height = element->getHeightForWidth(width);
         
+        /*
         element->set({
             {"x", GUI_BORDER},
             {"y", currentY},
             {"width",width},
             {"height", height}
         });
+         */
+        ofRectangle newRect;
+        newRect.x =GUI_BORDER;
+        newRect.y =currentY;
+        newRect.width = width;
+        newRect.height = height;
+        element->resize(newRect);
         currentY = currentY + height + GUI_BORDER;
     }
     

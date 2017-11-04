@@ -62,19 +62,7 @@ void Element::draw(NVGcontext* vg) {
     nvgBeginFrame(vg, parentRect.width, parentRect.height, 1);
 }
 
-ofRectangle Element::getDrawingRec() {
-    ofRectangle drawingRect = rect;
-    
-    if (parent!= NULL && parent->getClass().compare("Viewport") == 0) {
-        drawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
-    }
-    
-    return drawingRect;
-}
-
 void Element::finishDraw(NVGcontext* vg) {
-    
-    // uncomment to debug
 #ifdef GUIDEBUG
     drawDebugRect(vg);
 #endif
@@ -86,6 +74,18 @@ void Element::finishDraw(NVGcontext* vg) {
     nvgBeginFrame(vg, ofGetWidth(), ofGetHeight(), 1);
     
 }
+
+
+ofRectangle Element::getDrawingRec() {
+    ofRectangle drawingRect = rect;
+    
+    if (parent!= NULL && parent->getClass().compare("Viewport") == 0) {
+        drawingRect = ((Viewport *) parent)->calculateDrawingRectForElement(this);
+    }
+    
+    return drawingRect;
+}
+
 
 
 void Element::drawDebugRect(NVGcontext* vg) {
@@ -175,8 +175,7 @@ string Element::description() {
 }
 
 
-ofRectangle Element::getRect() {
-    ofRectangle returnedRect = rect;
+ofRectangle Element::getRect() {    ofRectangle returnedRect = rect;
     
     if (returnedRect.x < 0) {
         returnedRect.x = GUI_BORDER ;
@@ -192,7 +191,6 @@ ofRectangle Element::getRect() {
     }
     
     return returnedRect;
-    
 }
 
 

@@ -19,7 +19,7 @@ Button::Button()
 
 Button::~Button()
 {
-    
+    cout << "button destroyed" << endl;
 }
 
 void Button::update() {
@@ -35,6 +35,7 @@ void Button::update() {
 void Button::draw(NVGcontext* vg)
 {
     ofColor backgroundColor;
+    ofRectangle theRect;
     
     Element::draw(vg);
     if (hover == FALSE) {
@@ -43,7 +44,8 @@ void Button::draw(NVGcontext* vg)
     else {
         backgroundColor = pressed ? GUIStyle::getInstance().getDarkColor() : GUIStyle::getInstance().getLightColor();
     }
-    drawButton(vg, icon, caption, getRect(), ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    theRect = getRect();
+    drawButton(vg, icon, caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 
     Element::finishDraw(vg);
 }

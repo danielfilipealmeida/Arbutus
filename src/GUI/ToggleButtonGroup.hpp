@@ -18,7 +18,7 @@ class ToggleButtonGroup : public ButtonGroup
 public:    
     virtual void addButton(json::iterator it);
     void unpushAll();
-    void unpushAllExcept(ToggleButton *tbToKeepUntouched);
+    void unpushAllExcept(ToggleButton * tbToKeepUntouched);
 
 };
 #endif /* ToggleButtonGroup_hpp */

@@ -41,6 +41,15 @@ void ofApp::setup(){
 
 
 void ofApp::guiTest001() {
+    Splitter *splitter = GUI::getInstance().add<Splitter>({
+        {"mode", SPLITTER_VERTICAL}
+    });
+    Viewport *viewport1 = GUI::getInstance().add<Viewport>({});
+    splitter->add(viewport1, 0.30);
+    
+    Viewport *viewport2 = GUI::getInstance().add<Viewport>({});
+    splitter->add(viewport2, 0.7);
+    
     Label *label = GUI::getInstance().add<Label>({
         {"x", 100},
         {"y", 100},
@@ -48,10 +57,11 @@ void ofApp::guiTest001() {
         {"height", 32},
         {"caption", "My Label"}
     });
+    label->setParent(viewport2);
     
     ButtonGroup *buttonGroup = GUI::getInstance().add<ButtonGroup>({
-        {"x", 100},
-        {"y", 200},
+        {"x", 10},
+        {"y", 300},
         {"width", 200},
         {"height", 32},
         {"value", 1},
@@ -72,7 +82,10 @@ void ofApp::guiTest001() {
     buttonGroup->setOnClick([](ButtonGroup *bg) {
         cout << bg->getLastClickedButtonData().dump(4) << endl;
     });
+    buttonGroup->setParent(viewport2);
+    buttonGroup->update();
     
+    /*
     ToggleButton *toggleButton = GUI::getInstance().add<ToggleButton>({
         {"x", 400},
         {"y", 100},
@@ -83,7 +96,9 @@ void ofApp::guiTest001() {
     toggleButton->setOnClick([](ToggleButton *tb) {
         cout << (tb->isPushed() ? "Pushed" : "Not pushed") << endl;
     });
+     */
     
+    /*
     ToggleButtonGroup *toggleButtonGroup = GUI::getInstance().add<ToggleButtonGroup>({
         {"x", 400},
         {"y", 200},
@@ -104,6 +119,8 @@ void ofApp::guiTest001() {
             }
         }
     });
+    */
+    viewport2->update();
 }
 
 /*

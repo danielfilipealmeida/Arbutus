@@ -85,5 +85,12 @@ public:
      This method takes into consideration the margin between the buttons
      */
     float calculateButtonsWidth();
+    
+    /*!
+     \brief Sets the element that will contain this element
+     */
+    void setParent(Element *_parent);
+    
+    virtual void resize(ofRectangle newRect);
 };
 #endif /* ButtonGroup_hpp */

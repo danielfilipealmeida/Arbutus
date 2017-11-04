@@ -53,6 +53,12 @@ public:
      */
     void addFloat(json _elementData, string key);
     
+    /*!
+     \brief ...
+     */
+    void addButtonGroup(json _elementData, string key);
+
+    
     
     /*!
      \brief ...

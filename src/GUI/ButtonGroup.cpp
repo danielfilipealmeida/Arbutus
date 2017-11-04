@@ -33,6 +33,7 @@ void ButtonGroup::draw(NVGcontext* vg)
 
 void ButtonGroup::set(json config)
 {
+    cout << config.dump(4) << endl;
     Element::set(config);
     options = config["options"];
     nButtons = options.size();
@@ -46,12 +47,14 @@ float ButtonGroup::calculateButtonsWidth() {
 
 void ButtonGroup::createButtons() {
     buttonsWidth = calculateButtonsWidth();
-
+    //if (buttonsWidth <= 0 || nButtons == 0) return;
+    
     for(json::iterator it = options.begin(); it!=options.end(); it++) {
         addButton(it);
         currentX = currentX + buttonsWidth + GUI_BORDER;
     }
 }
+
 
 void ButtonGroup::addButton(json::iterator it) {
     auto buttonData = *it;
@@ -68,7 +71,6 @@ void ButtonGroup::addButton(json::iterator it) {
     button->setParent(this);
     
     button->setOnClick([this, it](Button *button) mutable {
-        cout << "here" << endl;
         this->setIterator(it);
         onClick(this);
     });
@@ -89,4 +91,31 @@ json ButtonGroup::getLastClickedButtonData() {
 
 void ButtonGroup::setOnClick(std::function<void(ButtonGroup *buttonGroup)> _onClick) {
     onClick = _onClick;
+}
+
+void ButtonGroup::setParent(Element *_parent) {
+    Element::setParent(_parent);
+    currentX = GUI_BORDER;
+    buttonsWidth = calculateButtonsWidth();
+    
+    for(auto button:buttons) {
+        ofRectangle buttonRect = button->getRect();
+        //button->setParent(_parent);
+        float newX = currentX + parent->getRect().x + rect.x;
+        float newY = rect.y + parent->getRect().y;
+        button->set({
+            {"x", newX},
+            {"y", newY},
+            {"width", buttonRect.width},
+            {"height", buttonRect.height}
+        });
+        
+         currentX = currentX + buttonsWidth + GUI_BORDER;
+    }
+}
+
+
+void ButtonGroup::resize(ofRectangle newRect) {
+    Element::resize(newRect);
+    if (parent!=NULL) setParent(parent);
 }

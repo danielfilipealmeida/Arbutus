@@ -58,6 +58,7 @@ Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
         "startPercentage",
         "endPercentage",
         "percentagePlayed",
+        "direction",
         "zoomX",
         "zoomY",
         "centerX",
