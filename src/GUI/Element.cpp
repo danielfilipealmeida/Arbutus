@@ -175,7 +175,8 @@ string Element::description() {
 }
 
 
-ofRectangle Element::getRect() {    ofRectangle returnedRect = rect;
+ofRectangle Element::getRect() {
+    ofRectangle returnedRect = rect;
     
     if (returnedRect.x < 0) {
         returnedRect.x = GUI_BORDER ;

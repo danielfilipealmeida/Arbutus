@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Arbutus/main.cpp"
-            timestampString = "531262880.799337"
+            timestampString = "531527870.513489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/GUI/ButtonGroup.cpp"
-            timestampString = "531450184.154154"
+            timestampString = "531531249.632463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "ButtonGroup::resize(ofRectangle newRect)"
             landmarkType = "7">
          </BreakpointContent>
@@ -112,6 +112,22 @@
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "Splitter::calculateChildsRects()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/GUI/ButtonGroup.cpp"
+            timestampString = "531531249.632893"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "ButtonGroup::setParent(Element *_parent)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

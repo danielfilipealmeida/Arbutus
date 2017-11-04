@@ -32,18 +32,28 @@ void Button::update() {
     }
 }
 
+ofColor Button::getBackgroundColor(Boolean isHover, Boolean isPressed) {
+    ofColor backgroundColor;
+    
+    if (isHover == FALSE) {
+        backgroundColor = GUIStyle::getInstance().getBackgroundColor();
+    }
+    else {
+        backgroundColor = isPressed ? GUIStyle::getInstance().getDarkColor() : GUIStyle::getInstance().getLightColor();
+    }
+    
+    return backgroundColor;
+}
+
+
 void Button::draw(NVGcontext* vg)
 {
     ofColor backgroundColor;
     ofRectangle theRect;
     
     Element::draw(vg);
-    if (hover == FALSE) {
-        backgroundColor = GUIStyle::getInstance().getBackgroundColor();
-    }
-    else {
-        backgroundColor = pressed ? GUIStyle::getInstance().getDarkColor() : GUIStyle::getInstance().getLightColor();
-    }
+    
+    backgroundColor = getBackgroundColor(hover, pressed);
     theRect = getRect();
     drawButton(vg, icon, caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 

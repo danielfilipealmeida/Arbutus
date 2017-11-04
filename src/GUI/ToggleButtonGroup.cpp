@@ -24,7 +24,7 @@ void ToggleButtonGroup::addButton(json::iterator it) {
     
     button->setOnClick([this, it](ToggleButton *button) mutable {
         this->unpushAllExcept(button);
-        this->setIterator(it);
+        //this->setIterator(it);
         onClick(this);
     });
     buttons.push_back(button);

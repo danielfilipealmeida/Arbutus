@@ -12,6 +12,13 @@
 #include "Button.hpp"
 
 
+typedef struct {
+    string caption;
+    unsigned int value;
+    ofRectangle rect;
+    Boolean pressed;
+} ButtonData;
+
 /*!
 @class ButtonGroup
 @abstract Implements a a group of buttons
@@ -20,9 +27,9 @@ class ButtonGroup : public Element
 {
 protected:
     string caption;
-    std::vector<Button *> buttons;
+    std::vector<ButtonData> buttons;
     json options;
-    json::iterator selectedButtonIterator;
+    ButtonData selectedButtonData;
     unsigned long nButtons;
     float buttonsWidth, currentX;
     
@@ -59,19 +66,11 @@ public:
     
     virtual void addButton(json::iterator it);
 
-    /*!
-     \brief Sets the selected iterator
-     
-     To be used inside the lambda that handles clicks of each button, for selecting the button pressed and be able to retrieve it.
-     */
-    void setIterator(json::iterator it);
-    
-    json::iterator getIterator();
-    
+
     /*!
      \brief Returns a json with the data of the last clicked button
      */
-    json getLastClickedButtonData();
+    ButtonData getLastClickedButtonData();
     
     /*!
      ...
@@ -91,6 +90,20 @@ public:
      */
     void setParent(Element *_parent);
     
+    /*!
+     \brief handles resizing (not sure if this is needed)
+     */
     virtual void resize(ofRectangle newRect);
+    
+    /*!
+     \brief Returns the button rect inside the parent or the window if parent is NULL
+     */
+    ofRectangle getRectForButton(ButtonData button);
+    
+    /*!
+     \brief return s the button rect inside the window 
+     */
+    ofRectangle getVisibleRectForButton(ButtonData button);
+
 };
 #endif /* ButtonGroup_hpp */

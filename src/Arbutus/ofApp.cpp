@@ -30,8 +30,8 @@ void ofApp::setup(){
         {"column", 0}
     });
     
-    //appGui.setup();
-    guiTest001();
+    appGui.setup();
+    //guiTest001();
     
 
     windows.add(window);
@@ -80,7 +80,7 @@ void ofApp::guiTest001() {
         }
     });
     buttonGroup->setOnClick([](ButtonGroup *bg) {
-        cout << bg->getLastClickedButtonData().dump(4) << endl;
+        cout << bg->getLastClickedButtonData().caption << endl;
     });
     buttonGroup->setParent(viewport2);
     buttonGroup->update();
