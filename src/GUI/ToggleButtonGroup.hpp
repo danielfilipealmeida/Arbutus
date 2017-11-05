@@ -14,11 +14,17 @@
 
 class ToggleButtonGroup : public ButtonGroup
 {
-    std::vector<ToggleButton *> buttons;
-public:    
+ public:    
     virtual void addButton(json::iterator it);
-    void unpushAll();
-    void unpushAllExcept(ToggleButton * tbToKeepUntouched);
+    //void unpushAll();
+    //void unpushAllExcept(ToggleButton * tbToKeepUntouched);
 
+    
+    /*!
+     ...
+     */
+    virtual void update();
+    
+    void draw(NVGcontext* vg);
 };
 #endif /* ToggleButtonGroup_hpp */

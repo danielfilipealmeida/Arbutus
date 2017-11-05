@@ -17,6 +17,7 @@ typedef struct {
     unsigned int value;
     ofRectangle rect;
     Boolean pressed;
+    Boolean pushed;
 } ButtonData;
 
 /*!

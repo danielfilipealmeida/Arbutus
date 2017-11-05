@@ -33,14 +33,14 @@ void ButtonGroup::update()
         if (!visibleRect.inside(ofGetMouseX(), ofGetMouseY())) continue;
         
         button.pressed = pressed;
+        
+        
        
         if (button.pressed == FALSE && previousPressed != pressed) {
             selectedButtonData = button;
             if (onClick != NULL) onClick(this);
         }
     }
-    
-    
 }
 
 
@@ -91,7 +91,6 @@ void ButtonGroup::draw(NVGcontext* vg)
 
 void ButtonGroup::set(json config)
 {
-    cout << config.dump(4) << endl;
     Element::set(config);
     options = config["options"];
     nButtons = options.size();
@@ -106,7 +105,6 @@ float ButtonGroup::calculateButtonsWidth() {
 
 void ButtonGroup::createButtons() {
     buttonsWidth = calculateButtonsWidth();
-    //if (buttonsWidth <= 0 || nButtons == 0) return;
     
     for(json::iterator it = options.begin(); it!=options.end(); it++) {
         addButton(it);
@@ -117,31 +115,12 @@ void ButtonGroup::createButtons() {
 
 void ButtonGroup::addButton(json::iterator it) {
     auto jsonData = *it;
-    //unsigned int icon = buttonData["icon"].is_number_integer() ? buttonData["icon"].get<unsigned int>() : 0;
-    
     ButtonData newButtonData;
+    
     newButtonData.caption = jsonData["title"];
     newButtonData.rect = ofRectangle(currentX, 0, buttonsWidth, rect.height);
     newButtonData.pressed = false;
     buttons.push_back(newButtonData);
-    
-    /*
-    Button *button = GUI::getInstance().add<Button>({
-        {"x", currentX},
-        {"y", 0},
-        {"width", buttonsWidth},
-        {"height", rect.height},
-        {"caption", buttonData["title"]},
-        {"icon", icon}
-    });
-    button->setParent(this);
-    
-    button->setOnClick([this, it](Button *button) mutable {
-        this->setIterator(it);
-        onClick(this);
-    });
-     buttons.push_back(button);
-     */
 }
 
 ButtonData ButtonGroup::getLastClickedButtonData() {
@@ -160,24 +139,11 @@ void ButtonGroup::setParent(Element *_parent) {
     buttonsWidth = calculateButtonsWidth();
     
     for(auto &button:buttons) {
-        //ofRectangle buttonRect = button->getRect();
-        //button->setParent(_parent);
-        //float newX = currentX + parent->getRect().x + rect.x;
-        //float newY = rect.y + parent->getRect().y;
-        
         float newX = currentX;
         float newY = button.rect.y;
         
-        /*
-        button->set({
-            {"x", newX},
-            {"y", newY},
-            {"width", buttonRect.width},
-            {"height", buttonRect.height}
-        });
-        */
         button.rect = ofRectangle(newX, newY, buttonsWidth, rect.height);
-         currentX = currentX + buttonsWidth + GUI_BORDER;
+        currentX = currentX + buttonsWidth + GUI_BORDER;
     }
     
 }

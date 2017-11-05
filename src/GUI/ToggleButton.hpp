@@ -27,6 +27,8 @@ public:
     Boolean isPushed();
     
     void setPushed(Boolean _pushed);
+    
+    static ofColor getBackgroundColor(Boolean isHover, Boolean isPressed, Boolean isPushed);
 };
 
 #endif /* ToggleButton_hpp */

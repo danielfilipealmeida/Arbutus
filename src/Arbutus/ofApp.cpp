@@ -30,8 +30,8 @@ void ofApp::setup(){
         {"column", 0}
     });
     
-    appGui.setup();
-    //guiTest001();
+    //appGui.setup();
+    guiTest001();
     
 
     windows.add(window);
@@ -61,7 +61,7 @@ void ofApp::guiTest001() {
     
     ButtonGroup *buttonGroup = GUI::getInstance().add<ButtonGroup>({
         {"x", 10},
-        {"y", 300},
+        {"y", 100},
         {"width", 200},
         {"height", 32},
         {"value", 1},
@@ -85,6 +85,7 @@ void ofApp::guiTest001() {
     buttonGroup->setParent(viewport2);
     buttonGroup->update();
     
+    
     /*
     ToggleButton *toggleButton = GUI::getInstance().add<ToggleButton>({
         {"x", 400},
@@ -95,13 +96,14 @@ void ofApp::guiTest001() {
     });
     toggleButton->setOnClick([](ToggleButton *tb) {
         cout << (tb->isPushed() ? "Pushed" : "Not pushed") << endl;
-    });
+     });
      */
     
-    /*
+    
+    
     ToggleButtonGroup *toggleButtonGroup = GUI::getInstance().add<ToggleButtonGroup>({
-        {"x", 400},
-        {"y", 200},
+        {"x", 10},
+        {"y", 400},
         {"width", 200},
         {"height", 32},
         {"value", 1},
@@ -119,7 +121,8 @@ void ofApp::guiTest001() {
             }
         }
     });
-    */
+    toggleButtonGroup->setParent(viewport2);
+    
     viewport2->update();
 }
 
