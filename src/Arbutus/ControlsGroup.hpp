@@ -59,6 +59,12 @@ public:
     void addButtonGroup(json _elementData, string key);
 
     
+    /*!
+     \brief ...
+     */
+    void addToggleButtonGroup(json _elementData, string key);
+    
+    
     
     /*!
      \brief ...

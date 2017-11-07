@@ -21,7 +21,7 @@ ControlsGroup::~ControlsGroup()  {
 
 void ControlsGroup::set(json data)  {
     controlsFullState = data;
-    cout << data.dump(4) << endl;
+    //cout << data.dump(4) << endl;
     createGUIElements();
 }
 
@@ -38,6 +38,9 @@ void ControlsGroup::createGUIElements() {
         }
         else if (type.compare("button_group") == 0) {
             addButtonGroup(element, controlName);
+        }
+        else if (type.compare("toggle_button_group") == 0) {
+            addToggleButtonGroup(element, controlName);
         }
         
     }
@@ -69,12 +72,33 @@ void ControlsGroup::addButtonGroup(json _elementData, string key) {
         {"value", (float) _elementData["value"].get<float>()}
         
     };
-    cout << _elementData.dump(4) << endl;
-    
+    Label *buttonGroupLabel = (Label *) parentElement->add(GUI::getInstance().add<Label>({
+        {"caption", _elementData["title"].get<string>()}
+    }));
     ButtonGroup *buttonGroup = (ButtonGroup *) parentElement->add(GUI::getInstance().add<ButtonGroup>(buttonGroupData));
-    
 }
 
+void ControlsGroup::addToggleButtonGroup(json _elementData, string key) {
+    json toggleButtonGroupData = {
+        {"caption", _elementData["title"].get<string>()},
+        {"options", _elementData["options"]},
+        {"value", (float) _elementData["value"].get<float>()}
+        
+    };
+    Label *toggleButtonGroupLabel = (Label *) parentElement->add(GUI::getInstance().add<Label>({
+        {"caption", _elementData["title"].get<string>()}
+    }));
+    Properties *properties = this->properties;
+    ToggleButtonGroup *toggleButtonGroup = (ToggleButtonGroup *) parentElement->add(GUI::getInstance().add<ToggleButtonGroup>(toggleButtonGroupData));
+    toggleButtonGroup->setOnClick([properties, _elementData, key](ToggleButtonGroup *toggleButtonGroup) mutable {
+        if (properties == NULL) {
+            return;
+        }
+        unsigned int value = toggleButtonGroup->getValue();
+        
+        properties->set(key, value);
+    });
+}
 
 void ControlsGroup::setParentElement(Element *_element) {
     parentElement = _element;

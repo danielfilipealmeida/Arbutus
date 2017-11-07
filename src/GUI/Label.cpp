@@ -21,7 +21,9 @@ void Label::update(){
 }
 
 void Label::draw(NVGcontext* vg){
+    Element::draw(vg);
     printCenteredText(vg, 0, caption, getRect(), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    Element::finishDraw(vg);
 }
 
 void Label::set(json config){

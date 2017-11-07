@@ -13,7 +13,7 @@
 
 ButtonGroup::ButtonGroup()
 {
-    currentX = GUI_BORDER;
+    currentX = 0;
 }
 
 ButtonGroup::~ButtonGroup()
@@ -33,11 +33,10 @@ void ButtonGroup::update()
         if (!visibleRect.inside(ofGetMouseX(), ofGetMouseY())) continue;
         
         button.pressed = pressed;
-        
-        
        
         if (button.pressed == FALSE && previousPressed != pressed) {
             selectedButtonData = button;
+            value = button.value;
             if (onClick != NULL) onClick(this);
         }
     }
@@ -94,13 +93,14 @@ void ButtonGroup::set(json config)
     Element::set(config);
     options = config["options"];
     nButtons = options.size();
+    value = config["value"].is_number() ? config["value"].get<unsigned int>():0;
     
     createButtons();
 }
 
 float ButtonGroup::calculateButtonsWidth() {
     unsigned int nButtons = buttons.size();
-    return (rect.width - (GUI_BORDER * (nButtons + 1)))/ (float) nButtons;
+    return (rect.width - (GUI_BORDER * (nButtons)))/ (float) nButtons;
 }
 
 void ButtonGroup::createButtons() {
@@ -134,7 +134,6 @@ void ButtonGroup::setOnClick(std::function<void(ButtonGroup *buttonGroup)> _onCl
 void ButtonGroup::setParent(Element *_parent) {
     Element::setParent(_parent);
     
-    Element::setParent(_parent);
     currentX = GUI_BORDER;
     buttonsWidth = calculateButtonsWidth();
     
@@ -148,8 +147,11 @@ void ButtonGroup::setParent(Element *_parent) {
     
 }
 
-
 void ButtonGroup::resize(ofRectangle newRect) {
     Element::resize(newRect);
     if (parent!=NULL) setParent(parent);
+}
+
+unsigned int ButtonGroup::getValue() {
+    return value;
 }

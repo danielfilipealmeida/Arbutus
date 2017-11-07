@@ -59,15 +59,41 @@ Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
         "endPercentage",
         "percentagePlayed",
         "direction",
+        "loopMode",
         "zoomX",
         "zoomY",
         "centerX",
         "centerY",
-        "effects_drywet"
+        "effects_drywet",
+        "triggerMode"
     }));
     controls.set(visualInstanceProperties->getFullState());
     
     return viewport;
+    
+    /*
+     state["zoomX"] = getZoomX();
+     state["zoomY"] = getZoomY();
+     state["centerX"] = getCenterX();
+     state["centerY"] = getCenterY();
+     state["x"] = getX();
+     state["y"] = getY();
+     state["layer"] = getLayer();
+     state["column"] = getColumn();
+     state["retrigger"] = getRetrigger();
+     state["isPlaying"] = getIsPlaying();
+     state["percentagePlayed"] = getPercentagePlayed();
+     state["startPercentage"] = getStartPercentage();
+     state["endPercentage"] = getEndPercentage();
+     state["effects_drywet"] = effects_drywet; // TODO: Make setter and getter
+     state["loopMode"] = getLoopMode();
+     state["direction"] = getDirection();
+     state["beatSnap"] = getBeatSnap();
+     state["isTriggered"] = getIsTriggered();
+     state["openedTimestamp"] = getOpenedTimestamp();
+     state["lastPlayedTimestamp"] = getLastPlayedTimestamp();
+     state["triggerMode"] = getTriggerMode();
+     */
 }
 
 Element* AppGUI::getLayerViewport(unsigned int layerNumber){

@@ -15,7 +15,7 @@
 #include "json.hpp"
 
 
-#define GUIDEBUG
+//#define GUIDEBUG
 
 /*!
  GUI definitions for dimensions

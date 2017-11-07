@@ -14,17 +14,27 @@
 
 class ToggleButtonGroup : public ButtonGroup
 {
- public:    
-    virtual void addButton(json::iterator it);
-    //void unpushAll();
-    //void unpushAllExcept(ToggleButton * tbToKeepUntouched);
-
+    std::function<void(ToggleButtonGroup *toggleButtonGroup)> onClick = NULL;
+ public:
     
+    /*!
+     ...
+     */
+    virtual void addButton(json::iterator it);
+
     /*!
      ...
      */
     virtual void update();
     
+    /*!
+     ...
+     */
     void draw(NVGcontext* vg);
+    
+    /*!
+     ...
+     */
+    void setOnClick(std::function<void(ToggleButtonGroup *toggleButtonGroup )> _onClick);
 };
 #endif /* ToggleButtonGroup_hpp */

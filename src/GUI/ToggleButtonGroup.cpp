@@ -11,6 +11,21 @@
 #include "Primitives.hpp"
 
 
+
+void ToggleButtonGroup::addButton(json::iterator it) {
+    auto jsonData = *it;
+    ButtonData newButtonData;
+    
+    newButtonData.caption = jsonData["title"];
+    newButtonData.rect = ofRectangle(currentX, 0, buttonsWidth, rect.height);
+    newButtonData.pressed = false;
+    newButtonData.pushed = (jsonData["value"].is_number() && jsonData["value"].get<unsigned int>() == value) ? true : false;
+    newButtonData.value = (jsonData["value"].is_number()) ? jsonData["value"].get<unsigned int>() : 0;
+    
+    
+    buttons.push_back(newButtonData);
+}
+
 void ToggleButtonGroup::draw(NVGcontext* vg)
 {
     Element::draw(vg);
@@ -35,7 +50,6 @@ void ToggleButtonGroup::draw(NVGcontext* vg)
 
 void ToggleButtonGroup::update()
 {
-    
     Element::update();
     
     for (auto &button:buttons) {
@@ -59,22 +73,14 @@ void ToggleButtonGroup::update()
                     button2.pushed = false;
                 }
             }
+            value = button.value;
             if (onClick != NULL) onClick(this);
-            //break;
         }
-        
-    
-        /*
-        
-        if (button.pressed == FALSE && previousPressed != pressed) {
-            selectedButtonData = button;
-            if (onClick != NULL) onClick(this);
-        }*/
     }
 }
 
-
-void ToggleButtonGroup::addButton(json::iterator it) {
-    ButtonGroup::addButton(it);
+void ToggleButtonGroup::setOnClick(std::function<void(ToggleButtonGroup *toggleButtonGroup)> _onClick) {
+    onClick = _onClick;
 }
+
 

@@ -33,6 +33,7 @@ protected:
     ButtonData selectedButtonData;
     unsigned long nButtons;
     float buttonsWidth, currentX;
+    unsigned int value;
     
     std::function<void(ButtonGroup *buttonGroup)> onClick = NULL;
     
@@ -102,9 +103,16 @@ public:
     ofRectangle getRectForButton(ButtonData button);
     
     /*!
-     \brief return s the button rect inside the window 
+     \brief returns the button rect inside the window
      */
     ofRectangle getVisibleRectForButton(ButtonData button);
+    
+    
+    /*!
+     \brief returns the value of the currently selected button
+     */
+    virtual unsigned int getValue();
+    
 
 };
 #endif /* ButtonGroup_hpp */
