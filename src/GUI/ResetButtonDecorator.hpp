@@ -22,6 +22,8 @@ public:
     void set(json config);
     void update();
     void setParent(Element *_parent);
+    void resize(ofRectangle newRect);
+    void setResetButton(ofRectangle _rect);
 };
 
 #endif /* ResetButtonDecorator_hpp */

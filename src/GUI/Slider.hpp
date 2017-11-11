@@ -25,6 +25,7 @@ class Slider : public Button
 protected:
     std::function<void(Slider *slider)> onChange= NULL;
     float value, maxValue, minValue, defaultValue;
+    Boolean showValue;
 
 public:
     

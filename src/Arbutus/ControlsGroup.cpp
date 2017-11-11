@@ -21,7 +21,6 @@ ControlsGroup::~ControlsGroup()  {
 
 void ControlsGroup::set(json data)  {
     controlsFullState = data;
-    //cout << data.dump(4) << endl;
     createGUIElements();
 }
 
@@ -52,8 +51,25 @@ void ControlsGroup::addFloat(json _elementData, string key) {
         {"caption", _elementData["title"].get<string>()},
         {"minValue", (float) _elementData["min"].get<float>()},
         {"maxValue", (float) _elementData["max"].get<float>()},
-        {"value", (float) _elementData["value"].get<float>()}
+        {"value", (float) _elementData["value"].get<float>()},
+        {"defaultValue", (float) (_elementData["value"].is_number() ? _elementData["value"].get<float>() : 0.0)}
     };
+    
+    Slider *newSlider = new Slider();
+    ResetButtonDecorator *sliderWithReset = new ResetButtonDecorator(newSlider);
+    sliderWithReset->set(sliderData);
+    GUI::getInstance().add(sliderWithReset);
+    sliderWithReset->setParent(parentElement);
+    Properties *properties = this->properties;
+    newSlider->setOnChange([properties, _elementData, key](Slider *slider) mutable {
+        if (properties == NULL) {
+            return;
+        }
+        properties->set(key, slider->getValue());
+    });
+    
+    return;
+    /*
     
     Slider *newSlider = (Slider *) parentElement->add(GUI::getInstance().add<Slider>(sliderData));
     Properties *properties = this->properties;
@@ -63,6 +79,7 @@ void ControlsGroup::addFloat(json _elementData, string key) {
         }
         properties->set(key, slider->getValue());
     });
+     */
 }
 
 void ControlsGroup::addButtonGroup(json _elementData, string key) {

@@ -37,4 +37,9 @@ void Decorator::setParent(Element *_parent) {
     element->setParent(_parent);
 }
 
+void Decorator::resize(ofRectangle newRect) {
+    Element::resize(newRect);
+    element->resize(newRect);
+}
+
 

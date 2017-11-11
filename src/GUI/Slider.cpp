@@ -14,7 +14,7 @@
 
 Slider::Slider()
 {
-    
+    showValue = true;
 }
 
 
@@ -71,10 +71,16 @@ float Slider::getRealValue(float normalizedValue) {
 
 void Slider::draw(NVGcontext* vg)
 {
+    string displayedCaption = caption;
     ofRectangle drawingRect = Element::getDrawingRec();
     ofColor backgroundColor = getBackgroundColor();
     Element::draw(vg);
-    drawSlider(vg, getNormalizedValue(), caption, drawingRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    
+    if (showValue) {
+        displayedCaption.append(" | " + ofToString(value, 2));
+    }
+    
+    drawSlider(vg, getNormalizedValue(), displayedCaption, drawingRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
     Element::finishDraw(vg);
 }
 
@@ -107,5 +113,6 @@ void Slider::setOnChange(std::function<void(Slider *slider)> _onChange) {
 
 void Slider::setDefaultValue() {
     value = defaultValue;
+    onChange(this);
 }
 

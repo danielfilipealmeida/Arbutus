@@ -43,7 +43,12 @@ public:
     /*!
      \brief ...
      */
-     void setParent(Element *_parent);
+    void setParent(Element *_parent);
+    
+    /*!
+     \brief ...
+     */
+    void resize(ofRectangle newRect);
 };
 
 

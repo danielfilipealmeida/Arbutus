@@ -30,9 +30,9 @@ void ofApp::setup(){
         {"column", 0}
     });
     
-    //appGui.setup();
+    appGui.setup();
     //guiTest001();
-    guiTest002();
+    //guiTest002();
     
 
     windows.add(window);

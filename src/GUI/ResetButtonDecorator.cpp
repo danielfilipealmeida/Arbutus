@@ -15,7 +15,6 @@ void ResetButtonDecorator::draw(NVGcontext* vg)
     Decorator::draw(vg);
     
     ofRectangle theRect;
-    Boolean isHovered;
     ofColor backgroundColor;
     
     theRect = resetButton.rect;
@@ -30,13 +29,22 @@ void ResetButtonDecorator::draw(NVGcontext* vg)
 void ResetButtonDecorator::set(json config) {
     Decorator::set(config);
     
-    resetButton.caption = "X";
-    resetButton.rect.width = resetButton.rect.height = config["height"];
-    resetButton.rect.y = config["y"].get<float>();
-    resetButton.rect.x = config["x"].get<float>() + config["width"].get<float>() - resetButton.rect.width;
-    
-    config["width"] = config["width"].get<float>() - resetButton.rect.width - (GUI_BORDER / 2.0);
+    if (config["x"].is_number() &&
+        config["y"].is_number() &&
+        config["width"].is_number() &&
+        config["height"].is_number())
+    {
+        setResetButton(ofRectangle(config["x"].get<float>(),config["y"].get<float>(),config["width"].get<float>(),config["height"].get<float>()));
+        config["width"] = config["width"].get<float>() - resetButton.rect.width - (GUI_BORDER / 2.0);
+    }
     getElement()->set(config);
+}
+
+void ResetButtonDecorator::setResetButton(ofRectangle _rect) {
+    resetButton.caption = "X";
+    resetButton.rect.width = resetButton.rect.height = _rect.height;
+    resetButton.rect.y = _rect.y;
+    resetButton.rect.x = _rect.x + _rect.width - resetButton.rect.width;
 }
 
 void ResetButtonDecorator::update() {
@@ -54,11 +62,8 @@ void ResetButtonDecorator::update() {
     
     resetButton.hover = visibleRect.inside(ofGetMouseX(), ofGetMouseY());
     if (resetButton.hover) {
-        resetButton.pressed = pressed;
-        
-        if (resetButton.pressed == true && previousPressed != resetButton.pressed && previousHover == true) resetButton.pushed = true;
-        
-        //cout << ( (resetButton.pushed)? "pushed":"not pussed") << endl;
+        resetButton.pressed = (ofGetMousePressed() > 0);
+        resetButton.pushed = (resetButton.pressed == true && previousPressed != resetButton.pressed && previousHover == true) ? true : false;
         if (resetButton.pushed) {
             Decorator::getElement()->setDefaultValue();
         }
@@ -72,4 +77,10 @@ void ResetButtonDecorator::update() {
 
 void ResetButtonDecorator::setParent(Element *_parent) {
     Decorator::setParent(_parent);
+}
+
+void ResetButtonDecorator::resize(ofRectangle newRect) {
+    setResetButton(newRect);
+    newRect.width = newRect.width - resetButton.rect.width - (GUI_BORDER / 2.0);
+    Decorator::resize(newRect);
 }
