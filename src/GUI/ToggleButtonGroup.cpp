@@ -42,7 +42,7 @@ void ToggleButtonGroup::draw(NVGcontext* vg)
         visibleRect = getVisibleRectForButton(button);
         isHovered =  visibleRect.inside(ofGetMouseX(), ofGetMouseY());
         backgroundColor = ToggleButton::getBackgroundColor(isHovered, button.pressed, button.pushed );
-        drawButton(vg, 0, button.caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+        drawButton(vg, button.caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
     }
     
     Element::finishDraw(vg);

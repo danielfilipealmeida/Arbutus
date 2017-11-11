@@ -147,7 +147,7 @@ void ofApp::guiTest002() {
         {"x", 400},
         {"y", 240},
         {"width", 100},
-        {"height", 32},
+        {"height", 22},
         {"caption", "Slider2"},
         {"value", 0.2},
         {"minValue", -1.0},

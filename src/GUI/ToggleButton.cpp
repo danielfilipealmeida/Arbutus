@@ -45,7 +45,7 @@ void ToggleButton::draw(NVGcontext* vg)
     
     Element::draw(vg);
     backgroundColor = getBackgroundColor(hover, pressed, isPushed());
-    drawButton(vg, icon, caption, getRect(), ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    drawButton(vg, caption, getRect(), ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
     
     Element::finishDraw(vg);
 }

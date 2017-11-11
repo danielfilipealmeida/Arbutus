@@ -63,7 +63,7 @@ void Preview::draw(NVGcontext* vg) {
         captionRect.width = 72;
         captionRect.height = 20;
         drawFilledRect(vg, captionRect, ofColor2NVGColor(ofColor::black));
-        printCenteredText(vg, 0, caption, captionRect, ofColor2NVGColor(ofColor::white));
+        printCenteredText(vg, caption, captionRect, ofColor2NVGColor(ofColor::white));
     }
     Element::finishDraw(vg);
 }

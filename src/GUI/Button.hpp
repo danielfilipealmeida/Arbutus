@@ -21,6 +21,7 @@ typedef struct {
     ofRectangle rect;
     Boolean pressed;
     Boolean pushed;
+    Boolean hover;
 } ButtonData;
 
 /*!

@@ -125,27 +125,15 @@ void printText(NVGcontext* vg, string text, float x, float y, NVGcolor textColor
             );
 }
 
-void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor textColor) {
-    float tw = 0, iw = 0;
+void printCenteredText(NVGcontext* vg, string text, ofRectangle rect, NVGcolor textColor) {
+    float textWidth = 0;
     char icon[8];
     
     nvgFontSize(vg, FONTSIZE);
     nvgFontFace(vg, "sans-bold");
     nvgFillColor(vg, textColor);
     
-    tw = nvgTextBounds(vg, 0,0, text.c_str(), NULL, NULL);
-    if (preicon != 0) {
-        nvgFontSize(vg, rect.getHeight() * 1.3f);
-        nvgFontFace(vg, "icons");
-        nvgTextAlign(vg,NVG_ALIGN_LEFT|NVG_ALIGN_MIDDLE);
-        nvgText(
-                vg,
-                rect.getX() + rect.getWidth() * 0.5f - tw * 0.5f - iw * 0.75f,
-                rect.getY() + rect.getHeight() * 0.5f,
-                cpToUTF8(preicon,icon),
-                NULL
-                );
-    }
+    textWidth = nvgTextBounds(vg, 0,0, text.c_str(), NULL, NULL);
     
     nvgFontSize(vg, FONTSIZE);
     nvgFontFace(vg, "sans-bold");
@@ -153,7 +141,7 @@ void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rec
     
     nvgText(
             vg,
-            rect.getX() + rect.getWidth() * 0.5f - tw * 0.5f + iw * 0.25f,
+            rect.getX() + rect.getWidth() * 0.5f - textWidth * 0.5f,
             rect.getY() + rect.getHeight() * 0.5f,
             text.c_str(),
             NULL
@@ -177,12 +165,12 @@ void printCenteredTextRotated90(NVGcontext* vg, string text, ofRectangle rect, N
    
 }
 
-void drawButton(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor)
+void drawButton(NVGcontext* vg, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor)
 {
     float cornerRadius = 2.0f;
     
     drawBox(vg, rect, backgroundColor, cornerRadius);
-    printCenteredText(vg, preicon, text, rect, textColor);
+    printCenteredText(vg, text, rect, textColor);
 }
 
 void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor, Boolean vertical)
@@ -193,7 +181,6 @@ void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcol
     ofRectangle innerRect, outerRect, valueRect;
     innerRect = outerRect = rect;
     shrinkRect(innerRect, 1);
-    //shrinkRect(outerRect, 0.5);
     
     valueRect = innerRect;
     if (!vertical ) {
@@ -207,7 +194,13 @@ void drawSlider(NVGcontext* vg, float pos, string text, ofRectangle rect, NVGcol
     drawFilledRoundRect(vg, valueRect, ofColor2NVGColor(ofColor::white, 64), cornerRadius - 1);
     drawStrokedRoundRect(vg, outerRect, ofColor2NVGColor(ofColor::black), cornerRadius - 0.5);
     
-    if (!vertical) printCenteredText(vg, 0, text, rect, textColor);
-    else printCenteredTextRotated90(vg, text, rect, textColor);
+    if (!vertical) {
+        nvgTextAlign(vg, NVG_ALIGN_LEFT | NVG_ALIGN_MIDDLE);
+        printText(vg, text, rect.x + 4, rect.y + rect.getHeight() * 0.5f, textColor);
+        //printCenteredText(vg, 0, text, rect, textColor);
+    }
+    else {
+        printCenteredTextRotated90(vg, text, rect, textColor);
+    }
 }
 

@@ -84,7 +84,7 @@ void ButtonGroup::draw(NVGcontext* vg)
         visibleRect = getVisibleRectForButton(button);
         isHovered =  visibleRect.inside(ofGetMouseX(), ofGetMouseY());
         backgroundColor = Button::getBackgroundColor(isHovered, pressed);
-        drawButton(vg, 0, button.caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+        drawButton(vg, button.caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
     }
     
     Element::finishDraw(vg);

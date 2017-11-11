@@ -55,7 +55,7 @@ void Button::draw(NVGcontext* vg)
     
     backgroundColor = getBackgroundColor(hover, pressed);
     theRect = getRect();
-    drawButton(vg, icon, caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    drawButton(vg, caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
 
     Element::finishDraw(vg);
 }

@@ -26,7 +26,7 @@ NVGcolor ofColor2NVGColor(ofColor color, unsigned char alpha = 255);
 /*!
  \brief Draws a button
  */
-void drawButton(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor);
+void drawButton(NVGcontext* vg, string text, ofRectangle rect, NVGcolor backgroundColor, NVGcolor textColor);
 
 /*!
  \brief Draws a slider
@@ -46,7 +46,7 @@ void shrinkRect(ofRectangle &rect, float pixels);
 /*!
  \brief .
  */
-void printCenteredText(NVGcontext* vg, int preicon, string text, ofRectangle rect, NVGcolor textColor);
+void printCenteredText(NVGcontext* vg, string text, ofRectangle rect, NVGcolor textColor);
 
 /*!
  \brief .

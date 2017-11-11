@@ -21,7 +21,7 @@ void ResetButtonDecorator::draw(NVGcontext* vg)
     visibleRect = resetButton.rect;
     isHovered =  visibleRect.inside(ofGetMouseX(), ofGetMouseY());
     backgroundColor = Button::getBackgroundColor(isHovered, pressed);
-    drawButton(vg, 0, resetButton.caption, resetButton.rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    drawButton(vg, resetButton.caption, resetButton.rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
     
 }
 
@@ -30,7 +30,9 @@ void ResetButtonDecorator::set(json config) {
     resetButton.rect.width = resetButton.rect.height = config["height"];
     resetButton.rect.y = config["y"];
     resetButton.rect.x = config["x"].get<float>() + config["width"].get<float>() - resetButton.rect.width;
-    config["width"] = config["width"].get<float>() - resetButton.rect.width;
+    config["width"] = config["width"].get<float>() - resetButton.rect.width - (GUI_BORDER / 2.0);
+    
+    resetButton.caption = "X";
     
     getElement()->set(config);
 }
@@ -39,13 +41,22 @@ void ResetButtonDecorator::update() {
     Decorator::update();
     
     Boolean previousPressed = resetButton.pressed;
+    Boolean previousHover = resetButton.hover;
     ofRectangle visibleRect;
   
-    if (resetButton.rect.inside(ofGetMouseX(), ofGetMouseY())) {
+    resetButton.hover = resetButton.rect.inside(ofGetMouseX(), ofGetMouseY());
+    if (resetButton.hover) {
         resetButton.pressed = pressed;
         
-        if (pressed == true && previousPressed != resetButton.pressed) {
+        if (resetButton.pressed == true && previousPressed != resetButton.pressed && previousHover == true) resetButton.pushed = true;
+        
+        if (resetButton.pushed) {
             Decorator::getElement()->setDefaultValue();
         }
     }
+    else {
+        resetButton.pressed = false;
+        resetButton.pushed = false;
+    }
+   
 }
