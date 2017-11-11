@@ -12,13 +12,7 @@
 #include "Button.hpp"
 
 
-typedef struct {
-    string caption;
-    unsigned int value;
-    ofRectangle rect;
-    Boolean pressed;
-    Boolean pushed;
-} ButtonData;
+
 
 /*!
 @class ButtonGroup

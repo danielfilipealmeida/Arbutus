@@ -43,6 +43,7 @@ void ButtonGroup::update()
 }
 
 
+
 ofRectangle ButtonGroup::getRectForButton(ButtonData button) {
     ofRectangle theRect;
     
@@ -65,6 +66,7 @@ ofRectangle ButtonGroup::getVisibleRectForButton(ButtonData button) {
     
     return visibleRect;
 }
+
 
 void ButtonGroup::draw(NVGcontext* vg)
 {

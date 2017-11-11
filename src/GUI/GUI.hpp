@@ -21,6 +21,12 @@
 #include "ButtonGroup.hpp"
 #include "ToggleButtonGroup.hpp"
 
+// Decorators
+#include "Decorator.hpp"
+#include "ResetButtonDecorator.hpp"
+
+
+
 /**
  * \brief Defines a GUI tree
  *
@@ -56,12 +62,17 @@ public:
     void draw();
     
     /*!
-     Load all needed fonts
+     \brief Load all needed fonts
      */
     void loadFonts();
     
     /*!
-     Template for creating, setting and storing new elements
+     \brief Adds an element to the elements list
+     */
+    void add(Element *element);
+
+    /*!
+     \brief Template for creating, setting and storing new elements
      */
     template<class guiClass>
     guiClass* add(json data) {
@@ -75,12 +86,12 @@ public:
     };
     
     /*!
-     Apply a lambda to all elements in the GUI
+     \brief Apply a lambda to all elements in the GUI
      */
     void forEach(std::function<void (Element *)> lambda);
     
     /*!
-     Apply a lambda to filter from all elements of the GUI
+     \brief Apply a lambda to filter from all elements of the GUI
      */
     std::vector<Element*> filter(std::function<bool (Element *)> lambda);
 };

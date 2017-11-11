@@ -24,7 +24,7 @@ class Slider : public Button
 {
 protected:
     std::function<void(Slider *slider)> onChange= NULL;
-    float value, maxValue, minValue;
+    float value, maxValue, minValue, defaultValue;
 
 public:
     
@@ -87,6 +87,8 @@ public:
      \brief transform a normalized value into on that corresponds to a real value inside the slider limis
      */
     float getRealValue(float normalizedValue);
+    
+    void setDefaultValue();
 
 };
 

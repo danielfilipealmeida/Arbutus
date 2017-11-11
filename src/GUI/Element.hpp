@@ -84,7 +84,7 @@ public:
      Draws. Method to be overriden by childs.
      When overriding this method, the descendent needs always to run this because in here elements inside elements are properly handled.
      */
-    virtual void draw(NVGcontext* vg);
+    virtual void draw(NVGcontext* vg) = 0;
     
     
     /*!
@@ -95,7 +95,7 @@ public:
     /*!
      Sets the Rectangle 
      */
-    virtual void set(json config);
+    virtual void set(json config) = 0;
     
     /**
      ...
@@ -145,7 +145,24 @@ public:
      */
     virtual void resize(ofRectangle newRect);
     
+    /*!
+     \brief gets the height for a requested width
+     */
     virtual float getHeightForWidth(float _width);
+    
+    /*!
+     \brief Get a visible rect, in the screen coordinates and crop if needed
+     
+     A returned rect can be croped if it´s inside a viewport that isn't completely visible
+     */
+    ofRectangle getVisibleRectForRect(ofRectangle _rect);
+    
+    /*!
+     \brief Method to be used to set the value to a default value that should be defined
+     
+     This method is defined and is empty and should only be overriden where it's needed, like in the Sliders
+     */
+    virtual void setDefaultValue() {}
     
 };
 

@@ -12,8 +12,16 @@
 #include <stdio.h>
 #include "Element.hpp"
 
-
-
+/*!
+ \brief a structure so store data that can be used to define a button when a button class isn't needed
+ */
+typedef struct {
+    string caption;
+    unsigned int value;
+    ofRectangle rect;
+    Boolean pressed;
+    Boolean pushed;
+} ButtonData;
 
 /*!
  @class Button

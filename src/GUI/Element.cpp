@@ -109,18 +109,6 @@ void Element::set(json config) {
              config["y"].get<unsigned int>(),
              config["width"].get<unsigned int>(),
              config["height"].get<unsigned int>());
-    /*
-    if (!config.is_object()) throw("not a json object");
-    if (!config["x"].is_number()) throw("x not defined");
-    if (!config["y"].is_number()) throw("x not defined");
-    if (!config["width"].is_number()) throw("x not defined");
-    if (!config["height"].is_number()) throw("x not defined");
-    
-    rect.set(config["x"].get<unsigned int>(),
-             config["y"].get<unsigned int>(),
-             config["width"].get<unsigned int>(),
-             config["height"].get<unsigned int>());
-     */
 }
 
 
@@ -204,3 +192,17 @@ float Element::getHeightForWidth(float _width) {
     return GUI_LINE_HEIGHT * 1.5;
 }
 
+ofRectangle Element::getVisibleRectForRect(ofRectangle _rect) {
+    ofRectangle visibleRect;
+    
+    visibleRect = _rect;
+    visibleRect.x = visibleRect.x + rect.x;
+    visibleRect.y = visibleRect.y + rect.y;
+    if (parent != NULL) {
+        ofRectangle parentRect = parent->getRect();
+        visibleRect.x = visibleRect.x + parentRect.x;
+        visibleRect.y = visibleRect.y + parentRect.y;
+    };
+    
+    return visibleRect;
+}

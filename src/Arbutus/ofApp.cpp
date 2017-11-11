@@ -30,8 +30,9 @@ void ofApp::setup(){
         {"column", 0}
     });
     
-    appGui.setup();
+    //appGui.setup();
     //guiTest001();
+    guiTest002();
     
 
     windows.add(window);
@@ -124,6 +125,36 @@ void ofApp::guiTest001() {
     toggleButtonGroup->setParent(viewport2);
     
     viewport2->update();
+}
+
+void ofApp::guiTest002() {
+    //ResetButtonDecorator *sliderWithReset = GUI::getInstance().add<ResetButtonDecorator>({});
+
+    /*
+    Slider *slider = GUI::getInstance().add<Slider>({
+        {"x", 400},
+        {"y", 240},
+        {"width", 32},
+        {"height", 100},
+        {"caption", "Slider2"},
+        {"value", 0.2},
+        {"minValue", -1.0},
+        {"maxValue", 1.0}
+    });
+     */
+    ResetButtonDecorator *sliderWithReset = new ResetButtonDecorator(new Slider());
+    sliderWithReset->set({
+        {"x", 400},
+        {"y", 240},
+        {"width", 100},
+        {"height", 32},
+        {"caption", "Slider2"},
+        {"value", 0.2},
+        {"minValue", -1.0},
+        {"maxValue", 1.0}
+    });
+    GUI::getInstance().add(sliderWithReset);
+    
 }
 
 /*

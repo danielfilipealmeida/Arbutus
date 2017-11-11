@@ -42,6 +42,9 @@ GUI& GUI::getInstance() {
     return instance;
 }
 
+void GUI::add(Element *element) {
+     elements.push_back(element);
+}
 
 void GUI::loadFonts() {
     fontIcons = nvgCreateFont(vg, "icons", "../Resources/entypo.ttf");

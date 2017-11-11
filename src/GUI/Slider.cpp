@@ -86,6 +86,7 @@ void Slider::set(json config) {
     if (!config["minValue"].is_null()) minValue = config["minValue"].is_number_float() ? config["minValue"].get<float>() : 0.0;
     if (!config["maxValue"].is_null()) maxValue = config["maxValue"].is_number_float() ? config["maxValue"].get<float>() : 1.0;
     if (!config["value"].is_null()) setValue((config["value"].is_number_float()) ? config["value"].get<float>() : minValue);
+    if (!config["defaultValue"].is_null()) defaultValue = config["defaultValue"].is_number_float() ? config["defaultValue"].get<float>(): 0.0;
 }
 
 
@@ -103,4 +104,8 @@ void Slider::setOnChange(std::function<void(Slider *slider)> _onChange) {
     onChange = _onChange;
 }
 
+
+void Slider::setDefaultValue() {
+    value = defaultValue;
+}
 
