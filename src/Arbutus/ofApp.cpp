@@ -123,29 +123,24 @@ void ofApp::guiTest001() {
         }
     });
     toggleButtonGroup->setParent(viewport2);
-    
     viewport2->update();
 }
 
 void ofApp::guiTest002() {
-    //ResetButtonDecorator *sliderWithReset = GUI::getInstance().add<ResetButtonDecorator>({});
-
-    /*
-    Slider *slider = GUI::getInstance().add<Slider>({
-        {"x", 400},
-        {"y", 240},
-        {"width", 32},
-        {"height", 100},
-        {"caption", "Slider2"},
-        {"value", 0.2},
-        {"minValue", -1.0},
-        {"maxValue", 1.0}
+    Splitter *splitter = GUI::getInstance().add<Splitter>({
+        {"mode", SPLITTER_VERTICAL}
     });
-     */
+    Viewport *viewport1 = GUI::getInstance().add<Viewport>({});
+    
+    splitter->add(viewport1, 0.50);
+
+    Viewport *viewport2 = GUI::getInstance().add<Viewport>({});
+    
+    splitter->add(viewport2, 0.50);
     ResetButtonDecorator *sliderWithReset = new ResetButtonDecorator(new Slider());
     sliderWithReset->set({
-        {"x", 400},
-        {"y", 240},
+        {"x", 20},
+        {"y", 10},
         {"width", 100},
         {"height", 22},
         {"caption", "Slider2"},
@@ -154,6 +149,7 @@ void ofApp::guiTest002() {
         {"maxValue", 1.0}
     });
     GUI::getInstance().add(sliderWithReset);
+    sliderWithReset->setParent(viewport2);
     
 }
 

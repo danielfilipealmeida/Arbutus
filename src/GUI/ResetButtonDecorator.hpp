@@ -21,6 +21,7 @@ public:
     void draw(NVGcontext* vg);
     void set(json config);
     void update();
+    void setParent(Element *_parent);
 };
 
 #endif /* ResetButtonDecorator_hpp */

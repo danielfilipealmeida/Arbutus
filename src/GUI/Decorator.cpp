@@ -31,3 +31,10 @@ void Decorator::update() {
 Element* Decorator::getElement() {
     return element;
 }
+
+void Decorator::setParent(Element *_parent) {
+    Element::setParent(_parent);
+    element->setParent(_parent);
+}
+
+

@@ -84,10 +84,13 @@ public:
     float getNormalizedValue();
     
     /*!
-     \brief transform a normalized value into on that corresponds to a real value inside the slider limis
+     \brief transform a normalized value into on that corresponds to a real value inside the slider limits
      */
     float getRealValue(float normalizedValue);
     
+    /*!
+     \brief Update the value to the default
+     */
     void setDefaultValue();
 
 };

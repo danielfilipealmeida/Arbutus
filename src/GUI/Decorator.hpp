@@ -39,7 +39,11 @@ public:
      \brief Returns the element where this Decorator is applied to
      */
     Element* getElement();
-    
+   
+    /*!
+     \brief ...
+     */
+     void setParent(Element *_parent);
 };
 
 

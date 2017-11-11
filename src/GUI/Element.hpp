@@ -105,7 +105,7 @@ public:
     /*!
      \brief Sets the element that will contain this element
      */
-    void setParent(Element *_parent);
+    virtual void setParent(Element *_parent);
     
     /*!
      \brief Adds another element as a child
