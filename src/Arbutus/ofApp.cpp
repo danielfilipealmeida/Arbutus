@@ -30,9 +30,9 @@ void ofApp::setup(){
         {"column", 0}
     });
     
-    appGui.setup();
+    //appGui.setup();
     //guiTest001();
-    //guiTest002();
+    guiTest002();
     
 
     windows.add(window);
@@ -130,13 +130,18 @@ void ofApp::guiTest002() {
     Splitter *splitter = GUI::getInstance().add<Splitter>({
         {"mode", SPLITTER_VERTICAL}
     });
-    Viewport *viewport1 = GUI::getInstance().add<Viewport>({});
+    //Viewport *viewport1 = GUI::getInstance().add<Viewport>({});
     
-    splitter->add(viewport1, 0.50);
+     Viewport *viewport1 = GUI::getInstance().add<Viewport>({});
+    
+  
+    splitter->add(viewport1, 0.30);
 
-    Viewport *viewport2 = GUI::getInstance().add<Viewport>({});
-    
-    splitter->add(viewport2, 0.50);
+    Viewport *viewport2 = new Viewport();
+    SliderDecorator *viewportWithSlider = new SliderDecorator(viewport2);
+    //GUI::getInstance().add(viewportWithSlider);
+    GUI::getInstance().add(viewportWithSlider);
+    splitter->add(viewportWithSlider, 0.70);
     ResetButtonDecorator *sliderWithReset = new ResetButtonDecorator(new Slider());
     sliderWithReset->set({
         {"x", 20},

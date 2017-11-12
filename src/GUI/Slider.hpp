@@ -15,6 +15,15 @@
 
 using json = nlohmann::json;
 
+typedef struct SliderData {
+    ofRectangle rect;
+    Boolean pressed;
+    Boolean pushed;
+    Boolean hover;
+    float value, maxValue, minValue;
+} SliderData;
+
+
 /*!
  @class Slider
  @abstract Implements a slider from the button

@@ -24,6 +24,7 @@
 // Decorators
 #include "Decorator.hpp"
 #include "ResetButtonDecorator.hpp"
+#include "SliderDecorator.hpp"
 
 
 

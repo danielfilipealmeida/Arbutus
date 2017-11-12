@@ -39,6 +39,8 @@
 		0CAC58841F935AE200090CCD /* Viewport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58831F935AD800090CCD /* Viewport.cpp */; };
 		0CAC58861F938DE900090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58851F938DE900090CCD /* Splitter.cpp */; };
 		0CAC58871F94108500090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC587A1F935A2600090CCD /* Splitter.cpp */; };
+		0CB9D7081FB85047001D9E4F /* SliderDecorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9D7061FB85047001D9E4F /* SliderDecorator.cpp */; };
+		0CB9D7091FB85047001D9E4F /* SliderDecorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9D7061FB85047001D9E4F /* SliderDecorator.cpp */; };
 		0CC9E3DA1FAA76B200861CC8 /* ToggleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CC9E3D81FAA76B200861CC8 /* ToggleButton.cpp */; };
 		0CC9E3DB1FAA76B200861CC8 /* ToggleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CC9E3D81FAA76B200861CC8 /* ToggleButton.cpp */; };
 		0CC9E3E31FAA7DDF00861CC8 /* ToggleButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CC9E3E11FAA7DDF00861CC8 /* ToggleButtonGroup.cpp */; };
@@ -222,6 +224,8 @@
 		0CAC58811F935A9000090CCD /* VerticalSlider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
 		0CAC58831F935AD800090CCD /* Viewport.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Viewport.cpp; path = GUI/Viewport.cpp; sourceTree = "<group>"; };
 		0CAC58851F938DE900090CCD /* Splitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Splitter.cpp; path = CatchCpp/GUI/Splitter.cpp; sourceTree = "<group>"; };
+		0CB9D7061FB85047001D9E4F /* SliderDecorator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SliderDecorator.cpp; path = GUI/SliderDecorator.cpp; sourceTree = "<group>"; };
+		0CB9D7071FB85047001D9E4F /* SliderDecorator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = SliderDecorator.hpp; path = GUI/SliderDecorator.hpp; sourceTree = "<group>"; };
 		0CC9E3D81FAA76B200861CC8 /* ToggleButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ToggleButton.cpp; path = GUI/ToggleButton.cpp; sourceTree = "<group>"; };
 		0CC9E3D91FAA76B200861CC8 /* ToggleButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ToggleButton.hpp; path = GUI/ToggleButton.hpp; sourceTree = "<group>"; };
 		0CC9E3E11FAA7DDF00861CC8 /* ToggleButtonGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ToggleButtonGroup.cpp; path = GUI/ToggleButtonGroup.cpp; sourceTree = "<group>"; };
@@ -484,6 +488,8 @@
 				0C3A40391FB64262000F4130 /* Decorator.hpp */,
 				0C3A40411FB649F2000F4130 /* ResetButtonDecorator.cpp */,
 				0C3A40421FB649F2000F4130 /* ResetButtonDecorator.hpp */,
+				0CB9D7061FB85047001D9E4F /* SliderDecorator.cpp */,
+				0CB9D7071FB85047001D9E4F /* SliderDecorator.hpp */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -1085,6 +1091,7 @@
 				65276BA81F486DE100949383 /* ofxRtMidiIn.cpp in Sources */,
 				65276BB01F486E1600949383 /* ofxOscReceiver.cpp in Sources */,
 				0C9895FD1FA50645003B47BD /* Windows.cpp in Sources */,
+				0CB9D7081FB85047001D9E4F /* SliderDecorator.cpp in Sources */,
 				0C0376A91F96B7E40079E842 /* Preview.cpp in Sources */,
 				650415341F6582F4001D7832 /* main.cpp in Sources */,
 				0C0B6A0E1FAA2CAD0055202F /* ButtonGroup.cpp in Sources */,
@@ -1111,6 +1118,7 @@
 				658AF5381F6FEA4500576066 /* Slider.cpp in Sources */,
 				658AF53A1F6FEA4500576066 /* nanovg.c in Sources */,
 				65E6BD3F1F446BB5008E4F9E /* NetworkingUtils.cpp in Sources */,
+				0CB9D7091FB85047001D9E4F /* SliderDecorator.cpp in Sources */,
 				65E6BD3E1F4469DB008E4F9E /* ofxXmlSettings.cpp in Sources */,
 				0C9895FE1FA50645003B47BD /* Windows.cpp in Sources */,
 				0C0B6A061FAA263B0055202F /* Label.cpp in Sources */,
