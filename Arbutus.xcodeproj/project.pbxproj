@@ -167,6 +167,13 @@
 			remoteGlobalIDString = 650455891F47A9FE00CB3BE5;
 			remoteInfo = Empty;
 		};
+		0C71E9E11FF7ECF80045EA4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C0B84CF1FC078FD00BEF796;
+			remoteInfo = Server;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -255,7 +262,7 @@
 		650415581F65DE47001D7832 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Resources/Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		650415591F65DE47001D7832 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Resources/Fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		6504155A1F65DE47001D7832 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Resources/Fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		650455591F47085D00CB3BE5 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		650455591F47085D00CB3BE5 /* Arbutus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arbutus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6504CA6B1ECE4DCC00355E4A /* Loop001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Loop001.mp4; sourceTree = "<group>"; };
 		650A1E171F8407A60061CFB6 /* Viewport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Viewport.cpp; path = CatchCpp/GUI/Viewport.cpp; sourceTree = "<group>"; };
 		65308E971F685A0D00106AE5 /* GUIStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUIStyle.cpp; path = GUI/GUIStyle.cpp; sourceTree = "<group>"; };
@@ -412,6 +419,7 @@
 			children = (
 				0C08AEFD1F915B0C00CE531F /* libArbutusLib.a */,
 				0C08AEFF1F915B0C00CE531F /* Catch Tests */,
+				0C71E9E21FF7ECF80045EA4D /* Server.app */,
 				0C08AF011F915B0C00CE531F /* HelloWorld.app */,
 				0C08AF031F915B0C00CE531F /* Empty.app */,
 			);
@@ -869,7 +877,7 @@
 				65E896521E72E839000D470B /* scripts */,
 				65E896631E72F420000D470B /* Catch Tests */,
 				6504CA6A1ECE4DCC00355E4A /* Test Data */,
-				650455591F47085D00CB3BE5 /* HelloWorld.app */,
+				650455591F47085D00CB3BE5 /* Arbutus.app */,
 				0C08AEF51F915B0C00CE531F /* ArbutusEngine.xcodeproj */,
 				0C1E77E51F8E5320005507CF /* openFrameworksLib.xcodeproj */,
 			);
@@ -888,9 +896,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		650455581F47085D00CB3BE5 /* HelloWorld */ = {
+		650455581F47085D00CB3BE5 /* Arbutus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 650455671F47085D00CB3BE5 /* Build configuration list for PBXNativeTarget "HelloWorld" */;
+			buildConfigurationList = 650455671F47085D00CB3BE5 /* Build configuration list for PBXNativeTarget "Arbutus" */;
 			buildPhases = (
 				650455551F47085D00CB3BE5 /* Sources */,
 				650455561F47085D00CB3BE5 /* Frameworks */,
@@ -900,9 +908,9 @@
 			);
 			dependencies = (
 			);
-			name = HelloWorld;
+			name = Arbutus;
 			productName = HelloWorld;
-			productReference = 650455591F47085D00CB3BE5 /* HelloWorld.app */;
+			productReference = 650455591F47085D00CB3BE5 /* Arbutus.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65E8965B1E72F3FF000D470B /* Catch Tests */ = {
@@ -968,7 +976,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				650455581F47085D00CB3BE5 /* HelloWorld */,
+				650455581F47085D00CB3BE5 /* Arbutus */,
 				65E8965B1E72F3FF000D470B /* Catch Tests */,
 			);
 		};
@@ -1008,6 +1016,13 @@
 			fileType = wrapper.application;
 			path = Empty.app;
 			remoteRef = 0C08AF021F915B0C00CE531F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C71E9E21FF7ECF80045EA4D /* Server.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Server.app;
+			remoteRef = 0C71E9E11FF7ECF80045EA4D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1791,7 +1806,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		650455671F47085D00CB3BE5 /* Build configuration list for PBXNativeTarget "HelloWorld" */ = {
+		650455671F47085D00CB3BE5 /* Build configuration list for PBXNativeTarget "Arbutus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				650455681F47085D00CB3BE5 /* Debug */,

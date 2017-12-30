@@ -63,7 +63,6 @@ public:
      */
     ofRectangle calculateDrawingRectForElement(Element *element);
     
-    
     /*!
      \brief
      */

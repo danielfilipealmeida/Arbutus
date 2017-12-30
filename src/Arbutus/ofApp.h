@@ -37,6 +37,12 @@ class ofApp : public ofBaseApp {
     
     void setWindow(shared_ptr<ofAppBaseWindow> _window) {window = _window;}
     
+    /*!
+     Setups up some data to help development
+     */
+    void devSetup();
+
+    
     void guiTest001();
     void guiTest002();
     /*

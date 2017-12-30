@@ -13,10 +13,12 @@
 
 void SliderDecorator::draw(NVGcontext* vg)
 {
-    Decorator::draw(vg);
-    
     ofColor backgroundColor = Button::getBackgroundColor(slider.hover, slider.pushed);
+    
+    Decorator::draw(vg);
+    Element::draw(vg);
     drawSlider(vg, slider.value, "", slider.rect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor()), true);
+    Element::finishDraw(vg);
 }
 
 void SliderDecorator::set(json config)
@@ -56,12 +58,11 @@ void SliderDecorator::update()
     slider.hover = visibleRect.inside(ofGetMouseX(), ofGetMouseY());
     if (slider.hover) {
         slider.pressed = (ofGetMousePressed() > 0);
-        slider.pushed = (slider.pressed == true && previousPressed != slider.pressed && previousHover == true) ? true : false;
+        slider.pushed = (slider.pressed == true && previousHover == true) ? true : false;
         
         if (slider.pushed) {
             slider.value = (ofGetMouseY() - visibleRect.y) / (rect.height);
-            ((Viewport *)Decorator::getElement())->setScrollPositionY(slider.value);
-            
+            ((Viewport *) Decorator::getElement())->setScrollPositionY(slider.value);
         }
         
     }

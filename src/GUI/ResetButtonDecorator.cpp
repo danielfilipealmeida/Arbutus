@@ -23,7 +23,10 @@ void ResetButtonDecorator::draw(NVGcontext* vg)
         theRect.y = theRect.y + parent->rect.y;
     }
     backgroundColor = Button::getBackgroundColor(resetButton.hover, resetButton.pushed);
+    
+    //Element::draw(vg);
     drawButton(vg, resetButton.caption, theRect, ofColor2NVGColor(backgroundColor, 255), ofColor2NVGColor(GUIStyle::getInstance().getTextColor(), 255));
+    //Element::finishDraw(vg);
 }
 
 void ResetButtonDecorator::set(json config) {

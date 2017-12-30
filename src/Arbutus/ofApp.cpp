@@ -9,11 +9,23 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     Engine *engine = new Engine();
-    string filePath = ofFilePath::getCurrentExeDir() + "../Resources/set.json";
-    
+
     ofSetWindowTitle("Arbutus");
+    ofSetFrameRate(35); 
     
+    devSetup();
     
+    appGui.setup();
+    //guiTest001();
+    //guiTest002();
+    
+    windows.add(window);
+}
+
+void ofApp::devSetup() {
+    Engine *engine = Engine::getInstance();
+    
+     string filePath = ofFilePath::getCurrentExeDir() + "../Resources/set.json";
     try {
         engine->openSet(filePath);
     }
@@ -29,17 +41,7 @@ void ofApp::setup(){
         {"layer", 1},
         {"column", 0}
     });
-    
-    //appGui.setup();
-    //guiTest001();
-    guiTest002();
-    
-
-    windows.add(window);
-    
-    
 }
-
 
 void ofApp::guiTest001() {
     Splitter *splitter = GUI::getInstance().add<Splitter>({
@@ -155,7 +157,6 @@ void ofApp::guiTest002() {
     });
     GUI::getInstance().add(sliderWithReset);
     sliderWithReset->setParent(viewport2);
-    
 }
 
 /*
