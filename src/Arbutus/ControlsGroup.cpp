@@ -62,24 +62,9 @@ void ControlsGroup::addFloat(json _elementData, string key) {
     sliderWithReset->setParent(parentElement);
     Properties *properties = this->properties;
     newSlider->setOnChange([properties, _elementData, key](Slider *slider) mutable {
-        if (properties == NULL) {
-            return;
-        }
+        if (properties == NULL) return;
         properties->set(key, slider->getValue());
     });
-    
-    return;
-    /*
-    
-    Slider *newSlider = (Slider *) parentElement->add(GUI::getInstance().add<Slider>(sliderData));
-    Properties *properties = this->properties;
-    newSlider->setOnChange([properties, _elementData, key](Slider *slider) mutable {
-        if (properties == NULL) {
-            return;
-        }
-        properties->set(key, slider->getValue());
-    });
-     */
 }
 
 void ControlsGroup::addButtonGroup(json _elementData, string key) {

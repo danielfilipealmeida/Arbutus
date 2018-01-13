@@ -15,16 +15,16 @@ AppGUI::~AppGUI()  {
     
 }
 
-void AppGUI::setup() {
+void AppGUI::setup(string resourcesPath) {
     splitter = GUI::getInstance().add<Splitter>({
-        {"mode", SPLITTER_VERTICAL}
+        {"mode", SPLITTER_HORIZONTAL}
     });
     
     splitter->add(getMainOutputViewport(), 0.20);
     splitter->add(getLayerViewport(0), 0.20);
     splitter->add(getVisualInstanceAtLayer(0), 0.20);
     splitter->add(getLayerViewport(1), 0.20);
-    splitter->add(getVisualInstanceAtLayer(0), 0.20);
+    splitter->add(getVisualInstanceAtLayer(1), 0.20);
 }
 
 Element* AppGUI::getMainOutputViewport(){
@@ -70,30 +70,6 @@ Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
     controls.set(visualInstanceProperties->getFullState());
     
     return viewport;
-    
-    /*
-     state["zoomX"] = getZoomX();
-     state["zoomY"] = getZoomY();
-     state["centerX"] = getCenterX();
-     state["centerY"] = getCenterY();
-     state["x"] = getX();
-     state["y"] = getY();
-     state["layer"] = getLayer();
-     state["column"] = getColumn();
-     state["retrigger"] = getRetrigger();
-     state["isPlaying"] = getIsPlaying();
-     state["percentagePlayed"] = getPercentagePlayed();
-     state["startPercentage"] = getStartPercentage();
-     state["endPercentage"] = getEndPercentage();
-     state["effects_drywet"] = effects_drywet; // TODO: Make setter and getter
-     state["loopMode"] = getLoopMode();
-     state["direction"] = getDirection();
-     state["beatSnap"] = getBeatSnap();
-     state["isTriggered"] = getIsTriggered();
-     state["openedTimestamp"] = getOpenedTimestamp();
-     state["lastPlayedTimestamp"] = getLastPlayedTimestamp();
-     state["triggerMode"] = getTriggerMode();
-     */
 }
 
 Element* AppGUI::getLayerViewport(unsigned int layerNumber){

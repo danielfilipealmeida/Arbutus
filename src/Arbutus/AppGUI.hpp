@@ -21,7 +21,7 @@ public:
     AppGUI();
     ~AppGUI();
     
-    void setup();
+    void setup(string resourcesPath);
     Element* getMainOutputViewport();
     Element* getLayerViewport(unsigned int layerNumber);
     Element* getVisualInstanceAtLayer(unsigned int layerNumber);

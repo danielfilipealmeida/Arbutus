@@ -13,8 +13,7 @@
  @discussion ...
  */
 class ofApp : public ofBaseApp {
-    //GUI *gui;
-    //ControlsGroup layersControls;
+    string resourcesPath;
     
     AppGUI appGui;
     Windows windows;
