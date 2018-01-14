@@ -17,7 +17,7 @@ AppGUI::~AppGUI()  {
 
 void AppGUI::setup(string resourcesPath) {
     splitter = GUI::getInstance().add<Splitter>({
-        {"mode", SPLITTER_HORIZONTAL}
+        {"type", SPLITTER_HORIZONTAL}
     });
     
     splitter->add(getMainOutputViewport(), 0.20);
@@ -49,6 +49,7 @@ Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
     ControlsGroup controls;
     
     viewport = GUI::getInstance().add<Viewport>({});
+    SliderDecorator *viewportWithSlider = new SliderDecorator(viewport);
     layer = Layers::getInstance().get(layerNumber);
     visualInstance = layer->getActiveInstance();
     visualInstanceProperties = visualInstance->getProperties();
@@ -69,7 +70,7 @@ Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
     }));
     controls.set(visualInstanceProperties->getFullState());
     
-    return viewport;
+    return viewportWithSlider;
 }
 
 Element* AppGUI::getLayerViewport(unsigned int layerNumber){
@@ -80,6 +81,7 @@ Element* AppGUI::getLayerViewport(unsigned int layerNumber){
     ControlsGroup controls;
     
     viewport = GUI::getInstance().add<Viewport>({});
+    SliderDecorator *viewportWithSlider = new SliderDecorator(viewport);
     layer = Layers::getInstance().get(layerNumber);
 
     /* Set the viewport */
@@ -106,5 +108,5 @@ Element* AppGUI::getLayerViewport(unsigned int layerNumber){
     }));
     controls.set(layerProperties->getFullState());
     
-    return viewport;
+    return viewportWithSlider;
 }

@@ -6,6 +6,7 @@
 //
 
 #include "ControlsGroup.hpp"
+#include "Utils.h"
 
 //#define EXECUTE_SET(FUNC, PARAMS) set(FUNC)((PARAMS))
 #define EXECUTE_SET(func, params) func##params
@@ -30,8 +31,19 @@ void ControlsGroup::createGUIElements() {
     for(auto item:controlsDisplayOrder) {
         string controlName = item.get<string>();
         auto element = controlsFullState[controlName];
-        string type = element["type"].get<string>();
+        StateType type = (StateType) element["type"].get<unsigned int>();
         
+        switch (type) {
+        case StateType_Integer:
+        case StateType_Float:
+            addFloat(element, controlName);
+            break;
+            
+        case StateType_ToggleButtonGroup:
+            addToggleButtonGroup(element, controlName);
+            break;
+        }
+        /*
         if (type.compare("f") == 0) {
             addFloat(element, controlName);
         }
@@ -41,7 +53,7 @@ void ControlsGroup::createGUIElements() {
         else if (type.compare("toggle_button_group") == 0) {
             addToggleButtonGroup(element, controlName);
         }
-        
+        */
     }
 }
 
