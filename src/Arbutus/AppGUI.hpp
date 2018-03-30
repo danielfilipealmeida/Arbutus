@@ -17,12 +17,15 @@ class AppGUI {
     ControlsGroup layersControls;
     Splitter *splitter;
     
+    Splitter *mainSplitter, *layer1Splitter, *layer2Splitter;
+    
 public:
     AppGUI();
     ~AppGUI();
     
     void setup(string resourcesPath);
     Element* getMainOutputViewport();
+    Element* getLayerPreviewAndInfo(unsigned int layerNumber);
     Element* getLayerViewport(unsigned int layerNumber);
     Element* getVisualInstanceAtLayer(unsigned int layerNumber);
 };

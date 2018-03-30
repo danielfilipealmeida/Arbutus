@@ -32,33 +32,36 @@ void ControlsGroup::createGUIElements() {
         string controlName = item.get<string>();
         auto element = controlsFullState[controlName];
         StateType type = (StateType) element["type"].get<unsigned int>();
+        Element *addedGUIElement;
         
         switch (type) {
         case StateType_Integer:
         case StateType_Float:
-            addFloat(element, controlName);
+            addedGUIElement = addFloat(element, controlName);
             break;
             
         case StateType_ToggleButtonGroup:
-            addToggleButtonGroup(element, controlName);
+            addedGUIElement = addToggleButtonGroup(element, controlName);
             break;
         }
-        /*
-        if (type.compare("f") == 0) {
-            addFloat(element, controlName);
-        }
-        else if (type.compare("button_group") == 0) {
-            addButtonGroup(element, controlName);
-        }
-        else if (type.compare("toggle_button_group") == 0) {
-            addToggleButtonGroup(element, controlName);
-        }
-        */
+        
+        updateParentRect(addedGUIElement);
     }
+    
 }
 
+void ControlsGroup::updateParentRect(Element *lastAddedElement) {
+    return;
+    
+    ofRectangle lastAddedElementRect = lastAddedElement->getRect();
+    ofRectangle currentParentRect = parentElement->getRect();
+    
+    currentParentRect.growToInclude(lastAddedElementRect.x + lastAddedElementRect.width + GUI_BORDER,
+                                    lastAddedElementRect.y + lastAddedElementRect.height + GUI_BORDER);
+    parentElement->getVisibleRectForRect(currentParentRect);
+}
 
-void ControlsGroup::addFloat(json _elementData, string key) {
+Element* ControlsGroup::addFloat(json _elementData, string key) {
     json sliderData = {
         {"caption", _elementData["title"].get<string>()},
         {"minValue", (float) _elementData["min"].get<float>()},
@@ -77,9 +80,11 @@ void ControlsGroup::addFloat(json _elementData, string key) {
         if (properties == NULL) return;
         properties->set(key, slider->getValue());
     });
+    
+    return newSlider;
 }
 
-void ControlsGroup::addButtonGroup(json _elementData, string key) {
+Element* ControlsGroup::addButtonGroup(json _elementData, string key) {
     json buttonGroupData = {
         {"caption", _elementData["title"].get<string>()},
         {"options", _elementData["options"]},
@@ -90,9 +95,11 @@ void ControlsGroup::addButtonGroup(json _elementData, string key) {
         {"caption", _elementData["title"].get<string>()}
     }));
     ButtonGroup *buttonGroup = (ButtonGroup *) parentElement->add(GUI::getInstance().add<ButtonGroup>(buttonGroupData));
+    
+    return buttonGroup;
 }
 
-void ControlsGroup::addToggleButtonGroup(json _elementData, string key) {
+Element* ControlsGroup::addToggleButtonGroup(json _elementData, string key) {
     json toggleButtonGroupData = {
         {"caption", _elementData["title"].get<string>()},
         {"options", _elementData["options"]},
@@ -112,6 +119,8 @@ void ControlsGroup::addToggleButtonGroup(json _elementData, string key) {
         
         properties->set(key, value);
     });
+    
+    return toggleButtonGroup;
 }
 
 void ControlsGroup::setParentElement(Element *_element) {
@@ -124,4 +133,16 @@ void ControlsGroup::setProperties(Properties *_properties) {
 
 void ControlsGroup::setControlsDisplayOrder(json _displayOrder) {
     controlsDisplayOrder = _displayOrder;
+}
+
+
+json ControlsGroup::dumpJson() {
+    json state;
+    
+    state["controlsFullState"] = controlsFullState;
+    state["controlsDisplayOrder"] = controlsDisplayOrder;
+    state["parentElement"] = parentElement->jsonDump();
+    state["properties"] = properties->getFullState();
+    
+    return state;
 }

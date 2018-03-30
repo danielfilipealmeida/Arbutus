@@ -16,15 +16,33 @@ AppGUI::~AppGUI()  {
 }
 
 void AppGUI::setup(string resourcesPath) {
-    splitter = GUI::getInstance().add<Splitter>({
+    /* main splitter */
+    mainSplitter = GUI::getInstance().add<Splitter>({
         {"type", SPLITTER_HORIZONTAL}
     });
     
-    splitter->add(getMainOutputViewport(), 0.20);
-    splitter->add(getLayerViewport(0), 0.20);
-    splitter->add(getVisualInstanceAtLayer(0), 0.20);
-    splitter->add(getLayerViewport(1), 0.20);
-    splitter->add(getVisualInstanceAtLayer(1), 0.20);
+    /* left Column - preview and other stuff */
+    mainSplitter->add(getMainOutputViewport(), 0.33);
+    
+    /* layer 1 */
+    layer1Splitter = GUI::getInstance().add<Splitter>({
+        {"type", SPLITTER_VERTICAL}
+    });
+    layer1Splitter->add(getLayerPreviewAndInfo(0), 150, SPLITTER_MODE_FIXED);
+    layer1Splitter->add(getLayerViewport(0), 0.50);
+    layer1Splitter->add(getVisualInstanceAtLayer(0));
+    mainSplitter->add(layer1Splitter, 0.33);
+   
+    /* layer 2 */
+    layer2Splitter = GUI::getInstance().add<Splitter>({
+        {"type", SPLITTER_VERTICAL}
+    });
+    layer2Splitter->add(getLayerPreviewAndInfo(1), 150, SPLITTER_MODE_FIXED);
+    layer2Splitter->add(getLayerViewport(1), 0.50);
+    layer2Splitter->add(getVisualInstanceAtLayer(1));
+    mainSplitter->add(layer2Splitter, 0.33);
+    
+    
 }
 
 Element* AppGUI::getMainOutputViewport(){
@@ -41,6 +59,15 @@ Element* AppGUI::getMainOutputViewport(){
     return viewport;
 }
 
+Element* AppGUI::getLayerPreviewAndInfo(unsigned int layerNumber) {
+    Preview *previewOutput = GUI::getInstance().add<Preview>({
+        {"caption", "Layer " + std::to_string(layerNumber + 1)}
+    });
+    previewOutput->setBuffer(Layers::getInstance().get(layerNumber)->getBuffer());
+    
+    return previewOutput;
+}
+
 Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
     Viewport *viewport;
     Layer *layer;
@@ -50,6 +77,8 @@ Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
     
     viewport = GUI::getInstance().add<Viewport>({});
     SliderDecorator *viewportWithSlider = new SliderDecorator(viewport);
+    GUI::getInstance().add(viewportWithSlider);
+    
     layer = Layers::getInstance().get(layerNumber);
     visualInstance = layer->getActiveInstance();
     visualInstanceProperties = visualInstance->getProperties();
@@ -81,15 +110,12 @@ Element* AppGUI::getLayerViewport(unsigned int layerNumber){
     ControlsGroup controls;
     
     viewport = GUI::getInstance().add<Viewport>({});
+    
     SliderDecorator *viewportWithSlider = new SliderDecorator(viewport);
+    GUI::getInstance().add(viewportWithSlider);
+    
     layer = Layers::getInstance().get(layerNumber);
 
-    /* Set the viewport */
-    previewOutput = (Preview *) viewport->add(GUI::getInstance().add<Preview>({
-        {"caption", "Layer " + std::to_string(layerNumber + 1)}
-    }));
-    previewOutput->setBuffer(layer->getBuffer());
-    
      /* Set the controls */
     layerProperties = layer->getProperties();
     controls.setParentElement(viewport);
@@ -107,6 +133,8 @@ Element* AppGUI::getLayerViewport(unsigned int layerNumber){
         "blendMode"
     }));
     controls.set(layerProperties->getFullState());
+    cout << viewport->dump() << endl;
+    
     
     return viewportWithSlider;
 }

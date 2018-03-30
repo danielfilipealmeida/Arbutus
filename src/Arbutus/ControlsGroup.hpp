@@ -51,26 +51,31 @@ public:
     /*!
      \brief ...
      */
-    void addFloat(json _elementData, string key);
+    Element* addFloat(json _elementData, string key);
     
     /*!
      \brief ...
      */
-    void addButtonGroup(json _elementData, string key);
+    Element* addButtonGroup(json _elementData, string key);
 
     
     /*!
      \brief ...
      */
-    void addToggleButtonGroup(json _elementData, string key);
-    
-    
+    Element* addToggleButtonGroup(json _elementData, string key);
     
     /*!
      \brief ...
      */
     void setControlsDisplayOrder(json _displayOrder);
     
+    /*!
+     \brief returns a json with the information of the control group
+     \returns a json variable
+     */
+    json dumpJson();
+    
+    void updateParentRect(Element *lastAddedElement);
 };
 
 #endif /* ControlsGroup_hpp */
