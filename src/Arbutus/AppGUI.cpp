@@ -15,7 +15,7 @@ AppGUI::~AppGUI()  {
     
 }
 
-void AppGUI::setup(string resourcesPath) {
+void AppGUI::setup(json configuration) {
     /* main splitter */
     mainSplitter = GUI::getInstance().add<Splitter>({
         {"type", SPLITTER_HORIZONTAL}

@@ -9,10 +9,11 @@
 #define AppGUI_hpp
 
 #include "ofMain.h"
-#include "GUI.hpp"
 #include "ControlsGroup.hpp"
+#include "GUIInterface.h"
 
-class AppGUI {
+class AppGUI : public GUIInterface
+{
     GUI *gui;
     ControlsGroup layersControls;
     Splitter *splitter;
@@ -23,7 +24,7 @@ public:
     AppGUI();
     ~AppGUI();
     
-    void setup(string resourcesPath);
+    void setup(json configuration);
     Element* getMainOutputViewport();
     Element* getLayerPreviewAndInfo(unsigned int layerNumber);
     Element* getLayerViewport(unsigned int layerNumber);

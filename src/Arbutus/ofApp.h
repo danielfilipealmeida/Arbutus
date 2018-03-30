@@ -5,6 +5,7 @@
 #include "GUI.hpp"
 #include "ControlsGroup.hpp"
 #include "AppGUI.hpp"
+#include "NewGUI.hpp"
 #include "Windows.hpp"
 
 /*!
@@ -15,7 +16,8 @@
 class ofApp : public ofBaseApp {
     string resourcesPath;
     
-    AppGUI appGui;
+    //AppGUI *appGui;
+    NewGUI *appGui;
     Windows windows;
     shared_ptr<ofAppBaseWindow> window;
     

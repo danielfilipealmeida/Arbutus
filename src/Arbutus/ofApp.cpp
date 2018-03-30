@@ -22,9 +22,11 @@ void ofApp::setup(){
     
     devSetup();
     
-    appGui.setup(resourcesPath);
+    //appGui = new AppGUI();
+    appGui = new NewGUI();
+    appGui->setup({});
 
-    windows.add(window);
+    //windows.add(window);
 }
 
 void ofApp::devSetup() {
@@ -62,11 +64,8 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofClear(GUIStyle::getInstance().getDarkColor());
-    //Engine::getInstance()->drawOutput();
     GUI::getInstance().draw();
-    //windows.drawWindow(0);
     ofGetWindowPtr()->makeCurrent();
-    //cout << "val: " << val << endl;
 }
 
 //--------------------------------------------------------------

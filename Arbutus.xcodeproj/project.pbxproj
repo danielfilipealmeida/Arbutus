@@ -24,6 +24,8 @@
 		0C9895FD1FA50645003B47BD /* Windows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C9895FB1FA50645003B47BD /* Windows.cpp */; };
 		0C9895FE1FA50645003B47BD /* Windows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C9895FB1FA50645003B47BD /* Windows.cpp */; };
 		0CAC58861F938DE900090CCD /* Splitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CAC58851F938DE900090CCD /* Splitter.cpp */; };
+		0CB45C60206E56B100BAF981 /* NewGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CB45C5E206E56B100BAF981 /* NewGUI.cpp */; };
+		0CB45C61206E56B100BAF981 /* NewGUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CB45C5E206E56B100BAF981 /* NewGUI.cpp */; };
 		0CEC7DFB20003A2F001AF9A3 /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC7DD820003A2A001AF9A3 /* VerticalSlider.cpp */; };
 		0CEC7DFC20003A2F001AF9A3 /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC7DDA20003A2B001AF9A3 /* Element.cpp */; };
 		0CEC7DFD20003A2F001AF9A3 /* ButtonGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CEC7DDB20003A2B001AF9A3 /* ButtonGroup.cpp */; };
@@ -199,6 +201,9 @@
 		0C9895FB1FA50645003B47BD /* Windows.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Windows.cpp; path = Arbutus/Windows.cpp; sourceTree = "<group>"; };
 		0C9895FC1FA50645003B47BD /* Windows.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Windows.hpp; path = Arbutus/Windows.hpp; sourceTree = "<group>"; };
 		0CAC58851F938DE900090CCD /* Splitter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Splitter.cpp; path = CatchCpp/GUI/Splitter.cpp; sourceTree = "<group>"; };
+		0CB45C5E206E56B100BAF981 /* NewGUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUI.cpp; sourceTree = "<group>"; };
+		0CB45C5F206E56B100BAF981 /* NewGUI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NewGUI.hpp; sourceTree = "<group>"; };
+		0CB45C63206E56F300BAF981 /* GUIInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUIInterface.h; sourceTree = "<group>"; };
 		0CEC7DD820003A2A001AF9A3 /* VerticalSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = External/AlmondGUI/Sources/VerticalSlider.cpp; sourceTree = SOURCE_ROOT; };
 		0CEC7DD920003A2B001AF9A3 /* GUIStyle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GUIStyle.hpp; path = External/AlmondGUI/Sources/GUIStyle.hpp; sourceTree = SOURCE_ROOT; };
 		0CEC7DDA20003A2B001AF9A3 /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = External/AlmondGUI/Sources/Element.cpp; sourceTree = SOURCE_ROOT; };
@@ -405,6 +410,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0CB45C62206E56B600BAF981 /* GUIS */ = {
+			isa = PBXGroup;
+			children = (
+				0CB45C5E206E56B100BAF981 /* NewGUI.cpp */,
+				0CB45C5F206E56B100BAF981 /* NewGUI.hpp */,
+				0C1AB0221FA296E1005E42DB /* AppGUI.cpp */,
+				0C1AB0231FA296E1005E42DB /* AppGUI.hpp */,
+				0CB45C63206E56F300BAF981 /* GUIInterface.h */,
+			);
+			name = GUIS;
+			sourceTree = "<group>";
+		};
 		0CEC7DF420003A2F001AF9A3 /* Decorators */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +460,7 @@
 		6504152D1F6582E4001D7832 /* Arbutus */ = {
 			isa = PBXGroup;
 			children = (
+				0CB45C62206E56B600BAF981 /* GUIS */,
 				0C08AEDA1F91405A00CE531F /* GLSL */,
 				650415401F6584C3001D7832 /* HelloWorld-Info.plist */,
 				6504152F1F6582F4001D7832 /* main.cpp */,
@@ -451,8 +469,6 @@
 				650415321F6582F4001D7832 /* set.json */,
 				0C628F0E1F9C053200ADB871 /* ControlsGroup.cpp */,
 				0C628F0F1F9C053200ADB871 /* ControlsGroup.hpp */,
-				0C1AB0221FA296E1005E42DB /* AppGUI.cpp */,
-				0C1AB0231FA296E1005E42DB /* AppGUI.hpp */,
 				0C9895FB1FA50645003B47BD /* Windows.cpp */,
 				0C9895FC1FA50645003B47BD /* Windows.hpp */,
 			);
@@ -1086,6 +1102,7 @@
 				0CEC7E0020003A2F001AF9A3 /* Viewport.cpp in Sources */,
 				65276BB31F486E3400949383 /* OscReceivedElements.cpp in Sources */,
 				0CEC7E0A20003A2F001AF9A3 /* ResetButtonDecorator.cpp in Sources */,
+				0CB45C60206E56B100BAF981 /* NewGUI.cpp in Sources */,
 				65276BA51F486DD000949383 /* ofxMidiIn.cpp in Sources */,
 				65276BA91F486DE600949383 /* ofxRtMidiOut.cpp in Sources */,
 				0CEC7E0320003A2F001AF9A3 /* ElementStyle.cpp in Sources */,
@@ -1163,6 +1180,7 @@
 				0CAC58861F938DE900090CCD /* Splitter.cpp in Sources */,
 				65E8969A1E734482000D470B /* ofxBaseMidi.cpp in Sources */,
 				65E896661E730453000D470B /* main.cpp in Sources */,
+				0CB45C61206E56B100BAF981 /* NewGUI.cpp in Sources */,
 				65E21BC81EC6764F006D1C37 /* ofApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
