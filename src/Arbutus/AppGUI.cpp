@@ -15,9 +15,16 @@ AppGUI::~AppGUI()  {
     
 }
 
+
+GUI* AppGUI::getGUI()
+{
+    return gui;
+}
+
+
 void AppGUI::setup(json configuration) {
     /* main splitter */
-    mainSplitter = GUI::getInstance().add<Splitter>({
+    mainSplitter = gui->add<Splitter>({
         {"type", SPLITTER_HORIZONTAL}
     });
     
@@ -25,7 +32,7 @@ void AppGUI::setup(json configuration) {
     mainSplitter->add(getMainOutputViewport(), 0.33);
     
     /* layer 1 */
-    layer1Splitter = GUI::getInstance().add<Splitter>({
+    layer1Splitter = gui->add<Splitter>({
         {"type", SPLITTER_VERTICAL}
     });
     layer1Splitter->add(getLayerPreviewAndInfo(0), 150, SPLITTER_MODE_FIXED);
@@ -34,7 +41,7 @@ void AppGUI::setup(json configuration) {
     mainSplitter->add(layer1Splitter, 0.33);
    
     /* layer 2 */
-    layer2Splitter = GUI::getInstance().add<Splitter>({
+    layer2Splitter = gui->add<Splitter>({
         {"type", SPLITTER_VERTICAL}
     });
     layer2Splitter->add(getLayerPreviewAndInfo(1), 150, SPLITTER_MODE_FIXED);
@@ -49,9 +56,9 @@ Element* AppGUI::getMainOutputViewport(){
     Viewport *viewport;
     Preview *previewOutput;
     
-    viewport = GUI::getInstance().add<Viewport>({});
+    viewport = gui->add<Viewport>({});
     
-    previewOutput = (Preview *) viewport->add(GUI::getInstance().add<Preview>({
+    previewOutput = (Preview *) viewport->add(gui->add<Preview>({
         {"caption", "Output"}
     }));
     previewOutput->setBuffer(Engine::getInstance()->getBuffer());
@@ -60,7 +67,7 @@ Element* AppGUI::getMainOutputViewport(){
 }
 
 Element* AppGUI::getLayerPreviewAndInfo(unsigned int layerNumber) {
-    Preview *previewOutput = GUI::getInstance().add<Preview>({
+    Preview *previewOutput = gui->add<Preview>({
         {"caption", "Layer " + std::to_string(layerNumber + 1)}
     });
     previewOutput->setBuffer(Layers::getInstance().get(layerNumber)->getBuffer());
@@ -75,13 +82,14 @@ Element* AppGUI::getVisualInstanceAtLayer(unsigned int layerNumber) {
     VisualInstancesProperties *visualInstanceProperties;
     ControlsGroup controls;
     
-    viewport = GUI::getInstance().add<Viewport>({});
+    viewport = gui->add<Viewport>({});
     SliderDecorator *viewportWithSlider = new SliderDecorator(viewport);
-    GUI::getInstance().add(viewportWithSlider);
+    gui->add(viewportWithSlider);
     
     layer = Layers::getInstance().get(layerNumber);
     visualInstance = layer->getActiveInstance();
     visualInstanceProperties = visualInstance->getProperties();
+    controls.setGUI(gui);
     controls.setParentElement(viewport);
     controls.setProperties(visualInstanceProperties);
     controls.setControlsDisplayOrder(json::array({
@@ -109,15 +117,16 @@ Element* AppGUI::getLayerViewport(unsigned int layerNumber){
     LayerProperties *layerProperties;
     ControlsGroup controls;
     
-    viewport = GUI::getInstance().add<Viewport>({});
+    viewport = gui->add<Viewport>({});
     
     SliderDecorator *viewportWithSlider = new SliderDecorator(viewport);
-    GUI::getInstance().add(viewportWithSlider);
+    gui->add(viewportWithSlider);
     
     layer = Layers::getInstance().get(layerNumber);
 
      /* Set the controls */
     layerProperties = layer->getProperties();
+    controls.setGUI(gui);
     controls.setParentElement(viewport);
     controls.setProperties(layerProperties);
     controls.setControlsDisplayOrder(json::array({

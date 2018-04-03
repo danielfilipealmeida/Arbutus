@@ -40,12 +40,14 @@ class NewGUI : public GUIInterface
 public:
     NewGUI();
     void setup (json configuration);
+    GUI* getGUI();
     
 protected:
     /*!
      \brief Creates the channels previews
      */
     void createChannelsPreviews();
+
 };
 
 #endif /* NewGUI_hpp */

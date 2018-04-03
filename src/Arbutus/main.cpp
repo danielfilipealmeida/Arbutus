@@ -16,7 +16,7 @@ int main( ){
     settings.height = 800;
     mainWindow = ofCreateWindow(settings);
     mainApp = new ofApp();
-    mainApp->setWindow(mainWindow);
+    // mainApp->setWindow(mainWindow);
     ofRunApp(mainApp);
     
 }

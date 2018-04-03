@@ -16,10 +16,11 @@
 class ofApp : public ofBaseApp {
     string resourcesPath;
     
-    //AppGUI *appGui;
     NewGUI *appGui;
-    Windows windows;
-    shared_ptr<ofAppBaseWindow> window;
+    
+    
+    // Windows windows;
+    // shared_ptr<ofAppBaseWindow> window;
     
 	public:
 		void setup();
@@ -36,7 +37,7 @@ class ofApp : public ofBaseApp {
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    void setWindow(shared_ptr<ofAppBaseWindow> _window) {window = _window;}
+    // void setWindow(shared_ptr<ofAppBaseWindow> _window) {window = _window;}
     
     /*!
      Setups up some data to help development

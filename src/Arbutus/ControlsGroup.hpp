@@ -21,6 +21,8 @@ class ControlsGroup {
     void createGUIElements();
     Properties *properties;
     
+    GUI *gui;
+    
     
 public:
     /*!
@@ -76,6 +78,12 @@ public:
     json dumpJson();
     
     void updateParentRect(Element *lastAddedElement);
+    
+    /*!
+     \brief Sets the GUI object to be used by the Control Group
+     \param GUI* gui the gui object to be stored and used by this Control Group
+     */
+    void setGUI(GUI *_gui);
 };
 
 #endif /* ControlsGroup_hpp */

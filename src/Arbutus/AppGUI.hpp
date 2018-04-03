@@ -25,10 +25,14 @@ public:
     ~AppGUI();
     
     void setup(json configuration);
+    GUI* getGUI();
+    
     Element* getMainOutputViewport();
     Element* getLayerPreviewAndInfo(unsigned int layerNumber);
     Element* getLayerViewport(unsigned int layerNumber);
     Element* getVisualInstanceAtLayer(unsigned int layerNumber);
+    
+
 };
 
 #endif /* AppGUI_hpp */

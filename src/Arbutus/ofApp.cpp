@@ -56,7 +56,7 @@ void ofApp::devSetup() {
 //--------------------------------------------------------------
 void ofApp::update(){
     Engine::getInstance()->render();
-    GUI::getInstance().update();
+    appGui->getGUI()->update();
     
 
 }
@@ -64,7 +64,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofClear(GUIStyle::getInstance().getDarkColor());
-    GUI::getInstance().draw();
+    appGui->getGUI()->draw();
     ofGetWindowPtr()->makeCurrent();
 }
 

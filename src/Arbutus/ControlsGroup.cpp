@@ -14,10 +14,14 @@
 ControlsGroup::ControlsGroup() {
     properties = NULL;
     parentElement = NULL;
+    gui = NULL;
 }
 
-ControlsGroup::~ControlsGroup()  {
-    
+ControlsGroup::~ControlsGroup() {}
+
+void ControlsGroup::setGUI(GUI *_gui)
+{
+    gui = _gui;
 }
 
 void ControlsGroup::set(json data)  {
@@ -73,7 +77,7 @@ Element* ControlsGroup::addFloat(json _elementData, string key) {
     Slider *newSlider = new Slider();
     ResetButtonDecorator *sliderWithReset = new ResetButtonDecorator(newSlider);
     sliderWithReset->set(sliderData);
-    GUI::getInstance().add(sliderWithReset);
+    gui->add(sliderWithReset);
     sliderWithReset->setParent(parentElement);
     Properties *properties = this->properties;
     newSlider->setOnChange([properties, _elementData, key](Slider *slider) mutable {
@@ -91,10 +95,10 @@ Element* ControlsGroup::addButtonGroup(json _elementData, string key) {
         {"value", (float) _elementData["value"].get<float>()}
         
     };
-    Label *buttonGroupLabel = (Label *) parentElement->add(GUI::getInstance().add<Label>({
+    Label *buttonGroupLabel = (Label *) parentElement->add(gui->add<Label>({
         {"caption", _elementData["title"].get<string>()}
     }));
-    ButtonGroup *buttonGroup = (ButtonGroup *) parentElement->add(GUI::getInstance().add<ButtonGroup>(buttonGroupData));
+    ButtonGroup *buttonGroup = (ButtonGroup *) parentElement->add(gui->add<ButtonGroup>(buttonGroupData));
     
     return buttonGroup;
 }
@@ -106,11 +110,11 @@ Element* ControlsGroup::addToggleButtonGroup(json _elementData, string key) {
         {"value", (float) _elementData["value"].get<float>()}
         
     };
-    Label *toggleButtonGroupLabel = (Label *) parentElement->add(GUI::getInstance().add<Label>({
+    Label *toggleButtonGroupLabel = (Label *) parentElement->add(gui->add<Label>({
         {"caption", _elementData["title"].get<string>()}
     }));
     Properties *properties = this->properties;
-    ToggleButtonGroup *toggleButtonGroup = (ToggleButtonGroup *) parentElement->add(GUI::getInstance().add<ToggleButtonGroup>(toggleButtonGroupData));
+    ToggleButtonGroup *toggleButtonGroup = (ToggleButtonGroup *) parentElement->add(gui->add<ToggleButtonGroup>(toggleButtonGroupData));
     toggleButtonGroup->setOnClick([properties, _elementData, key](ToggleButtonGroup *toggleButtonGroup) mutable {
         if (properties == NULL) {
             return;
