@@ -18,6 +18,8 @@ class ofApp : public ofBaseApp {
     
     NewGUI *appGui;
     
+    shared_ptr<ofAppBaseWindow> previewWindow, layersWindow;
+    
     
     // Windows windows;
     // shared_ptr<ofAppBaseWindow> window;
@@ -26,7 +28,26 @@ class ofApp : public ofBaseApp {
 		void setup();
 		void update();
 		void draw();
-		
+    
+    /*!
+     \brief Draws the content of the Preview Window.
+        
+     Activated by a listener set on main.cpp
+     */
+    void setPreviewWindow(shared_ptr<ofAppBaseWindow> _previewWindow);
+
+    /*!
+     \brief Draws the content of the Layers Window.
+     
+     Activated by a listener set on main.cpp
+     */
+    void setLayersWindow(shared_ptr<ofAppBaseWindow> _layersWindow);
+    
+    
+    
+    void drawPreview(ofEventArgs & args);
+    void drawLayers(ofEventArgs & args);
+    
 		void keyPressed(int key);
 		void keyReleased(int key);
 		void mouseMoved(int x, int y);

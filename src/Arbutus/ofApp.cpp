@@ -27,6 +27,8 @@ void ofApp::setup(){
     appGui->setup({});
 
     //windows.add(window);
+    json currentState = Engine::getInstance()->getState();
+    cout << currentState.dump(4) << endl;
 }
 
 void ofApp::devSetup() {
@@ -66,6 +68,35 @@ void ofApp::draw(){
     ofClear(GUIStyle::getInstance().getDarkColor());
     appGui->getGUI()->draw();
     ofGetWindowPtr()->makeCurrent();
+}
+
+
+void ofApp::setPreviewWindow(shared_ptr<ofAppBaseWindow> _previewWindow) {
+    previewWindow = _previewWindow;
+}
+
+void ofApp::setLayersWindow(shared_ptr<ofAppBaseWindow> _layersWindow)  {
+    layersWindow = _layersWindow;
+}
+
+
+
+
+void ofApp::drawPreview(ofEventArgs & args)
+{
+    ofRectangle previewDrawingRect;
+    previewDrawingRect.setSize(previewWindow->getWidth(), previewWindow->getHeight());
+    ofClear(ofColor::black);
+    ofSetColor(255,255,255);
+    Engine::getInstance()->getBuffer()->getTexture().draw(previewDrawingRect);
+}
+
+void ofApp::drawLayers(ofEventArgs & args) {
+    ofRectangle layersDrawingRect;
+    layersDrawingRect.setSize(layersWindow->getWidth(), layersWindow->getHeight());
+    ofClear(ofColor::black);
+    ofSetColor(255,255,255);
+
 }
 
 //--------------------------------------------------------------

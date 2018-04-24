@@ -16,13 +16,15 @@ NewGUI::NewGUI() {
 
 GUI* NewGUI::getGUI()
 {
-    return gui;
+        return gui;
 }
 
 
 void NewGUI::setup (json configuration)
 {
+    
     gui = new GUI();
+    /*
     
     mainOutput = gui->add<Preview>({
         {"caption", "Output"},
@@ -34,6 +36,11 @@ void NewGUI::setup (json configuration)
     mainOutput->setBuffer(Engine::getInstance()->getBuffer());
     
     createChannelsPreviews();
+    */
+    
+    
+    layersControls = new LayersControls(gui);
+    layersControls->setup();
 }
 
 

@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "GUIInterface.h"
 #include "GUI.hpp"
+#include "LayersControls.hpp"
 
 #include <vector>
 
@@ -37,6 +38,11 @@ class NewGUI : public GUIInterface
     std::vector<Preview *> channelsOutput;
 
     float previewWidth, previewHeight;
+    
+    LayersControls *layersControls;
+    
+    float x, y, width, height;
+    
 public:
     NewGUI();
     void setup (json configuration);

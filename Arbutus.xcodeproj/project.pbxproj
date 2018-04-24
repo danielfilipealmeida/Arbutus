@@ -79,6 +79,7 @@
 		65276BB91F486EDA00949383 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81451DF8D96500331165 /* NetworkingUtils.cpp */; };
 		65276BBA1F486FC100949383 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
 		6532BF4F1F729987008A5761 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6532BF4E1F729987008A5761 /* Button.cpp */; };
+		653E53032075772700832B38 /* LayersControls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 653E53012075772700832B38 /* LayersControls.cpp */; };
 		655BFAF91E7355BD00B74446 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655BFAF81E7355BD00B74446 /* CoreMIDI.framework */; };
 		655BFAFA1E7358C000B74446 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
 		655BFAFB1E735A3D00B74446 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81401DF8D96500331165 /* IpEndpointName.cpp */; };
@@ -260,6 +261,8 @@
 		651B4EB3207406E3006B12A6 /* VerticalSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = External/AlmondGUI/Sources/VerticalSlider.cpp; sourceTree = SOURCE_ROOT; };
 		651B4EB4207406E3006B12A6 /* VerticalSlider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VerticalSlider.hpp; path = External/AlmondGUI/Sources/VerticalSlider.hpp; sourceTree = SOURCE_ROOT; };
 		6532BF4E1F729987008A5761 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Button.cpp; path = CatchCpp/GUI/Button.cpp; sourceTree = "<group>"; };
+		653E53012075772700832B38 /* LayersControls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LayersControls.cpp; path = Arbutus/GUIs/NewGui/LayersControls.cpp; sourceTree = "<group>"; };
+		653E53022075772700832B38 /* LayersControls.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = LayersControls.hpp; path = Arbutus/GUIs/NewGui/LayersControls.hpp; sourceTree = "<group>"; };
 		655BFAF81E7355BD00B74446 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		658AF53C1F6FEAD600576066 /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = CatchCpp/GUI/Element.cpp; sourceTree = "<group>"; };
 		659583BB1F76B7A100EE275D /* VerticalSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = CatchCpp/GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
@@ -416,10 +419,8 @@
 		0CB45C62206E56B600BAF981 /* GUIS */ = {
 			isa = PBXGroup;
 			children = (
-				0CB45C5E206E56B100BAF981 /* NewGUI.cpp */,
-				0CB45C5F206E56B100BAF981 /* NewGUI.hpp */,
-				0C1AB0221FA296E1005E42DB /* AppGUI.cpp */,
-				0C1AB0231FA296E1005E42DB /* AppGUI.hpp */,
+				653E5300207576E100832B38 /* OldGUI */,
+				653E52F9207576D200832B38 /* NewGUI */,
 				0CB45C63206E56F300BAF981 /* GUIInterface.h */,
 			);
 			name = GUIS;
@@ -549,6 +550,26 @@
 			name = Interfaces;
 			path = External/AlmondGUI/Sources/Interfaces;
 			sourceTree = SOURCE_ROOT;
+		};
+		653E52F9207576D200832B38 /* NewGUI */ = {
+			isa = PBXGroup;
+			children = (
+				0CB45C5E206E56B100BAF981 /* NewGUI.cpp */,
+				0CB45C5F206E56B100BAF981 /* NewGUI.hpp */,
+				653E53012075772700832B38 /* LayersControls.cpp */,
+				653E53022075772700832B38 /* LayersControls.hpp */,
+			);
+			name = NewGUI;
+			sourceTree = "<group>";
+		};
+		653E5300207576E100832B38 /* OldGUI */ = {
+			isa = PBXGroup;
+			children = (
+				0C1AB0221FA296E1005E42DB /* AppGUI.cpp */,
+				0C1AB0231FA296E1005E42DB /* AppGUI.hpp */,
+			);
+			name = OldGUI;
+			sourceTree = "<group>";
 		};
 		658AF53B1F6FEA7500576066 /* GUI */ = {
 			isa = PBXGroup;
@@ -1114,6 +1135,7 @@
 				65276BA91F486DE600949383 /* ofxRtMidiOut.cpp in Sources */,
 				65276BA61F486DD000949383 /* ofxMidiMessage.cpp in Sources */,
 				651B4EB8207406E3006B12A6 /* Viewport.cpp in Sources */,
+				653E53032075772700832B38 /* LayersControls.cpp in Sources */,
 				651B4EBF207406E4006B12A6 /* Element.cpp in Sources */,
 				651B4EC5207406E4006B12A6 /* Slider.cpp in Sources */,
 				65276BB21F486E3400949383 /* OscPrintReceivedElements.cpp in Sources */,
