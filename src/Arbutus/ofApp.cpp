@@ -92,10 +92,26 @@ void ofApp::drawPreview(ofEventArgs & args)
 }
 
 void ofApp::drawLayers(ofEventArgs & args) {
+    Engine *engine;
+    Layers *layers;
+    float currentY, previewHeight;
+    
+    engine = Engine::getInstance();
+    layers = &Layers::getInstance();
+    
     ofRectangle layersDrawingRect;
     layersDrawingRect.setSize(layersWindow->getWidth(), layersWindow->getHeight());
     ofClear(ofColor::black);
     ofSetColor(255,255,255);
+    
+    currentY = 0;
+    previewHeight = previewWindow->getWidth() * 3 / 4;
+    for (int f = 0; f < layers->count(); f++)
+    {
+        layers->get(f)->draw(0, currentY, previewWindow->getWidth(), previewHeight);
+        currentY += previewHeight;
+    }
+    
 
 }
 

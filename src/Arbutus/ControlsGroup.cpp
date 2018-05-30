@@ -49,24 +49,31 @@ void ControlsGroup::createGUIElements() {
             break;
         }
         
-        updateParentRect(addedGUIElement);
+        //updateParentRect(addedGUIElement);
     }
     
 }
 
 void ControlsGroup::updateParentRect(Element *lastAddedElement) {
-    return;
-    
-    ofRectangle lastAddedElementRect = lastAddedElement->getRect();
-    ofRectangle currentParentRect = parentElement->getRect();
-    
-    currentParentRect.growToInclude(lastAddedElementRect.x + lastAddedElementRect.width + GUI_BORDER,
-                                    lastAddedElementRect.y + lastAddedElementRect.height + GUI_BORDER);
+    ofRectangle lastAddedElementRect, currentParentRect;
+    float growWidth, growHeight;
+
+    lastAddedElementRect = lastAddedElement->getRect();
+    currentParentRect = parentElement->getRect();
+    growWidth = lastAddedElementRect.x + lastAddedElementRect.width + GUI_BORDER;
+    growHeight = lastAddedElementRect.y + lastAddedElementRect.height + GUI_BORDER;
+    currentParentRect.growToInclude(growWidth, growHeight);
     parentElement->getVisibleRectForRect(currentParentRect);
 }
 
 Element* ControlsGroup::addFloat(json _elementData, string key) {
-    json sliderData = {
+    
+    json sliderData;
+    Slider *newSlider;
+    ResetButtonDecorator *sliderWithReset;
+    Properties *properties;
+    
+    sliderData = {
         {"caption", _elementData["title"].get<string>()},
         {"minValue", (float) _elementData["min"].get<float>()},
         {"maxValue", (float) _elementData["max"].get<float>()},
@@ -74,12 +81,13 @@ Element* ControlsGroup::addFloat(json _elementData, string key) {
         {"defaultValue", (float) (_elementData["value"].is_number() ? _elementData["value"].get<float>() : 0.0)}
     };
     
-    Slider *newSlider = new Slider();
-    ResetButtonDecorator *sliderWithReset = new ResetButtonDecorator(newSlider);
+    newSlider = new Slider();
+    sliderWithReset = new ResetButtonDecorator(newSlider);
     sliderWithReset->set(sliderData);
     gui->add(sliderWithReset);
-    sliderWithReset->setParent(parentElement);
-    Properties *properties = this->properties;
+    parentElement->add(sliderWithReset);
+    
+    properties = this->properties;
     newSlider->setOnChange([properties, _elementData, key](Slider *slider) mutable {
         if (properties == NULL) return;
         properties->set(key, slider->getValue());

@@ -31,6 +31,12 @@ public:
     
     void setup();
     
+private:
+    ControlsGroup getLayerControls(unsigned int layerNumber, Element *parentElement);
+    void createGUIForLayer(unsigned int layerNumber);
+    void addCaptionAndNavigator();
+    void addElements();
+    
 };
 
 #endif /* LayersControls_hpp */

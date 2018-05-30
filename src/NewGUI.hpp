@@ -33,6 +33,7 @@
 class NewGUI : public GUIInterface
 {
     GUI *gui;
+    Splitter *splitter;
     
     Preview *mainOutput;
     std::vector<Preview *> channelsOutput;
@@ -49,10 +50,9 @@ public:
     GUI* getGUI();
     
 protected:
-    /*!
-     \brief Creates the channels previews
-     */
-    void createChannelsPreviews();
+
+    
+    ControlsGroup getLayerControls(unsigned int layerNumber);
 
 };
 
