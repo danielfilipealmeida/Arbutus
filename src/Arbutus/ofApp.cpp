@@ -108,8 +108,29 @@ void ofApp::drawLayers(ofEventArgs & args) {
     previewHeight = previewWindow->getWidth() * 3 / 4;
     for (int f = 0; f < layers->count(); f++)
     {
+        bool isSelected = layers->getCurrentId() == f;
+        ofSetColor(ofColor::white);
         layers->get(f)->draw(0, currentY, previewWindow->getWidth(), previewHeight);
+        
+        if (isSelected) {
+            ofSetColor(ofColor::white);
+            ofNoFill();
+            ofSetLineWidth(3);
+            ofDrawRectangle(ofRectangle(1, currentY + 1, previewWindow->getWidth()-2, previewHeight-2));
+        }
+        
+        ofRectangle labelRect =ofRectangle(1, currentY +1, previewWindow->getWidth()-2, 20);
+        if (!isSelected) {
+            ofSetColor(ofColor::gray);
+        }
+        ofFill();
+        ofDrawRectangle(labelRect);
+        
+        ofSetColor(ofColor::black);
+        GUI::drawCenteredText("Layer " + ofToString(f + 1), labelRect);
+        
         currentY += previewHeight;
+
     }
     
 
