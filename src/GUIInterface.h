@@ -32,6 +32,12 @@ public:
      \brief Returns the GUI object
      */
     virtual GUI* getGUI() = 0;
+    
+    /*!
+     \brief Updates all the blocks in the gui
+     */
+
+    virtual void update() = 0;
 };
 
 #endif /* GUIInterface_h */

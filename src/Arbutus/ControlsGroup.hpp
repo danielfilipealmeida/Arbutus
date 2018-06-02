@@ -46,14 +46,19 @@ public:
     void setParentElement(Element *_element);
     
     /*!
-     \brief ...
+     \brief Sets the properties of the Control Group
+     \param *_properties the properties
      */
     void setProperties(Properties *_properties);
     
     /*!
-     \brief ...
+     \brief Adds a slider to the control. Can also add a reset button next to it
+     \param _elementData slider data
+     \param key 
+     \param withResetButton should have a reset button. default true
+     \returns the new element
      */
-    Element* addFloat(json _elementData, string key);
+    Element* addFloat(json _elementData, string key, bool withResetButton = true);
     
     /*!
      \brief ...

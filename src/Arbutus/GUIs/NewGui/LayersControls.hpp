@@ -16,6 +16,7 @@
 class LayersControls
 {
     GUI *gui;
+    GUIInterface *guiInterface;
     ControlsGroup layersControls;
     
     Viewport *viewport;
@@ -25,16 +26,41 @@ class LayersControls
     
 public:
     /*!
-     
+     \brief Constructor. sets up the main gui pointer
      */
-    LayersControls(GUI *_gui);
+    LayersControls(GUI *_gui, GUIInterface *_guiInterface);
     
+    /*!
+     \brief Setups up the Layers controls
+     */
     void setup();
     
+    /*!
+     \brief updates this GUI part
+     */
+    void update();
+    
 private:
+    
+    /*!
+     \brief ...
+     */
     ControlsGroup getLayerControls(unsigned int layerNumber, Element *parentElement);
+    
+    
+    /*!
+     \brief ...
+     */
     void createGUIForLayer(unsigned int layerNumber);
+    
+    /*!
+     \brief ...
+     */
     void addCaptionAndNavigator();
+    
+    /*!
+     \brief ...
+     */
     void addElements();
     
 };

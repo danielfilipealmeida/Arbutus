@@ -12,6 +12,7 @@
 #include "GUIInterface.h"
 #include "GUI.hpp"
 #include "LayersControls.hpp"
+#include "VisualsControls.hpp"
 
 #include <vector>
 
@@ -41,6 +42,7 @@ class NewGUI : public GUIInterface
     float previewWidth, previewHeight;
     
     LayersControls *layersControls;
+    VisualsControls *visualsControls;
     
     float x, y, width, height;
     
@@ -48,6 +50,8 @@ public:
     NewGUI();
     void setup (json configuration);
     GUI* getGUI();
+    
+    void update();
     
 protected:
 

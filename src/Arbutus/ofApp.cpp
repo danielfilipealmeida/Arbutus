@@ -119,7 +119,7 @@ void ofApp::drawLayers(ofEventArgs & args) {
             ofDrawRectangle(ofRectangle(1, currentY + 1, previewWindow->getWidth()-2, previewHeight-2));
         }
         
-        ofRectangle labelRect =ofRectangle(1, currentY +1, previewWindow->getWidth()-2, 20);
+        ofRectangle labelRect = ofRectangle(1, currentY +1, previewWindow->getWidth()-2, 20);
         if (!isSelected) {
             ofSetColor(ofColor::gray);
         }

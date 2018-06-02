@@ -41,7 +41,7 @@ void ControlsGroup::createGUIElements() {
         switch (type) {
         case StateType_Integer:
         case StateType_Float:
-            addedGUIElement = addFloat(element, controlName);
+            addedGUIElement = addFloat(element, controlName, true);
             break;
             
         case StateType_ToggleButtonGroup:
@@ -51,10 +51,11 @@ void ControlsGroup::createGUIElements() {
         
         //updateParentRect(addedGUIElement);
     }
-    
 }
 
-void ControlsGroup::updateParentRect(Element *lastAddedElement) {
+
+void ControlsGroup::updateParentRect(Element *lastAddedElement)
+{
     ofRectangle lastAddedElementRect, currentParentRect;
     float growWidth, growHeight;
 
@@ -66,8 +67,9 @@ void ControlsGroup::updateParentRect(Element *lastAddedElement) {
     parentElement->getVisibleRectForRect(currentParentRect);
 }
 
-Element* ControlsGroup::addFloat(json _elementData, string key) {
-    
+
+Element* ControlsGroup::addFloat(json _elementData, string key, bool withResetButton)
+{
     json sliderData;
     Slider *newSlider;
     ResetButtonDecorator *sliderWithReset;
@@ -82,10 +84,22 @@ Element* ControlsGroup::addFloat(json _elementData, string key) {
     };
     
     newSlider = new Slider();
-    sliderWithReset = new ResetButtonDecorator(newSlider);
-    sliderWithReset->set(sliderData);
-    gui->add(sliderWithReset);
-    parentElement->add(sliderWithReset);
+    
+    if (withResetButton) {
+        sliderWithReset = new ResetButtonDecorator(newSlider);
+        sliderWithReset->set(sliderData);
+       
+        gui->add(sliderWithReset);
+        parentElement->add(sliderWithReset);
+         sliderWithReset->setParent(parentElement);
+    }
+    else {
+        newSlider->set(sliderData);
+        gui->add(newSlider);
+        newSlider->setParent(parentElement);
+        parentElement->add(newSlider);
+    }
+
     
     properties = this->properties;
     newSlider->setOnChange([properties, _elementData, key](Slider *slider) mutable {
@@ -95,6 +109,7 @@ Element* ControlsGroup::addFloat(json _elementData, string key) {
     
     return newSlider;
 }
+
 
 Element* ControlsGroup::addButtonGroup(json _elementData, string key) {
     json buttonGroupData = {
@@ -110,6 +125,7 @@ Element* ControlsGroup::addButtonGroup(json _elementData, string key) {
     
     return buttonGroup;
 }
+
 
 Element* ControlsGroup::addToggleButtonGroup(json _elementData, string key) {
     json toggleButtonGroupData = {

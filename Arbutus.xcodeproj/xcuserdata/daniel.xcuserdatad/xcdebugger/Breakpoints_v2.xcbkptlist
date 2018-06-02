@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Arbutus/GUIs/NewGui/LayersControls.cpp"
-            timestampString = "546380236.786153"
+            timestampString = "549645681.699482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "LayersControls::setup()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,59 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Arbutus/ControlsGroup.cpp"
-            timestampString = "549127368.8395489"
+            timestampString = "549571296.671631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "ControlsGroup::createGUIElements()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ControlsGroup::createGUIElements()"
-                  moduleName = "Arbutus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daniel/XCode/Arbutus/src/Arbutus/ControlsGroup.cpp"
-                  timestampString = "549127378.684496"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "46">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ControlsGroup::createGUIElements()"
-                  moduleName = "Arbutus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daniel/XCode/Arbutus/src/Arbutus/ControlsGroup.cpp"
-                  timestampString = "549127378.850575"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "113">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Arbutus/ControlsGroup.cpp"
-            timestampString = "549128819.999442"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "ControlsGroup::updateParentRect(Element *lastAddedElement)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Arbutus/ControlsGroup.cpp"
-            timestampString = "549132022.040814"
+            timestampString = "549637138.2458121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "ControlsGroup::addFloat(json _elementData, string key)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "ControlsGroup::addFloat(json _elementData, string key, bool withResetButton)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -160,6 +112,54 @@
             startingLineNumber = "111"
             endingLineNumber = "111"
             landmarkName = "ofApp::drawLayers(ofEventArgs &amp; args)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "External/AlmondGUI/Sources/Decorators/ResetButtonDecorator.cpp"
+            timestampString = "549574322.430385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "ResetButtonDecorator::getRect()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "External/AlmondGUI/Sources/Decorators/Decorator.cpp"
+            timestampString = "549625545.311603"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "Decorator::update()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "External/AlmondGUI/Sources/Decorators/ResetButtonDecorator.cpp"
+            timestampString = "549633557.679873"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "ResetButtonDecorator::set(json config)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

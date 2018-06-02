@@ -102,6 +102,7 @@
 		6536382820BAFF2200EFB5BA /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 653637FE20BAFF2200EFB5BA /* VerticalSlider.cpp */; };
 		6536382920BAFF2200EFB5BA /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 653637FE20BAFF2200EFB5BA /* VerticalSlider.cpp */; };
 		653E53032075772700832B38 /* LayersControls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 653E53012075772700832B38 /* LayersControls.cpp */; };
+		655302CC20C06C7A003E6E37 /* VisualsControls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 655302CA20C06C7A003E6E37 /* VisualsControls.cpp */; };
 		655BFAF91E7355BD00B74446 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655BFAF81E7355BD00B74446 /* CoreMIDI.framework */; };
 		655BFAFA1E7358C000B74446 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81461DF8D96500331165 /* UdpSocket.cpp */; };
 		655BFAFB1E735A3D00B74446 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81401DF8D96500331165 /* IpEndpointName.cpp */; };
@@ -287,6 +288,8 @@
 		653637FF20BAFF2200EFB5BA /* VerticalSlider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VerticalSlider.hpp; path = External/AlmondGUI/Sources/VerticalSlider.hpp; sourceTree = SOURCE_ROOT; };
 		653E53012075772700832B38 /* LayersControls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LayersControls.cpp; path = Arbutus/GUIs/NewGui/LayersControls.cpp; sourceTree = "<group>"; };
 		653E53022075772700832B38 /* LayersControls.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = LayersControls.hpp; path = Arbutus/GUIs/NewGui/LayersControls.hpp; sourceTree = "<group>"; };
+		655302CA20C06C7A003E6E37 /* VisualsControls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisualsControls.cpp; path = Arbutus/GUIs/NewGui/VisualsControls.cpp; sourceTree = "<group>"; };
+		655302CB20C06C7A003E6E37 /* VisualsControls.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VisualsControls.hpp; path = Arbutus/GUIs/NewGui/VisualsControls.hpp; sourceTree = "<group>"; };
 		655BFAF81E7355BD00B74446 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		658AF53C1F6FEAD600576066 /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = CatchCpp/GUI/Element.cpp; sourceTree = "<group>"; };
 		659583BB1F76B7A100EE275D /* VerticalSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = CatchCpp/GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
@@ -584,6 +587,8 @@
 				0CB45C5F206E56B100BAF981 /* NewGUI.hpp */,
 				653E53012075772700832B38 /* LayersControls.cpp */,
 				653E53022075772700832B38 /* LayersControls.hpp */,
+				655302CA20C06C7A003E6E37 /* VisualsControls.cpp */,
+				655302CB20C06C7A003E6E37 /* VisualsControls.hpp */,
 			);
 			name = NewGUI;
 			sourceTree = "<group>";
@@ -1188,6 +1193,7 @@
 				0C9895FD1FA50645003B47BD /* Windows.cpp in Sources */,
 				650415341F6582F4001D7832 /* main.cpp in Sources */,
 				65276BAE1F486E0000949383 /* tinyxmlparser.cpp in Sources */,
+				655302CC20C06C7A003E6E37 /* VisualsControls.cpp in Sources */,
 				6536380E20BAFF2200EFB5BA /* Window.cpp in Sources */,
 				65276BA71F486DD000949383 /* ofxMidiOut.cpp in Sources */,
 				65276BAF1F486E0E00949383 /* ofxOscMessage.cpp in Sources */,

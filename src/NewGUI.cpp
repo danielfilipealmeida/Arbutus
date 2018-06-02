@@ -16,7 +16,7 @@ NewGUI::NewGUI() {
 
 GUI* NewGUI::getGUI()
 {
-        return gui;
+    return gui;
 }
 
 
@@ -27,9 +27,15 @@ void NewGUI::setup (json configuration)
     
     gui = new GUI();
     
-    layersControls = new LayersControls(gui);
+    layersControls = new LayersControls(gui, this);
     layersControls->setup();
-    
+   
+    visualsControls = new VisualsControls(gui, this);
+    visualsControls->setup();
 }
 
+void NewGUI::update() {
+    layersControls->update();
+    visualsControls->update();
+}
 

@@ -10,27 +10,27 @@
 #include "Utils.h"
 
 
-LayersControls::LayersControls(GUI *_gui)
+LayersControls::LayersControls(GUI *_gui, GUIInterface *_guiInterface)
 {
     gui = _gui;
+    guiInterface = _guiInterface;
 }
 
 
 void LayersControls::setup()
 {
+    float width, x;
+    
+    width = ofGetWidth() / 2.0;
+    x = 0;
     viewport = gui->add<Viewport>({
-        {"x", 0},
+        {"x", x},
         {"y", 0},
-        {"width", ofGetWidth() / 4.0},
+        {"width", width},
         {"height", ofGetHeight()}
     });	
     
     addElements();
-}
-
-void addElementsTo()
-{
-    
 }
 
 void LayersControls::createGUIForLayer(unsigned int layerNumber)
@@ -75,8 +75,6 @@ ControlsGroup LayersControls::getLayerControls(unsigned int layerNumber, Element
     
     layer = Layers::getInstance().get(layerNumber);
     
-
-    
     // Set the controls 
     layerProperties = layer->getProperties();
     controls.setGUI(gui);
@@ -95,11 +93,6 @@ ControlsGroup LayersControls::getLayerControls(unsigned int layerNumber, Element
         "blendMode"
     }));
     
-    /*
-    if (layer == NULL) {
-        return controls;
-    }
-    */
     controls.set(layerProperties->getFullState());
     
     return controls;
@@ -115,18 +108,10 @@ void LayersControls::addElements()
     navigationButtons = (ButtonGroup*) viewport->add(gui->add<ButtonGroup>({
         {
             "options", {
-                {
-                    {"caption", "First"}
-                },
-                {
-                    {"caption", "Previous"}
-                },
-                {
-                    {"caption", "Next"}
-                },
-                {
-                    {"caption", "Last"}
-                }
+                {{"caption", "First"}},
+                {{"caption", "Previous"}},
+                {{"caption", "Next"}},
+                {{"caption", "Last"}}
             }
         }
     }));
@@ -148,13 +133,21 @@ void LayersControls::addElements()
             layers->activateLast();
         }
         
-        viewport->empty();
-        this->addElements();
+        guiInterface->update();
+        
     });
     
     string layerCaption = "Layer " + ofToString(Layers::getInstance().getCurrentId() + 1);
     label->setCaption(layerCaption);
     layersControls = getLayerControls(Layers::getInstance().getCurrentId(), viewport);
-    
 }
 
+
+/*!
+ \brief updates this GUI part
+ */
+void LayersControls::update()
+{
+    viewport->empty();
+    this->addElements();
+}
