@@ -6,6 +6,12 @@ A Back to Basics VJing software.
 
 ## Todo
 
+- Keyboard / MIDI / OSC controllers. keys assigned to stuff. action types (change layer, trigger/schedulle visual instances)
+- Dragging (implement first on AlmondGUI)
+- Protect GUI elements from clicking when dragging. (if dragging, lock to the current element. do this on AlmondGUI)
+- List all available visual instances in a layer
+- Visuals Matrix
+
 - fix GUI:
     - show all videos
     - add sliders to the viewports

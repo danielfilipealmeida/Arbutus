@@ -14,6 +14,7 @@ LayersControls::LayersControls(GUI *_gui, GUIInterface *_guiInterface)
 {
     gui = _gui;
     guiInterface = _guiInterface;
+    needsUpdate = false;
 }
 
 
@@ -133,7 +134,8 @@ void LayersControls::addElements()
             layers->activateLast();
         }
         
-        guiInterface->update();
+        // forcing full update. 
+        guiInterface->update(true);
         
     });
     
@@ -143,11 +145,17 @@ void LayersControls::addElements()
 }
 
 
-/*!
- \brief updates this GUI part
- */
+
 void LayersControls::update()
 {
+    if (needsUpdate == false) return;
+
     viewport->empty();
     this->addElements();
+    needsUpdate = false;
+}
+
+
+void LayersControls::setNeedsUpdate(bool _needsUpdate) {
+    needsUpdate = _needsUpdate;
 }

@@ -34,8 +34,23 @@ void NewGUI::setup (json configuration)
     visualsControls->setup();
 }
 
-void NewGUI::update() {
+void NewGUI::update(bool force) {
+    if (force == true) {
+        layersControls->setNeedsUpdate(true);
+        visualsControls->setNeedsUpdate(true);
+    }
+    
     layersControls->update();
     visualsControls->update();
 }
 
+
+ControlBlockInterface* NewGUI::getControlBlock(AvailableControlBlocks block) {
+    switch (block) {
+        case CTRLBLOCK_LAYERS:
+            return layersControls;
+            
+        case CTRLBLOCK_VISUALS:
+            return visualsControls;
+    }
+}

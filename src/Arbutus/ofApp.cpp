@@ -26,9 +26,7 @@ void ofApp::setup(){
     appGui = new NewGUI();
     appGui->setup({});
 
-    //windows.add(window);
     json currentState = Engine::getInstance()->getState();
-    cout << currentState.dump(4) << endl;
 }
 
 void ofApp::devSetup() {
@@ -59,8 +57,6 @@ void ofApp::devSetup() {
 void ofApp::update(){
     Engine::getInstance()->render();
     appGui->getGUI()->update();
-    
-
 }
 
 //--------------------------------------------------------------
@@ -138,6 +134,27 @@ void ofApp::drawLayers(ofEventArgs & args) {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    Layers *layers = &Layers::getInstance();
+    
+    /*
+    switch (key) {
+        case 49: // 1
+            layers->setActive(0);
+            appGui->update();
+            break;
+            
+        case 50: // 2
+            layers->setActive(1);
+            appGui->update();
+            break;
+    }
+     */
+    if (key >= 49 && key <=50) {
+        layers->setActive(key - 48);
+        appGui->update(true);
+
+    }
+    //cout << key << endl;
 
 }
 

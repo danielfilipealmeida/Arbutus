@@ -226,6 +226,7 @@
 		0CB45C5E206E56B100BAF981 /* NewGUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NewGUI.cpp; sourceTree = "<group>"; };
 		0CB45C5F206E56B100BAF981 /* NewGUI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NewGUI.hpp; sourceTree = "<group>"; };
 		0CB45C63206E56F300BAF981 /* GUIInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUIInterface.h; sourceTree = "<group>"; };
+		6503DC8120C30B7B003CB988 /* ControlBlockInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ControlBlockInterface.hpp; path = Arbutus/GUIs/ControlBlockInterface.hpp; sourceTree = "<group>"; };
 		6504152F1F6582F4001D7832 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Arbutus/main.cpp; sourceTree = "<group>"; };
 		650415301F6582F4001D7832 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = Arbutus/ofApp.cpp; sourceTree = "<group>"; };
 		650415311F6582F4001D7832 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = Arbutus/ofApp.h; sourceTree = "<group>"; };
@@ -449,6 +450,7 @@
 				653E5300207576E100832B38 /* OldGUI */,
 				653E52F9207576D200832B38 /* NewGUI */,
 				0CB45C63206E56F300BAF981 /* GUIInterface.h */,
+				6503DC8120C30B7B003CB988 /* ControlBlockInterface.hpp */,
 			);
 			name = GUIS;
 			sourceTree = "<group>";

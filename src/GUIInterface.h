@@ -35,9 +35,12 @@ public:
     
     /*!
      \brief Updates all the blocks in the gui
+     \param force ignore block update conditions
      */
 
-    virtual void update() = 0;
+    virtual void update(bool force = false) = 0;
+    
+    
 };
 
 #endif /* GUIInterface_h */

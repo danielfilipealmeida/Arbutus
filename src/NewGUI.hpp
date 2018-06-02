@@ -17,6 +17,11 @@
 #include <vector>
 
 
+typedef enum AvailableControlBlocks{
+    CTRLBLOCK_LAYERS = 0,
+    CTRLBLOCK_VISUALS
+};
+
 /*!
  \brief Implements the new interface of the app
  
@@ -47,11 +52,34 @@ class NewGUI : public GUIInterface
     float x, y, width, height;
     
 public:
+    
+    /*!
+     \brief Constructor
+     */
     NewGUI();
+    
+    /*!
+     \brief Sets up the GUI implementation
+     \param configuration the configuration
+     */
     void setup (json configuration);
+    
+    /*!
+     \brief Returns the current GUI
+     */
     GUI* getGUI();
     
-    void update();
+    /*!
+     \brief Updates all blocks that are set for update
+     */
+    void update(bool force = false);
+    
+    
+    /*!
+     \brief Returns a control block
+     \param AvailableControlBlocks block the block
+     */
+    ControlBlockInterface* getControlBlock(AvailableControlBlocks block);
     
 protected:
 

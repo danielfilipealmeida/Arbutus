@@ -14,6 +14,7 @@ VisualsControls::VisualsControls(GUI *_gui, GUIInterface *_guiInterface)
 {
     gui = _gui;
     guiInterface = _guiInterface;
+    needsUpdate = false;
 }
 
 void VisualsControls::setup()
@@ -45,9 +46,12 @@ void VisualsControls::addElements()
     layer = Layers::getInstance().get(currentLayer);
     visualInstance = layer->getActiveInstance();
     visualInstanceProperties = visualInstance->getProperties();
-
+    string caption;
+    
+    caption = (visualInstance != NULL) ? visualInstanceProperties->getName() : "[invalid visual]";
+    
     label = (Label *) viewport->add(gui->add<Label>({
-        {"caption", visualInstanceProperties->getName()}
+        {"caption", caption}
     }));
     
     navigationButtons = (ButtonGroup*) viewport->add(gui->add<ButtonGroup>({
@@ -70,28 +74,34 @@ void VisualsControls::addElements()
     }));
     
     navigationButtons->setOnClick([this] (ButtonGroup *buttonGroup) {
-        string lastButtonCaption = buttonGroup->getLastClickedButtonData().caption;
+        string lastButtonCaption;
+        Engine *engine = Engine::getInstance();
         
+        VisualInstances visualInstances = Set::getInstance().getCurrentScene()->visualInstances;
+        
+        lastButtonCaption = buttonGroup->getLastClickedButtonData().caption;
         
         if (lastButtonCaption.compare("First") == 0) {
-      
+            engine->playFirstVisualInstanceOnActiveLayer();
         }
         else if (lastButtonCaption.compare("Previous") == 0) {
-        
+            engine->playPreviousVisualInstanceOnActiveLayer();
         }
         else if (lastButtonCaption.compare("Next") == 0) {
-        
+            engine->playNextVisualInstanceOnActiveLayer();
         }
         else if (lastButtonCaption.compare("Last") == 0) {
-        
+            engine->playLastVisualInstanceOnActiveLayer();
         }
         
+        needsUpdate = true;
         guiInterface->update();
         
     });
     
-
-    visualInstanceControls = getVisualInstanceControls(visualInstanceProperties, viewport);
+    if (visualInstance != NULL) {
+        visualInstanceControls = getVisualInstanceControls(visualInstanceProperties, viewport);
+    }
 }
 
 ControlsGroup VisualsControls::getVisualInstanceControls(
@@ -100,8 +110,6 @@ ControlsGroup VisualsControls::getVisualInstanceControls(
                                                          )
 {
     ControlsGroup controls;
-    
-    cout << properties->getFullState().dump(4) << endl;
     
     controls.setGUI(gui);
     controls.setParentElement(parentElement);
@@ -123,11 +131,17 @@ ControlsGroup VisualsControls::getVisualInstanceControls(
     return controls;
 }
 
-/*!
- \brief updates this GUI part
- */
+
 void VisualsControls::update()
 {
+    if (needsUpdate == false) return;
+    
     viewport->empty();
     this->addElements();
+    needsUpdate = false;
+}
+
+
+void VisualsControls::setNeedsUpdate(bool _needsUpdate) {
+    needsUpdate = _needsUpdate;
 }

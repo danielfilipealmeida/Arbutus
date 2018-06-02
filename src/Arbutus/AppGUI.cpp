@@ -142,8 +142,6 @@ Element* AppGUI::getLayerViewport(unsigned int layerNumber){
         "blendMode"
     }));
     controls.set(layerProperties->getFullState());
-    cout << viewport->dump() << endl;
-    
     
     return viewportWithSlider;
 }

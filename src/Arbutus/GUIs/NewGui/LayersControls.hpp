@@ -12,8 +12,9 @@
 #include "ofMain.h"
 #include "ControlsGroup.hpp"
 #include "GUIInterface.h"
+#include "ControlBlockInterface.hpp"
 
-class LayersControls
+class LayersControls : public ControlBlockInterface
 {
     GUI *gui;
     GUIInterface *guiInterface;
@@ -23,6 +24,7 @@ class LayersControls
     Label *label;
     ButtonGroup *navigationButtons;
 
+    bool needsUpdate;
     
 public:
     /*!
@@ -39,6 +41,12 @@ public:
      \brief updates this GUI part
      */
     void update();
+    
+    /*!
+     \brief sets this control block to be updated next time the ::update() method is executed
+     \param _needsUpdate
+     */
+    void setNeedsUpdate(bool _needsUpdate);
     
 private:
     
