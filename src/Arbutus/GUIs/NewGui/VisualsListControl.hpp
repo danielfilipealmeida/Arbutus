@@ -1,29 +1,30 @@
 //
-//  LayersControls.hpp
+//  VisualsListControl.hpp
 //  Arbutus
 //
-//  Created by Daniel Almeida on 04/04/18.
+//  Created by Daniel Almeida on 06/06/18.
 //
 //
 
-#ifndef LayersControls_hpp
-#define LayersControls_hpp
+#ifndef VisualsListControl_hpp
+#define VisualsListControl_hpp
 
 #include "ofMain.h"
 #include "ControlsGroup.hpp"
 #include "GUIInterface.h"
 #include "ControlBlockInterface.hpp"
 
-class LayersControls : public ControlBlockInterface
+class VisualsListControls : public ControlBlockInterface
 {
     GUI *gui;
     GUIInterface *guiInterface;
     ControlsGroup layersControls;
+    ImageMatrix *imageMatrix;
     
     Viewport *viewport;
-    Label *label;
-    ButtonGroup *navigationButtons;
+    //Label *label;
 
+    
     bool needsUpdate;
     
 public:
@@ -31,7 +32,7 @@ public:
     /*!
      \brief Constructor. sets up the main gui pointer
      */
-    LayersControls(GUI *_gui, GUIInterface *_guiInterface);
+    VisualsListControls(GUI *_gui, GUIInterface *_guiInterface);
     
     /*!
      \brief Setups up the Layers controls
@@ -54,24 +55,9 @@ private:
     /*!
      \brief ...
      */
-    ControlsGroup getLayerControls(unsigned int layerNumber, Element *parentElement);
-    
-    
-    /*!
-     \brief ...
-     */
-    void createGUIForLayer(unsigned int layerNumber);
-    
-    /*!
-     \brief ...
-     */
-    void addCaptionAndNavigator();
-    
-    /*!
-     \brief ...
-     */
     void addElements();
+    
     
 };
 
-#endif /* LayersControls_hpp */
+#endif /* VisualsListControl_hpp */

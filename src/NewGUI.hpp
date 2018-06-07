@@ -13,6 +13,8 @@
 #include "GUI.hpp"
 #include "LayersControls.hpp"
 #include "VisualsControls.hpp"
+#include "VisualsListControl.hpp"
+
 
 #include <vector>
 
@@ -46,6 +48,7 @@ class NewGUI : public GUIInterface
 
     float previewWidth, previewHeight;
     
+    VisualsListControls *visualsListControls;
     LayersControls *layersControls;
     VisualsControls *visualsControls;
     

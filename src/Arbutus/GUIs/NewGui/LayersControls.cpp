@@ -22,8 +22,8 @@ void LayersControls::setup()
 {
     float width, x;
     
-    width = ofGetWidth() / 2.0;
-    x = 0;
+    width = ofGetWidth() / 3.0;
+    x = width;
     viewport = gui->add<Viewport>({
         {"x", x},
         {"y", 0},

@@ -20,6 +20,7 @@ class VisualsControls : public ControlBlockInterface {
     GUI *gui;
     GUIInterface *guiInterface;
     ControlsGroup visualInstanceControls;
+    ImageMatrix *imageMatrix;
     
     Viewport *viewport;
     Label *label;

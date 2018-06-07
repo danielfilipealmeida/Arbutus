@@ -109,6 +109,7 @@
 		655BFAFD1E735BC100B74446 /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81321DF8D94600331165 /* SyphonNameboundClient.m */; };
 		658AF53D1F6FEAD600576066 /* Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 658AF53C1F6FEAD600576066 /* Element.cpp */; };
 		659583BC1F76B7A100EE275D /* VerticalSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 659583BB1F76B7A100EE275D /* VerticalSlider.cpp */; };
+		65B7413C20C569C400070900 /* ImageMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65B7413A20C569C400070900 /* ImageMatrix.cpp */; };
 		65E21BC81EC6764F006D1C37 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65E21BC61EC6764F006D1C37 /* ofApp.cpp */; };
 		65E6BD321F4467A0008E4F9E /* ofxMidiMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC818E1DF8D9CA00331165 /* ofxMidiMessage.cpp */; };
 		65E6BD331F4467B1008E4F9E /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81891DF8D9CA00331165 /* ofxMidi.cpp */; };
@@ -135,6 +136,7 @@
 		65E8969F1E734F02000D470B /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81531DF8D96500331165 /* OscPrintReceivedElements.cpp */; };
 		65E896A01E734F05000D470B /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65BC81501DF8D96500331165 /* OscOutboundPacketStream.cpp */; };
 		65E896A11E734F37000D470B /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65C1EB171E6E1D16003F731D /* RtMidi.cpp */; };
+		65F3BAFB20C887BA00DB15BA /* VisualsListControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65F3BAF920C887BA00DB15BA /* VisualsListControl.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +297,8 @@
 		658AF53C1F6FEAD600576066 /* Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Element.cpp; path = CatchCpp/GUI/Element.cpp; sourceTree = "<group>"; };
 		659583BB1F76B7A100EE275D /* VerticalSlider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VerticalSlider.cpp; path = CatchCpp/GUI/VerticalSlider.cpp; sourceTree = "<group>"; };
 		659E25D51E70BCAE00217A12 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		65B7413A20C569C400070900 /* ImageMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImageMatrix.cpp; path = External/AlmondGUI/Sources/ImageMatrix.cpp; sourceTree = SOURCE_ROOT; };
+		65B7413B20C569C400070900 /* ImageMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ImageMatrix.hpp; path = External/AlmondGUI/Sources/ImageMatrix.hpp; sourceTree = SOURCE_ROOT; };
 		65BC812F1DF8D94600331165 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
 		65BC81311DF8D94600331165 /* SyphonNameboundClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyphonNameboundClient.h; sourceTree = "<group>"; };
 		65BC81321DF8D94600331165 /* SyphonNameboundClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SyphonNameboundClient.m; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 		65E8967B1E73311F000D470B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		65E896851E733920000D470B /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = ../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework; sourceTree = "<group>"; };
 		65E896871E733975000D470B /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = ../../../libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
+		65F3BAF920C887BA00DB15BA /* VisualsListControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisualsListControl.cpp; path = Arbutus/GUIs/NewGui/VisualsListControl.cpp; sourceTree = "<group>"; };
+		65F3BAFA20C887BA00DB15BA /* VisualsListControl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VisualsListControl.hpp; path = Arbutus/GUIs/NewGui/VisualsListControl.hpp; sourceTree = "<group>"; };
 		65F6C5401F42F08A00270C51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
@@ -476,12 +482,15 @@
 		650415431F65A3B3001D7832 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				653637EF20BAFF2200EFB5BA /* Interfaces */,
+				653637D320BAFF2200EFB5BA /* Containers */,
+				653637E020BAFF2200EFB5BA /* Decorators */,
+				65B7413A20C569C400070900 /* ImageMatrix.cpp */,
+				65B7413B20C569C400070900 /* ImageMatrix.hpp */,
 				653637CF20BAFF2200EFB5BA /* Button.cpp */,
 				653637D020BAFF2200EFB5BA /* Button.hpp */,
 				653637D120BAFF2200EFB5BA /* ButtonGroup.cpp */,
 				653637D220BAFF2200EFB5BA /* ButtonGroup.hpp */,
-				653637D320BAFF2200EFB5BA /* Containers */,
-				653637E020BAFF2200EFB5BA /* Decorators */,
 				653637E720BAFF2200EFB5BA /* Element.cpp */,
 				653637E820BAFF2200EFB5BA /* Element.hpp */,
 				653637E920BAFF2200EFB5BA /* ElementStyle.cpp */,
@@ -490,7 +499,6 @@
 				653637EC20BAFF2200EFB5BA /* GUI.hpp */,
 				653637ED20BAFF2200EFB5BA /* GUIStyle.cpp */,
 				653637EE20BAFF2200EFB5BA /* GUIStyle.hpp */,
-				653637EF20BAFF2200EFB5BA /* Interfaces */,
 				653637F420BAFF2200EFB5BA /* Label.cpp */,
 				653637F520BAFF2200EFB5BA /* Label.hpp */,
 				653637F620BAFF2200EFB5BA /* Preview.cpp */,
@@ -591,6 +599,8 @@
 				653E53022075772700832B38 /* LayersControls.hpp */,
 				655302CA20C06C7A003E6E37 /* VisualsControls.cpp */,
 				655302CB20C06C7A003E6E37 /* VisualsControls.hpp */,
+				65F3BAF920C887BA00DB15BA /* VisualsListControl.cpp */,
+				65F3BAFA20C887BA00DB15BA /* VisualsListControl.hpp */,
 			);
 			name = NewGUI;
 			sourceTree = "<group>";
@@ -1173,6 +1183,7 @@
 				6536381420BAFF2200EFB5BA /* SliderDecorator.cpp in Sources */,
 				6536382620BAFF2200EFB5BA /* ToggleButtonGroup.cpp in Sources */,
 				6536381620BAFF2200EFB5BA /* Element.cpp in Sources */,
+				65F3BAFB20C887BA00DB15BA /* VisualsListControl.cpp in Sources */,
 				65276BB21F486E3400949383 /* OscPrintReceivedElements.cpp in Sources */,
 				65276BB41F486E3400949383 /* OscTypes.cpp in Sources */,
 				6536381820BAFF2200EFB5BA /* ElementStyle.cpp in Sources */,
@@ -1189,6 +1200,7 @@
 				65276BA81F486DE100949383 /* ofxRtMidiIn.cpp in Sources */,
 				6536381020BAFF2200EFB5BA /* Decorator.cpp in Sources */,
 				6536381220BAFF2200EFB5BA /* ResetButtonDecorator.cpp in Sources */,
+				65B7413C20C569C400070900 /* ImageMatrix.cpp in Sources */,
 				65276BB01F486E1600949383 /* ofxOscReceiver.cpp in Sources */,
 				6536380020BAFF2200EFB5BA /* Button.cpp in Sources */,
 				6536380620BAFF2200EFB5BA /* PaginatedViewport.cpp in Sources */,

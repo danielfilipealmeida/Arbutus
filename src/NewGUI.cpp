@@ -27,6 +27,9 @@ void NewGUI::setup (json configuration)
     
     gui = new GUI();
     
+    visualsListControls = new VisualsListControls(gui, this);
+    visualsListControls->setup();
+    
     layersControls = new LayersControls(gui, this);
     layersControls->setup();
    
@@ -38,8 +41,10 @@ void NewGUI::update(bool force) {
     if (force == true) {
         layersControls->setNeedsUpdate(true);
         visualsControls->setNeedsUpdate(true);
+        visualsListControls->setNeedsUpdate(true);
     }
     
+    visualsListControls->update();
     layersControls->update();
     visualsControls->update();
 }

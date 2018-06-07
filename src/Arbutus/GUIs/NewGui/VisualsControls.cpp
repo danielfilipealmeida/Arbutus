@@ -22,8 +22,8 @@ void VisualsControls::setup()
     unsigned int x;
     unsigned int width;
     
-    width = ofGetWidth() / 2.0;
-    x = width;
+    width = ofGetWidth() / 3.0;
+    x = width*2;
     
     viewport = gui->add<Viewport>({
         {"x", x},
@@ -72,6 +72,27 @@ void VisualsControls::addElements()
             }
         }
     }));
+    
+    imageMatrix = (ImageMatrix*) viewport->add(gui->add<ImageMatrix>({
+        {"height", 128.0},
+        {"width", 0},
+        {"columns", 6},
+        {"rows", 2}
+    }));
+    VisualInstances *currentVisualInstances = Engine::getInstance()->getCurrentVisualInstances();
+    for(unsigned int pos = 0;
+        pos < currentVisualInstances->countInLayer(currentLayer);
+        pos++) {
+        
+        VisualInstance *vi = currentVisualInstances->get(currentLayer, pos);
+        
+        if (vi!=NULL){
+            // todo: visual ::getScreenshot
+            imageMatrix->addImage(vi->visual->getScreenshot());
+        }
+        
+    }
+
     
     navigationButtons->setOnClick([this] (ButtonGroup *buttonGroup) {
         string lastButtonCaption;
